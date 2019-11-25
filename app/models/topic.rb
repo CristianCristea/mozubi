@@ -1,4 +1,4 @@
 class Topic < ApplicationRecord
   belongs_to :profession
-  has_many :articles
+  has_many :articles, dependent: :destroy
 end
