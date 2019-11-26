@@ -1,0 +1,32 @@
+.card-carousel-header {
+  text-transform: uppercase;
+  background-color: $primary;
+  color: $text-secondary;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-carousel-header-title {
+  font-weight: 400;
+  font-size: 1.4rem;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.card-carousel-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+}
+
+.btn-primary {
+  background-color: $secondary;
+  border: none;
+}
+
+.carousel-control-prev-icon {
+  color: $black;
+}
