@@ -1,0 +1,32 @@
+.top-bar {
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 1px 5px rgba($color: #000000, $alpha: 0.3);
+  position: relative;
+
+  h2 {
+    font-size: 1.6rem;
+    padding: 20px;
+  }
+
+  progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+    width: 100%;
+    height: 4px;
+  }
+  progress::-webkit-progress-bar {
+    background-color: #fff;
+    border-radius: 2px;
+  }
+  progress::-webkit-progress-value {
+    border-radius: 2px;
+    background-color: $primary;
+  }
+  progress::-moz-progress-bar {
+    /* style rules */
+  }
+}

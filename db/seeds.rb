@@ -1,4 +1,5 @@
 puts "Cleaning DB..."
+UserArticle.delete_all
 Chapter.delete_all
 UserArticle.delete_all
 Article.delete_all
@@ -13,8 +14,13 @@ puts "Adding users..."
 user = User.create!(
         email: "test_user@example.com",
         password: "123456",
+        first_name: "Bob",
+        last_name: "McDonald",
+        birthdate: Date.new(1986, 4, 10),
+        exam_date: Date.new(2020, 9, 1),
         profession: profession
     )
+
 
 puts "Creating topics..."
 topic1 = Topic.create!(
@@ -96,3 +102,12 @@ Chapter.create!(
   content: "Just like other programming languages, Sass allows the use of variables that can store information you can use throughout your style sheet. For example, you can store a colour value in a variable at the top of the file, and then use this variable when setting the colour of your elements. This enables you to quickly change your colours without having to modify each line separately.",
   article: topic2_article1
 )
+
+# assignment of article to user
+# user_article1 = UserArticle.new(user_id: user.id, article_id: topic1_article1.id, read: true)
+# user_article1.save!
+
+# user_article2 = UserArticle.new(user_id: user.id, article_id: topic2_article1.id, read: true)
+# user_article2.save!
+
+# puts 'user articles are created'

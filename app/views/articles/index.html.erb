@@ -1,0 +1,151 @@
+<div class="container">
+  <div class="container-library">
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card-carousel">
+          <div class="card-carousel-header">
+            <div>
+              <%= @articles_read_counted %> Completed
+            </div>
+            <div>
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <div id="carouselLeft" class="carousel slide">
+            <div class="carousel-inner">
+              <% @articles.each_with_index do |article, index| %>
+                <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
+                  <p class="card-carousel-header-title"><strong><%= article.title %></strong></p>
+                  <p class="card-carousel-text"><%=h truncate(article.description, :length => 250) %></p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="card-carousel-bottom">
+
+            <div class="card-carousel-arrows">
+              <a class="carousel-control-prev" href="#carouselLeft" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselLeft" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            <div class="card-carousel-count">
+              <p>1/17</p>
+            </div>
+            <div>
+              <a href="#" class="btn btn-primary">Read again</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="card-carousel">
+          <div class="card-carousel-header">
+            <div>
+              <%= @articles_not_read_counted %> Upcoming
+            </div>
+            <div>
+              <i class="fas fa-external-link-alt"></i>
+            </div>
+          </div>
+          <div id="carouselMiddle" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
+                <p class="card-carousel-text">This should be a synopsis</p>
+              </div>
+              <div class="carousel-item">
+                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
+                <p class="card-carousel-text">This should be a synopsis</p>
+              </div>
+              <div class="carousel-item">
+                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
+                <p class="card-carousel-text">This should be a synopsis</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-carousel-bottom">
+
+            <div class="card-carousel-arrows">
+              <a class="carousel-control-prev" href="#carouselMiddle" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselMiddle" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            <div class="card-carousel-count">
+              <p>1/17</p>
+            </div>
+            <div>
+              <a href="#" class="btn btn-primary">Read again</a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+       <div class="col-sm-4">
+        <div class="card-carousel">
+          <div class="card-carousel-header">
+            <div>
+              XX Bookmarked
+            </div>
+            <div>
+              <i class="far fa-bookmark"></i>
+            </div>
+          </div>
+          <div id="carouselRight" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
+                <p class="card-carousel-text">This should be a synopsis</p>
+              </div>
+              <div class="carousel-item">
+                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
+                <p class="card-carousel-text">This should be a synopsis</p>
+              </div>
+              <div class="carousel-item">
+                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
+                <p class="card-carousel-text">This should be a synopsis</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-carousel-bottom">
+
+            <div class="card-carousel-arrows">
+              <a class="carousel-control-prev" href="#carouselRight" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselRight" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            <div class="card-carousel-count">
+              <p>1/17</p>
+            </div>
+            <div>
+              <a href="#" class="btn btn-primary">Read again</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
