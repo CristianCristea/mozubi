@@ -12,6 +12,7 @@
 .sidebar-sticky {
   position: relative;
   top: 0;
+  bottom: 0;
   height: calc(100vh - 0px);
   overflow-x: hidden;
   overflow-y: auto;
@@ -27,7 +28,6 @@
 
 .sidebar .nav-link {
   height: 80px;
-  width: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,10 +39,6 @@
 
 .sidebar .nav-item:hover {
   background: $hover-primary;
-}
-
-.sidebar .nav-link:hover {
-
 }
 
 .sidebar .nav-link.active {
