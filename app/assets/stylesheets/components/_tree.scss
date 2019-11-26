@@ -35,6 +35,7 @@
 }
 .tree .nav-item {
   padding: 10px;
+  padding-left: 45px;
   color: $text-secondary;
 }
 
@@ -44,6 +45,9 @@
 
 .tree .nav-item.active {
   background-color: $hover-primary;
+}
+.tree .nav-sub {
+  list-style: none;
 }
 .material-icons-sharp {
   font-size: 24px;
@@ -73,7 +77,6 @@ ul.list:before {
     z-index: 400;
 }
 ul.list > li {
-    margin: 20px 0;
     padding-left: 20px;
 }
 ul.list > li:before {
