@@ -104,10 +104,10 @@ Chapter.create!(
 )
 
 # assignment of article to user
-user_article1 = UserArticle.new(user_id: user.id, article_id: topic1_article1.id, read: true)
-user_article1.save!
+# user_article1 = UserArticle.new(user_id: user.id, article_id: topic1_article1.id, read: true)
+# user_article1.save!
 
-user_article2 = UserArticle.new(user_id: user.id, article_id: topic2_article1.id, read: true)
-user_article2.save!
+# user_article2 = UserArticle.new(user_id: user.id, article_id: topic2_article1.id, read: true)
+# user_article2.save!
 
-puts 'user articles are created'
+# puts 'user articles are created'
