@@ -1,3 +1,9 @@
+.card-carousel {
+  width: 320px;
+  background-color: white;
+  margin: 130px;
+}
+
 .card-carousel-header {
   text-transform: uppercase;
   background-color: $primary;
@@ -14,6 +20,12 @@
   font-size: 1.4rem;
   letter-spacing: 1px;
   margin: 0;
+  padding: 15px;
+}
+
+.card-carousel-text {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .card-carousel-bottom {
@@ -27,6 +39,25 @@
   border: none;
 }
 
-.carousel-control-prev-icon {
-  color: $black;
+.card-carousel-arrows {
+  display: flex;
+  justify-content: center;
 }
+
+.carousel-control-prev  {
+  position: relative;
+  left: 8px;
+  height: 17px;
+}
+
+.carousel-control-next {
+  position: relative;
+  right: -33px;
+  height: 17px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-image: none;
+  color: $primary !important;
+  font-size: 25px;
+ }
