@@ -1,12 +1,62 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  width: 70px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 0px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: $primary;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
 }
+
+.sidebar .nav-link {
+  height: 80px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: $text-secondary;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.sidebar .nav-item:hover {
+  background: $hover-primary;
+}
+
+.sidebar .nav-link:hover {
+
+}
+
+.sidebar .nav-link.active {
+  background-color: $hover-primary;
+}
+.material-icons-sharp {
+  font-size: 24px;
+}
+.bottom {
+  height: 80px;
+  width: 70px;
+  position: absolute;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+}
+
