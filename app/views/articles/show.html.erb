@@ -1,19 +1,10 @@
+<div class="container col-12 col-lg-9 mt-4">
 
-<!--
-<%= @article.title %>
-<p><%= @article.description %></p>
-
-
-<% @article.chapters.each do |chapter| %>
-<p><%= chapter.title %></p>
-<p><%= chapter.content %></p>
-<% end %> -->
-
-<h1 align="center"><%= @article.title %></h1>
-
+  <h3 align="center" class="mb-4"><%= @article.title %></h3>
+  <div class="row justify-content-center">
 
 <!--Accordion wrapper-->
-<div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+  <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
 
   <!-- Accordion card -->
   <div class="card">
@@ -61,7 +52,6 @@
       </div>
     </div>
     <% end %>
-
-
 </div>
-<!-- Accordion wrapper -->
+</div>
+</div>
