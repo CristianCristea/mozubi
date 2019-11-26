@@ -1,0 +1,62 @@
+.card-carousel {
+  width: 320px;
+  height: 450px;
+  background-color: white;
+  margin: 130px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-carousel-header {
+  text-transform: uppercase;
+  background-color: $primary;
+  color: $text-secondary;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-carousel-header-title {
+  font-weight: 400;
+  font-size: 1.4rem;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 15px;
+}
+
+.card-carousel-text {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.card-carousel-bottom {
+  padding: 14px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  align-items: center;
+}
+
+.btn-primary {
+  background-color: $secondary;
+  border: none;
+}
+
+.card-carousel-arrows {
+  display: flex;
+  justify-content: space-between;
+}
+.carousel-control-prev, .carousel-control-next {
+  position: relative;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-image: none;
+  color: $primary !important;
+  font-size: 25px;
+ }
