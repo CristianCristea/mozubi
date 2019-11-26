@@ -1,6 +1,3 @@
-<div class="top-bar">
-  <h2 class="display-4"><%= (current_user.exam_date.to_date - Date.current).to_i %> days to exam</h2>
-  <progress max="<%= (current_user.exam_date.to_date - current_user.created_at.to_date).to_i %>" value="<%= ((current_user.exam_date.to_date - current_user.created_at.to_date).to_i) - ((current_user.exam_date.to_date - Date.current).to_i) %>"></progress>
 <div class="jumbotron">
   <h1 class="display-4">Welcome to Mozubi!</h1>
   <p class="lead">This is the solution for German apprentencis that want to pass their final exam.</p>
