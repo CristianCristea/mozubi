@@ -5,4 +5,14 @@ class PagesController < ApplicationController
     @topics = Topic.all
     @articles = Article.all
   end
+
+  def dashboard
+    @read_articles = UserArticle.where(user: current_user, read: true)
+    if @read_articles.nil?
+      @current_article = current_user.user_articles.last.article
+    else
+      @current_article = current_user.profession.topics.first.articles.first
+    end
+    @current_topic = @current_article.topic
+  end
 end
