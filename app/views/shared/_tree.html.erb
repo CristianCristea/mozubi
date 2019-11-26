@@ -1,0 +1,22 @@
+<nav class="d-none d-md-block bg-light">
+  <div class="tree-sticky">
+    <div class="search">
+        <i class="material-icons-sharp">search</i>
+        <p style="margin: 0; padding-left: 10%">Search</p>
+    </div>
+    <ul class="nav flex-column list">
+      <% @topics.each do |topic| %>
+      <li class="nav-item">
+        <%= topic.name %>
+        <ul>
+          <% topic.articles.each do |article| %>
+            <li class="nav-sub">
+              <%= article.title %>
+            </li>
+        <% end %>
+        </ul>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

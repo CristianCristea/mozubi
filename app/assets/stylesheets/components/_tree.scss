@@ -1,0 +1,100 @@
+.tree {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  // padding: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  width: 280px;
+  margin-left: 70px;
+}
+
+.tree-sticky {
+  background-color: $secondary;
+  position: relative;
+  top: 0;
+  height: calc(100vh - 0px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .tree-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.tree .nav-link {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+.tree .nav-item {
+  padding: 10px;
+  padding-left: 45px;
+  color: $text-secondary;
+}
+
+.tree .nav-item:hover {
+  background: $hover-primary;
+}
+
+.tree .nav-item.active {
+  background-color: $hover-primary;
+}
+.tree .nav-sub {
+  list-style: none;
+}
+.material-icons-sharp {
+  font-size: 24px;
+}
+.search {
+  position: fixed;
+  width: 280px;
+  height: 50px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  background-color: #719944;
+  opacity: 1;
+  color: white;
+  padding-left: 20px;
+  z-index: 50;
+}
+ul.list {
+    z-index: 30;
+    top: 50px;
+    list-style-type: none;
+    position: relative;
+}
+ul.list:before {
+    content: ' ';
+    background: $text-secondary;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.list > li {
+    padding-left: 20px;
+}
+ul.list > li:before {
+    content: ' ';
+    background: $primary;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    left: 25px;
+    margin-top: 7px;
+    width: 10px;
+    height: 10px;
+    z-index: 400;
+    box-shadow: 0px 0px 10px $primary;
+}
+
