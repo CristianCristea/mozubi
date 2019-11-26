@@ -13,8 +13,13 @@ puts "Adding users..."
 user = User.create!(
         email: "test_user@example.com",
         password: "123456",
+        first_name: "Bob",
+        last_name: "McDonald",
+        birthdate: Date.new(1986, 4, 10),
+        exam_date: Date.new(2020, 9, 1),
         profession: profession
     )
+
 
 puts "Creating topics..."
 topic1 = Topic.create!(
