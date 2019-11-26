@@ -1,33 +1,102 @@
-<h1>Dashboard</h1>
+    <h1>Dashboard</h1>
+  <div class="row">
 
-<div class="card card-progress-bar">
-  <div class="card-header">
-    <h4 class="card-header-title">Library</h4>
+    <div class="col-md-3">
+      <div class="card card-progress-bar">
+        <div class="card-header">
+          <h4 class="card-header-title">Library</h4>
+          <i class="fa fa-book card-title-icon" aria-hidden="true"></i>
+        </div>
 
-    <i class="fa fa-book card-title-icon" aria-hidden="true"></i>
-  </div>
-  <div class="card-body text-center">
-    <div class="round-progress-bar">
-      <svg
-        class="progress-ring"
-        width="120"
-        height="120">
-        <circle
-          class="progress-ring__circle"
-          stroke="#6a5cf7"
-          stroke-width="6"
-          fill="transparent"
-          r="52"
-          cx="60"
-          cy="60"/>
-      </svg>
-    </div>
-    <hr class="py-1">
-    <p class="card-title">Current chapter:</p>
-    <p class="card-text">Marketing Mix</p>
-    <div class="card-footer">
-      <div class="card-text">Reads: 7/7</div>
-      <a href="#" class="btn btn-secondary">Continue</a>
-    </div>
-  </div>
-</div>
+        <div class="card-body text-center">
+          <div class="round-progress-bar">
+            <svg
+              class="progress-ring"
+              width="120"
+              height="120">
+              <circle
+                class="progress-ring__circle"
+                stroke="#6a5cf7"
+                stroke-width="6"
+                fill="transparent"
+                r="52"
+                cx="60"
+                cy="60"/>
+            </svg>
+          </div>
+          <hr class="py-1">
+          <p class="card-title">Current article:</p>
+          <p class="card-text"><%= @current_article.title %></p>
+          <div class="card-footer">
+            <div class="card-text">Reads: <%= @read_articles.size || 1 %> / <%= @current_topic.articles.count %></div>
+            <%= link_to  "Continue", @current_article, class: "btn btn-secondary" %>
+          </div>
+        </div>
+      </div>
+    </div> <!-- ./col -->
+    <div class="col-md-3">
+      <div class="card card-progress-bar">
+        <div class="card-header">
+          <h4 class="card-header-title">Flashcards</h4>
+          <i class="fa fa-clone card-title-icon" aria-hidden="true"></i>
+        </div>
+
+        <div class="card-body text-center">
+          <div class="round-progress-bar">
+            <svg
+              class="progress-ring"
+              width="120"
+              height="120">
+              <circle
+                class="progress-ring__circle"
+                stroke="#6a5cf7"
+                stroke-width="6"
+                fill="transparent"
+                r="52"
+                cx="60"
+                cy="60"/>
+            </svg>
+          </div>
+          <hr class="py-1">
+          <p class="card-title">Article:</p>
+          <p class="card-text"><%= @current_article.title %></p>
+          <div class="card-footer">
+            <div class="card-text">Cards: 0 / 10</div>
+            <%= link_to  "Continue", @current_article, class: "btn btn-secondary" %>
+          </div>
+        </div>
+      </div>
+    </div> <!-- ./col -->
+    <div class="col-sm-12 col-md-3">
+      <div class="card card-progress-bar">
+        <div class="card-header">
+          <h4 class="card-header-title">Prep Exams</h4>
+          <i class="fa fa-question card-title-icon" aria-hidden="true"></i>
+        </div>
+
+        <div class="card-body text-center">
+          <div class="round-progress-bar">
+            <svg
+              class="progress-ring"
+              width="120"
+              height="120">
+              <circle
+                class="progress-ring__circle"
+                stroke="#6a5cf7"
+                stroke-width="6"
+                fill="transparent"
+                r="52"
+                cx="60"
+                cy="60"/>
+            </svg>
+          </div>
+          <hr class="py-1">
+          <p class="card-title">Test yourself</p>
+          <div class="card-footer mt-5">
+            <div class="card-text">Exams: 0 / 10</div>
+            <a href="#" class="btn btn-secondary">Continue</a>
+          </div>
+        </div>
+      </div>
+    </div> <!-- ./col -->
+  </div> <!-- ./row -->
