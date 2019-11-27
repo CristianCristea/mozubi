@@ -35,6 +35,57 @@ topic2 = Topic.create!(
   profession: profession
 )
 
+topic3 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic4 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic5 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic6 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic7 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic8 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic9 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic10 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic11 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic12 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+
 puts "Creating articles..."
 topic1_article1 = Article.create!(
   title: "Active Record Basics",

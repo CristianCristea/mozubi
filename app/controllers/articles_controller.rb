@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :set_topics, only: [:show, :index]
+
   def index
     @articles = Article.all
     @articles_read = UserArticle.where(user: current_user, read: true)
@@ -22,5 +24,12 @@ class ArticlesController < ApplicationController
     # for testing point to first article if they are no flashcards for current article
     @flashcard = @article.flashcards.first || Article.first.flashcards.first
     @topic = @article.topic
+  end
+
+  private
+
+  def set_topics
+    @all_topics = Topic.all
+    @all_articles = Article.all
   end
 end
