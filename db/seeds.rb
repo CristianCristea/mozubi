@@ -2,6 +2,8 @@ puts "Cleaning DB..."
 UserArticle.delete_all
 Chapter.delete_all
 UserArticle.delete_all
+Answer.delete_all
+Flashcard.delete_all
 Article.delete_all
 Topic.delete_all
 User.delete_all
@@ -32,6 +34,57 @@ topic2 = Topic.create!(
   name: "Front End Development",
   profession: profession
 )
+
+topic3 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic4 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic5 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic6 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic7 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic8 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic9 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic10 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic11 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
+topic12 = Topic.create!(
+  name: "Front End Development",
+  profession: profession
+)
+
 
 puts "Creating articles..."
 topic1_article1 = Article.create!(
@@ -103,11 +156,19 @@ Chapter.create!(
   article: topic2_article1
 )
 
-# assignment of article to user
-# user_article1 = UserArticle.new(user_id: user.id, article_id: topic1_article1.id, read: true)
-# user_article1.save!
+puts "Creating flashcards..."
+flashcard1 = Flashcard.create!(article: topic1_article1, content: "Which of these is not a various components of rail?")
+flashcard2 = Flashcard.create!(article: topic1_article2, content: "Which of these is not a various components of rail?")
 
-# user_article2 = UserArticle.new(user_id: user.id, article_id: topic2_article1.id, read: true)
-# user_article2.save!
+Answer.create!(flashcard: flashcard1, content: "Action pack")
+Answer.create!(flashcard: flashcard1, content: "Action model")
+Answer.create!(flashcard: flashcard1, content: "Action mailer")
+Answer.create!(flashcard: flashcard1, content: "Action development", right_answer: true)
 
-# puts 'user articles are created'
+flashcard2 = Flashcard.create!(article: Article.first, content: "Representation of a resource is called... ")
+
+Answer.create!(flashcard: flashcard2, content: "Ruby make")
+Answer.create!(flashcard: flashcard2, content: "Camel case")
+Answer.create!(flashcard: flashcard2, content: "Web page")
+Answer.create!(flashcard: flashcard2, content: "Action pack", right_answer: true)
+

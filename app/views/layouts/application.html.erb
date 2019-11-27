@@ -15,6 +15,11 @@
         <div class="sidebar">
           <%= render 'shared/sidebar' %>
         </div>
+        <% if request.path == articles_path %>
+          <div class="tree">
+              <%= render 'shared/tree-short' %>
+          </div>
+        <% end %>
         <div class="content">
           <%= render 'shared/flashes' %>
           <%= yield %>
