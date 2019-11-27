@@ -5,6 +5,7 @@
   margin: 130px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .card-carousel-header {
@@ -41,6 +42,10 @@
   margin: 0;
 }
 
+.carousel-inner, .carousel-item, #carouselMiddle {
+  position: static;
+}
+
 .card-carousel-bottom {
   padding: 32px;
   margin-top: 30px;
@@ -59,6 +64,11 @@
   border: none;
 }
 
+.carousel-btn {
+  position: absolute;
+  right: 17px;
+  bottom: 18px;
+}
 .card-carousel-arrows {
   display: flex;
   justify-content: space-between;
