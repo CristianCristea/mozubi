@@ -1,36 +1,35 @@
-<nav class="d-none d-md-block bg-light sidebar">
+<nav class="d-none d-md-block bg-light sidebar" id="sidebar">
   <div class="sidebar-sticky">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <%= link_to root_path, class: "nav-link #{current_class?(root_path)}" do %>
           Mozubi
-        </a>
+        <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">
+        <%= link_to dashboard_path, class: "nav-link #{current_class?(dashboard_path)}" do %>
           <i class="material-icons-sharp">home</i>
-          <span class="sr-only">(current)</span>
-        </a>
+        <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="articles">
+        <%= link_to articles_path, class: "nav-link #{current_class?(articles_path)}" do  %>
           <i class="material-icons-sharp">local_library</i>
-        </a>
+        <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <%= link_to dashboard_path, class: "nav-link" do  %>
           <i class="material-icons-sharp fa-rotate-180">dynamic_feed</i>
-        </a>
+        <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <%= link_to dashboard_path, class: "nav-link" do  %>
           <i class="material-icons-sharp">description</i>
-        </a>
+        <% end %>
       </li>
       <li class="nav-item bottom">
-        <a class="nav-link" href="#">
+        <%= link_to dashboard_path, class: "nav-link" do  %>
           <i class="material-icons-sharp">person</i>
-        </a>
+        <% end %>
       </li>
     </ul>
   </div>
