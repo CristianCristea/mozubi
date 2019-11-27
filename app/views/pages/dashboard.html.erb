@@ -27,7 +27,7 @@
         <p class="card-title">Current article:</p>
         <p class="card-text"><%= @current_article.title %></p>
         <div class="card-footer">
-          <div class="card-text">Reads: <%= @read_articles.size || 1 %> / <%= @current_topic.articles.count %></div>
+          <div class="card-text">Reads: <%= @article_index %> / <%= @current_topic.articles.count %></div>
           <%= link_to  "Continue", @current_article, class: "btn btn-secondary" %>
         </div>
       </div>
