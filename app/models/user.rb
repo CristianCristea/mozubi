@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+  # a new user can't sign up because it has to belong to a profession
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
