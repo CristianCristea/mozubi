@@ -1,0 +1,7 @@
+
+<blockquote><%= @flashcard.content %></blockquote>
+<ol>
+<% @flashcard.answers.each do |answer| %>
+  <li><%= answer.content %></li>
+<% end %>
+</ol>

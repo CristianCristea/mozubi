@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get "/dashboard", to: "pages#dashboard"
-  resources :articles, only: [:index, :show]
+  resources :articles, only: [:index, :show] do
+    resources :flashcards, only: [:show]
+  end
 end
