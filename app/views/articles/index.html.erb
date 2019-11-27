@@ -6,15 +6,16 @@
         <div class="card-carousel">
           <div class="card-carousel-header">
             <div>
-              <%= @articles_read_counted %> Completed
+              <%= @articles_read.count %> Completed
             </div>
             <div>
               <i class="fas fa-check"></i>
             </div>
           </div>
+
           <div id="carouselLeft" class="carousel slide">
             <div class="carousel-inner">
-              <% @articles.each_with_index do |article, index| %>
+              <% @articles_read.each_with_index do |article, index| %>
                 <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
                   <p class="card-carousel-header-title"><strong><%= article.title %></strong></p>
                   <p class="card-carousel-text"><%=h truncate(article.description, :length => 250) %></p>
@@ -36,10 +37,13 @@
               </a>
             </div>
             <div class="card-carousel-count">
-              <p>1/17</p>
+              <p> /<%= @articles_read.count %></p>
             </div>
+
+           <!--    Make the shown_article -->
+
             <div>
-              <a href="#" class="btn btn-primary">Read again</a>
+              <%= link_to "Read again", @shown_article, class: "btn btn-primary" %>
             </div>
           </div>
 
@@ -50,7 +54,7 @@
         <div class="card-carousel">
           <div class="card-carousel-header">
             <div>
-              <%= @articles_not_read_counted %> Upcoming
+              <%= @articles_upcoming.count %> Upcoming
             </div>
             <div>
               <i class="fas fa-external-link-alt"></i>
@@ -58,18 +62,12 @@
           </div>
           <div id="carouselMiddle" class="carousel slide">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
-                <p class="card-carousel-text">This should be a synopsis</p>
-              </div>
-              <div class="carousel-item">
-                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
-                <p class="card-carousel-text">This should be a synopsis</p>
-              </div>
-              <div class="carousel-item">
-                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
-                <p class="card-carousel-text">This should be a synopsis</p>
-              </div>
+              <% @articles_upcoming.each_with_index do |article, index| %>
+                <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
+                  <p class="card-carousel-header-title"><strong><%= article.title %></strong></p>
+                  <p class="card-carousel-text"><%=h truncate(article.description, :length => 250) %></p>
+                </div>
+              <% end %>
             </div>
           </div>
 
@@ -86,10 +84,10 @@
               </a>
             </div>
             <div class="card-carousel-count">
-              <p>1/17</p>
+              <p>1/<%= @articles_upcoming.count %></p>
             </div>
             <div>
-              <a href="#" class="btn btn-primary">Read again</a>
+              <a href="#" class="btn btn-primary">Continue</a>
             </div>
 
           </div>
@@ -101,7 +99,7 @@
         <div class="card-carousel">
           <div class="card-carousel-header">
             <div>
-              XX Bookmarked
+              <%= @articles_bookmarked.count %> Bookmarked
             </div>
             <div>
               <i class="far fa-bookmark"></i>
@@ -109,18 +107,12 @@
           </div>
           <div id="carouselRight" class="carousel slide">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
-                <p class="card-carousel-text">This should be a synopsis</p>
-              </div>
-              <div class="carousel-item">
-                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
-                <p class="card-carousel-text">This should be a synopsis</p>
-              </div>
-              <div class="carousel-item">
-                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
-                <p class="card-carousel-text">This should be a synopsis</p>
-              </div>
+              <% @articles_bookmarked.each_with_index do |article, index| %>
+                <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
+                  <p class="card-carousel-header-title"><strong><%= article.title %></strong></p>
+                  <p class="card-carousel-text"><%=h truncate(article.description, :length => 250) %></p>
+                </div>
+              <% end %>
             </div>
           </div>
 
@@ -137,7 +129,7 @@
               </a>
             </div>
             <div class="card-carousel-count">
-              <p>1/17</p>
+              <p>1/<%= @articles_bookmarked.count %></p>
             </div>
             <div>
               <a href="#" class="btn btn-primary">Read again</a>
