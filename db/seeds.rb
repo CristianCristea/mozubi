@@ -121,11 +121,3 @@ Answer.create!(flashcard: flashcard2, content: "Camel case")
 Answer.create!(flashcard: flashcard2, content: "Web page")
 Answer.create!(flashcard: flashcard2, content: "Action pack", right_answer: true)
 
-# assignment of article to user
-# user_article1 = UserArticle.new(user_id: user.id, article_id: topic1_article1.id, read: true)
-# user_article1.save!
-
-# user_article2 = UserArticle.new(user_id: user.id, article_id: topic2_article1.id, read: true)
-# user_article2.save!
-
-# puts 'user articles are created'
