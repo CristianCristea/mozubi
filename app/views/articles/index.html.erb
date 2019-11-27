@@ -37,7 +37,7 @@
               </a>
             </div>
             <div class="card-carousel-count">
-              <p> /<%= @articles_read.count %></p>
+              <p> <%= @articles_read.size || 1 %>/<%= @articles_read.count %></p>
             </div>
 
            <!--    Make the shown_article -->
@@ -65,6 +65,8 @@
               <% @articles_upcoming.each_with_index do |article, index| %>
                 <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
                   <p class="card-carousel-header-title"><strong><%= article.title %></strong></p>
+                  <p class='card-carousel-header-count'><%= index + 1 %> / <%= @articles_upcoming.count %></p>
+                  <hr class="card-carousel-division py-1">
                   <p class="card-carousel-text"><%=h truncate(article.description, :length => 250) %></p>
                 </div>
               <% end %>
@@ -84,10 +86,10 @@
               </a>
             </div>
             <div class="card-carousel-count">
-              <p>1/<%= @articles_upcoming.count %></p>
+
             </div>
             <div>
-              <a href="#" class="btn btn-primary">Continue</a>
+              <%= link_to "Continue", @shown_article, class: "btn btn-primary" %>
             </div>
 
           </div>
@@ -129,13 +131,14 @@
               </a>
             </div>
             <div class="card-carousel-count">
-              <p>1/<%= @articles_bookmarked.count %></p>
+              <% @articles_bookmarked.each_with_index do |article, index| %>
+              <p><%= index %>/<%= @articles_bookmarked.count %></p>
+              <% end %>
             </div>
             <div>
-              <a href="#" class="btn btn-primary">Read again</a>
+              <%= link_to "Read again", @shown_article, class: "btn btn-primary" %>
             </div>
           </div>
-
         </div>
       </div>
     </div>

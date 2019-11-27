@@ -19,11 +19,19 @@
 
 .card-carousel-header-title {
   font-weight: 400;
-  font-size: 1.4rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   letter-spacing: 1px;
   margin: 0;
   padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.card-carousel-header-count {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: lighter;
+  margin: 0;
+  text-align: right;
 }
 
 .card-carousel-text {
@@ -34,12 +42,16 @@
 }
 
 .card-carousel-bottom {
-  padding: 14px;
+  padding: 32px;
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
   margin-top: auto;
   align-items: center;
+}
+
+.card-carousel-division {
+  width: 65%;
 }
 
 .btn-primary {
