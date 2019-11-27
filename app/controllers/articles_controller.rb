@@ -12,6 +12,9 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    # change to first not finished card
+    # for testing point to first article if they are no flashcards for current article
+    @flashcard = @article.flashcards.first || Article.first.flashcards.first
     @topic = @article.topic
   end
 end

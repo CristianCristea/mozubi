@@ -13,8 +13,9 @@
   </div>
 
 
-  <h3 align="center" class="mb-4"><%= @article.title %></h3>
+  <h3 align="center" class="mb-4"><%= @article.title %> <%= render "shared/badge", text: "Read" if UserArticle.exists?(article: @article) %></h3>
   <div class="row justify-content-center">
+
 
 <!--Accordion wrapper-->
     <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
@@ -65,13 +66,8 @@
   </div>
   <div class="row">
 
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-      <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
-    </div>
-
     <div class="text-right">
-      <button type="button" class="btn btn-primary mt-5">Go to Flashcards</button>
+      <%= link_to "Go to Flashcards",  article_flashcard_path(@article, @flashcard), class: "btn btn-primary mt-5" %>
     </div>
   </div>
 </div>
