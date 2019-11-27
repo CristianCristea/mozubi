@@ -2,6 +2,8 @@ puts "Cleaning DB..."
 UserArticle.delete_all
 Chapter.delete_all
 UserArticle.delete_all
+Answer.delete_all
+Flashcard.delete_all
 Article.delete_all
 Topic.delete_all
 User.delete_all
@@ -102,6 +104,22 @@ Chapter.create!(
   content: "Just like other programming languages, Sass allows the use of variables that can store information you can use throughout your style sheet. For example, you can store a colour value in a variable at the top of the file, and then use this variable when setting the colour of your elements. This enables you to quickly change your colours without having to modify each line separately.",
   article: topic2_article1
 )
+
+puts "Creating flashcards..."
+flashcard1 = Flashcard.create!(article: topic1_article1, content: "Which of these is not a various components of rail?")
+flashcard2 = Flashcard.create!(article: topic1_article2, content: "Which of these is not a various components of rail?")
+
+Answer.create!(flashcard: flashcard1, content: "Action pack")
+Answer.create!(flashcard: flashcard1, content: "Action model")
+Answer.create!(flashcard: flashcard1, content: "Action mailer")
+Answer.create!(flashcard: flashcard1, content: "Action development", right_answer: true)
+
+flashcard2 = Flashcard.create!(article: Article.first, content: "Representation of a resource is called... ")
+
+Answer.create!(flashcard: flashcard2, content: "Ruby make")
+Answer.create!(flashcard: flashcard2, content: "Camel case")
+Answer.create!(flashcard: flashcard2, content: "Web page")
+Answer.create!(flashcard: flashcard2, content: "Action pack", right_answer: true)
 
 # assignment of article to user
 # user_article1 = UserArticle.new(user_id: user.id, article_id: topic1_article1.id, read: true)
