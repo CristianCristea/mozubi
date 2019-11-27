@@ -1,14 +1,25 @@
 <nav class="d-none d-md-block bg-light">
-  <div class="tree-sticky">
-    <div class="search">
+  <a class="btn" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <div class="tree-sticky">
+      <div class="search">
         <i class="material-icons-sharp">search</i>
+      </div>
+      <ul class="nav flex-column list">
+        <% @all_topics.each do |topic| %>
+        <li class="nav-item">
+          <div class="collapse" id="collapseExample">
+            <%= topic.name %>
+            <ul>
+              <% topic.articles.each do |article| %>
+                <li class="nav-sub">
+                  <%= article.title %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </li>
+        <% end %>
+      </ul>
     </div>
-    <ul class="nav flex-column list">
-      <% @topics.each do |topic| %>
-      <li class="nav-item">
-        <%#= topic.name %>
-      </li>
-      <% end %>
-    </ul>
-  </div>
+  </a>
 </nav>

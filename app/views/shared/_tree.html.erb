@@ -2,21 +2,22 @@
   <div class="tree-sticky">
     <div class="search">
         <i class="material-icons-sharp">search</i>
-        <p style="margin: 0; padding-left: 10%">Search</p>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     </div>
     <ul class="nav flex-column list">
-      <% @topics.each do |topic| %>
+      <% @articles.each do |topic| %>
       <li class="nav-item">
-        <%= topic.name %>
+        <%#= topic.name %>
         <ul>
-          <% topic.articles.each do |article| %>
+          <%# topic.articles.each do |article| %>
             <li class="nav-sub">
-              <%= article.title %>
+              <%#= article.title %>
             </li>
-        <% end %>
+        <%# end %>
         </ul>
       </li>
       <% end %>
     </ul>
+    <h1>This is a tree</h1>
   </div>
 </nav>

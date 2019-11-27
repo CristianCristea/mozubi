@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :set_topics, only: [:show, :index]
+
   def index
     @articles = Article.all
     articles_read = UserArticle.where(user: current_user, read: true)
@@ -12,6 +14,13 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @topic = @article.topic
+    @topic = article.title
+  end
+
+  private
+
+  def set_topics
+    @all_topics = Topic.all
+    @all_articles = Article.all
   end
 end
