@@ -5,6 +5,7 @@
   margin: 130px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .card-carousel-header {
@@ -19,11 +20,19 @@
 
 .card-carousel-header-title {
   font-weight: 400;
-  font-size: 1.4rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   letter-spacing: 1px;
   margin: 0;
   padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.card-carousel-header-count {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: lighter;
+  margin: 0;
+  text-align: right;
 }
 
 .card-carousel-text {
@@ -33,8 +42,12 @@
   margin: 0;
 }
 
+.carousel-inner, .carousel-item, #carouselMiddle {
+  position: static;
+}
+
 .card-carousel-bottom {
-  padding: 14px;
+  padding: 32px;
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
@@ -42,11 +55,20 @@
   align-items: center;
 }
 
+.card-carousel-division {
+  width: 65%;
+}
+
 .btn-primary {
   background-color: $secondary;
   border: none;
 }
 
+.carousel-btn {
+  position: absolute;
+  right: 17px;
+  bottom: 18px;
+}
 .card-carousel-arrows {
   display: flex;
   justify-content: space-between;

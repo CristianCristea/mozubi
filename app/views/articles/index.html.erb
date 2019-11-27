@@ -6,18 +6,22 @@
         <div class="card-carousel">
           <div class="card-carousel-header">
             <div>
-              <%= @articles_read_counted %> Completed
+              <%= @articles_read.count %> Completed
             </div>
             <div>
               <i class="fas fa-check"></i>
             </div>
           </div>
-          <div id="carouselLeft" class="carousel slide">
+
+          <div id="carouselLeft" class="carousel">
             <div class="carousel-inner">
-              <% @articles.each_with_index do |article, index| %>
+              <% @articles_read.each_with_index do |article, index| %>
                 <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
                   <p class="card-carousel-header-title"><strong><%= article.title %></strong></p>
+                  <p class='card-carousel-header-count'><%= index + 1 %> / <%= @articles_upcoming.count %></p>
+                  <hr class="card-carousel-division py-1">
                   <p class="card-carousel-text"><%=h truncate(article.description, :length => 250) %></p>
+                  <%= link_to "Read more", article, class: "btn carousel-btn btn-primary" %>
                 </div>
               <% end %>
             </div>
@@ -35,12 +39,6 @@
                 <span class="sr-only">Next</span>
               </a>
             </div>
-            <div class="card-carousel-count">
-              <p>1/17</p>
-            </div>
-            <div>
-              <a href="#" class="btn btn-primary">Read again</a>
-            </div>
           </div>
 
         </div>
@@ -50,26 +48,23 @@
         <div class="card-carousel">
           <div class="card-carousel-header">
             <div>
-              <%= @articles_not_read_counted %> Upcoming
+              <%= @articles_upcoming.count %> Upcoming
             </div>
             <div>
               <i class="fas fa-external-link-alt"></i>
             </div>
           </div>
-          <div id="carouselMiddle" class="carousel slide">
+          <div id="carouselMiddle" class="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
-                <p class="card-carousel-text">This should be a synopsis</p>
-              </div>
-              <div class="carousel-item">
-                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
-                <p class="card-carousel-text">This should be a synopsis</p>
-              </div>
-              <div class="carousel-item">
-                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
-                <p class="card-carousel-text">This should be a synopsis</p>
-              </div>
+              <% @articles_upcoming.each_with_index do |article, index| %>
+                <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
+                  <p class="card-carousel-header-title"><strong><%= article.title %></strong></p>
+                  <p class='card-carousel-header-count'><%= index + 1 %> / <%= @articles_upcoming.count %></p>
+                  <hr class="card-carousel-division py-1">
+                  <p class="card-carousel-text"><%=h truncate(article.description, :length => 250) %></p>
+                  <%= link_to "Continue", article, class: "btn carousel-btn btn-primary" %>
+                </div>
+              <% end %>
             </div>
           </div>
 
@@ -85,13 +80,6 @@
                 <span class="sr-only">Next</span>
               </a>
             </div>
-            <div class="card-carousel-count">
-              <p>1/17</p>
-            </div>
-            <div>
-              <a href="#" class="btn btn-primary">Read again</a>
-            </div>
-
           </div>
 
         </div>
@@ -101,26 +89,23 @@
         <div class="card-carousel">
           <div class="card-carousel-header">
             <div>
-              XX Bookmarked
+              <%= @articles_bookmarked.count %> Bookmarked
             </div>
             <div>
               <i class="far fa-bookmark"></i>
             </div>
           </div>
-          <div id="carouselRight" class="carousel slide">
+          <div id="carouselRight" class="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
-                <p class="card-carousel-text">This should be a synopsis</p>
-              </div>
-              <div class="carousel-item">
-                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
-                <p class="card-carousel-text">This should be a synopsis</p>
-              </div>
-              <div class="carousel-item">
-                <p class="card-carousel-header-title"><strong>This will be an article title</strong></p>
-                <p class="card-carousel-text">This should be a synopsis</p>
-              </div>
+              <% @articles_bookmarked.each_with_index do |article, index| %>
+                <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
+                  <p class="card-carousel-header-title"><strong><%= article.title %></strong></p>
+                  <p class='card-carousel-header-count'><%= index + 1 %> / <%= @articles_upcoming.count %></p>
+                  <hr class="card-carousel-division py-1">
+                  <p class="card-carousel-text"><%=h truncate(article.description, :length => 250) %></p>
+                  <%= link_to "Read again", article, class: "btn carousel-btn btn-primary" %>
+                </div>
+              <% end %>
             </div>
           </div>
 
@@ -136,14 +121,7 @@
                 <span class="sr-only">Next</span>
               </a>
             </div>
-            <div class="card-carousel-count">
-              <p>1/17</p>
-            </div>
-            <div>
-              <a href="#" class="btn btn-primary">Read again</a>
-            </div>
           </div>
-
         </div>
       </div>
     </div>
