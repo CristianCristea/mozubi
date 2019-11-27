@@ -13,9 +13,10 @@
   </div>
 
 
-  <h3 align="center" class="my-5"><%= @article.title %></h3>
+  <h3 align="center" class="my-5"><%= @article.title %><%= render "shared/badge", text: "Read" if UserArticle.exists?(article: @article) %></h3>
   <div class="row">
     <div class="container pl-0">
+
 
 <!--Accordion wrapper-->
     <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
@@ -68,11 +69,13 @@
     </div>
   </div>
 
+    <div class="text-right">
+      <%= link_to "Go to Flashcards",  article_flashcard_path(@article, @flashcard), class: "btn btn-primary mt-5" %>
+    </div>
+  </div>
+
 </div>
 
-<div class="text-right my-5">
-  <button type="button" class="btn btn-primary">Go to Flashcards</button>
-</div>
 
 
 
