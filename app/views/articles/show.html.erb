@@ -1,10 +1,10 @@
-<div class="container col-12 col-lg-9 mt-4">
+<div class="container col-lg-9 mt-4">
   <div class="row mt-3">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item topic"><%= @topic.name %></li>
+        <li class="breadcrumb-item topic"><strong><%= @topic.name %></strong></li>
         <% @topic.articles.each do |article| %>
-        <li class="breadcrumb-item"><a href="#"><%= article.title %></a></li>
+        <li class="breadcrumb-item"><%= link_to article.title, article_path(article) %></li>
         <% end %>
       </ol>
     </nav>
@@ -13,8 +13,9 @@
   </div>
 
 
-  <h3 align="center" class="mb-4"><%= @article.title %> <%= render "shared/badge", text: "Read" if UserArticle.exists?(article: @article) %></h3>
-  <div class="row justify-content-center">
+  <h3 align="center" class="my-5"><%= @article.title %><%= render "shared/badge", text: "Read" if UserArticle.exists?(article: @article) %></h3>
+  <div class="row">
+    <div class="container pl-0">
 
 
 <!--Accordion wrapper-->
@@ -26,7 +27,8 @@
     <!-- Card header -->
         <div class="card-header" role="tab" id="headingOne1">
           <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
-          <h5 class="mb-0">Description<i class="fas fa-angle-down rotate-icon"></i>
+          <h5 class="my-2 d-flex justify-content-between">Description
+            <i class="fas fa-angle-down rotate-icon"></i>
           </h5>
           </a>
         </div>
@@ -49,8 +51,9 @@
 
           <div class="card-header" role="tab" id="heading<%= chapter.id %>">
             <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapse<%= chapter.id %>" aria-expanded="false" aria-controls="collapseTwo2">
-            <h5 class="mb-0">
-              <%= chapter.title %><i class="fas fa-angle-down rotate-icon"></i>
+            <h5 class="my-2 d-flex justify-content-between">
+              <%= chapter.title %>
+              <i class="fas fa-angle-down rotate-icon"></i>
             </h5>
             </a>
           </div>
@@ -63,11 +66,19 @@
         </div>
         <% end %>
     </div>
+    </div>
   </div>
-  <div class="row">
 
     <div class="text-right">
       <%= link_to "Go to Flashcards",  article_flashcard_path(@article, @flashcard), class: "btn btn-primary mt-5" %>
     </div>
   </div>
+
 </div>
+
+
+
+
+
+
+
