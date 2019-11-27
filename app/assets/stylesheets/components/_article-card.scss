@@ -1,0 +1,22 @@
+.bs-accordion {
+  .panel-heading {
+    // remove the padding on the heading so we can increase the click area of the anchor
+    padding: 0;
+    a {
+      // increase the click area of the anchor trigger to match the original .panel-heading
+      display: block;
+      padding: 10px 15px;
+
+      // spin the chevron!
+      &[aria-expanded=true] {
+        .glyphicon.glyphicon-chevron-right {
+          transform: rotate(90deg);
+          transition: transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+      }
+      .glyphicon.glyphicon-chevron-right {
+        transition: transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+    }
+  }
+}
