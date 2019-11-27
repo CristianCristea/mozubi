@@ -12,7 +12,7 @@ profession = Profession.create!(name: "Web Developer")
 
 puts "Adding users..."
 user = User.create!(
-        email: "test_user@example.com",
+        email: "bob@example.com",
         password: "123456",
         first_name: "Bob",
         last_name: "McDonald",
