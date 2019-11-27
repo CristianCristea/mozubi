@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_130455) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "bookmarked", default: true
+    t.boolean "bookmarked", default: false
     t.index ["article_id"], name: "index_user_articles_on_article_id"
     t.index ["user_id"], name: "index_user_articles_on_user_id"
   end
