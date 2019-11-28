@@ -72,15 +72,23 @@
   border: none;
 }
 
-.carousel-btn {
+.carousel-btn-1 {
+  position: absolute;
+  right: 17px;
+  bottom: -95px;
+}
+
+.carousel-btn-2 {
   position: absolute;
   right: 17px;
   bottom: 18px;
 }
+
 .card-carousel-arrows {
   display: flex;
   justify-content: space-between;
 }
+
 .carousel-control-prev, .carousel-control-next {
   position: relative;
 }
