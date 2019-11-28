@@ -25,6 +25,16 @@ class ArticlesController < ApplicationController
     @topic = @article.topic
   end
 
+  def bookmark
+    @article = Article.find(params[:id])
+    @user_article = UserArticle.find_by(article: @article)
+    if @user_article.nil?
+      UserArticle.create(user: current_user, article: @article, bookmarked: true)
+    else
+      @user_article.update(bookmarked: true)
+    end
+  end
+
   private
 
   def set_topics
