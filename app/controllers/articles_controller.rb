@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_topics, only: [:show, :index]
+  before_action :link_topic, only: [:show, :index]
 
   def index
     @articles = Article.all
@@ -47,5 +48,9 @@ class ArticlesController < ApplicationController
   def set_topics
     @all_topics = Topic.all
     @all_articles = Article.all
+  end
+
+  def link_topic
+    @article = current_user.profession.topics.first.articles
   end
 end

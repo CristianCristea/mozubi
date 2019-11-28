@@ -1,0 +1,16 @@
+<form class="form-inline mx-3">
+  <%= simple_form_for :search, method: "get", url: request.path do |f| %>
+    <div class="form-group">
+      <div class="mb-2 mr-sm-2">
+        <%= text_field_tag :article,
+            params[:article],
+            class: "form-control",
+            id: "article",
+            placeholder: "Search"
+        %>
+      </div>
+    <div class="mb-2 mr-sm-2">
+      <%= f.button :submit, "Goat for it!", class: "btn" %>
+    </div>
+  <% end %>
+</form>

@@ -1,23 +1,41 @@
-<nav class="d-none d-md-block bg-light">
-  <div class="tree-sticky">
-    <div class="search">
-        <i class="material-icons-sharp">search</i>
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+<!-- <nav class="d-none d-md-block bg-light"> -->
+  <!-- <a class="btn multi-collapse" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> -->
+    <div class="tree-sticky">
+      <div class="search">
+        <i class="material-icons-sharp" id="search-icon">search</i>
+        <%#= render 'shared/searchbar' %>
+      </div>
+      <ul class="nav list">
+        <% @all_topics.each do |topic| %>
+        <!-- <li class="nav-item"> -->
+          <li class="tree-item">
+          <!-- <div class="collapse" id="collapseExample"> -->
+            <div class="hidden">
+              <%= topic.name %>
+              <div class="gone">
+                <ul class="sub">
+                  <% topic.articles.each do |article| %>
+                    <li class="nav-sub">
+                        <%= link_to article, class: "#{current_class?(topic)}" do %>
+                          <%= article.title %>
+                        <% end %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <!-- </div> -->
+          </li>
+        <!-- </li> -->
+        <% end %>
+      </ul>
     </div>
-    <ul class="nav flex-column list">
-      <% @articles.each do |topic| %>
-      <li class="nav-item">
-        <%#= topic.name %>
-        <ul>
-          <%# topic.articles.each do |article| %>
-            <li class="nav-sub">
-              <%#= article.title %>
-            </li>
-        <%# end %>
-        </ul>
-      </li>
-      <% end %>
-    </ul>
-    <h1>This is a tree</h1>
-  </div>
-</nav>
+  <!-- </a> -->
+<!-- </nav> -->
+
+<script>
+  var tree = document.querySelector(".tree-sticky")
+  tree.addEventListener("click", function() {
+    tree.classList.toggle("show")
+  })
+</script>

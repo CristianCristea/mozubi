@@ -1,21 +1,59 @@
+$width-tree: calc(#{$sidebar-width} / 2);
+$width-half: calc(#{$width-tree} / 2);
+$width-third: calc(#{$width-tree} / 3);
+$width-fourth: calc(#{$width-tree} / 4);
+$width-eights: calc(#{$width-tree} / 8);
+
+$width-expand: calc(#{$sidebar-width} * 3);
+
+$line-width: 2px;
+$line-left: calc(#{$width-half} - (#{$line-width} / 2));
+
+$dot-width: $width-fourth;
+$dot-left: calc(#{$width-half} - (#{$dot-width} / 2));
+
+$search-left: calc(#{$width-half} - 12px);
+
+$height: 50px;
+$height-half: calc(#{$height} / 2);
+
 .tree {
-  position: fixed;
+  // position: absolute;
   top: 0;
   bottom: 0;
-  z-index: 10;
+  z-index: 150;
   // padding: 0;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
-  width: 280px;
-  margin-left: 70px;
+  min-width: $width-tree;
+  margin-left: 0px;
 }
 
 .tree-sticky {
   background-color: $secondary;
-  position: relative;
+  position: absolute;
+  height: 100vh;
+  // position: relative;
   top: 0;
+  // width: $width-tree;
   height: calc(100vh - 0px);
   overflow-x: hidden;
   overflow-y: auto;
+  width: $width-tree;
+}
+
+@keyframes expand{
+  0% {
+    width: $width-tree;
+  }
+  100% {
+    width: $width-expand;
+  }
+}
+
+.sticky-div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
 }
 
 @supports ((position: -webkit-sticky) or (position: sticky)) {
@@ -24,65 +62,99 @@
     position: sticky;
   }
 }
+.tree-sticky.show {
+  width: $width-expand;
+  animation: expand .3s ease-in;
+}
 
 .tree .nav-link {
-  height: 80px;
+  height: $height;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
   line-height: 2rem;
 }
-.tree .nav-item {
-  padding: 10px;
-  padding-left: 45px;
+.tree-sticky.show .tree-item {
+  // padding: 10px;
+  padding-left: $width-tree;
+  width: 100%;
   color: $text-secondary;
 }
-
-.tree .nav-item:hover {
-  background: $hover-primary;
+.tree .tree-item:hover {
+  background-color: $hover-primary;
+  width: 100%;
 }
-
-.tree .nav-item.active {
+.tree .tree-item.active {
   background-color: $hover-primary;
 }
 .tree .nav-sub {
   list-style: none;
 }
+.hidden {
+  visibility: hidden;
+  // display: none;
+}
+.tree-sticky.show .hidden {
+  visibility: visible;
+  transition-delay: .4s;
+}
+.gone {
+  display: none;
+}
+.tree-sticky.show .gone {
+  display: block;
+}
+.tree .btn{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 .material-icons-sharp {
   font-size: 24px;
 }
 .search {
-  position: fixed;
-  width: 280px;
-  height: 50px;
+  // position: sticky;
+  width: 100%;
+  height: $height;
   margin: 0;
   display: flex;
   align-items: center;
   background-color: #719944;
   opacity: 1;
   color: white;
-  padding-left: 20px;
-  z-index: 50;
+  z-index: 30;
+}
+#search-icon{
+  margin-left: $search-left;
+}
+.breadcrumb {
+  z-index: 10;
+}
+ul {
+  padding-inline-start: $line-left;
 }
 ul.list {
+    background-color: $secondary;
     z-index: 30;
-    top: 50px;
     list-style-type: none;
     position: relative;
+    min-height: 100vh;
 }
 ul.list:before {
     content: ' ';
     background: $text-secondary;
     display: inline-block;
     position: absolute;
-    left: 29px;
-    width: 2px;
+    left: $line-left;
+    width: $line-width;
     height: 100%;
     z-index: 400;
 }
 ul.list > li {
-    padding-left: 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 ul.list > li:before {
     content: ' ';
@@ -90,11 +162,41 @@ ul.list > li:before {
     display: inline-block;
     position: absolute;
     border-radius: 50%;
-    left: 25px;
-    margin-top: 7px;
-    width: 10px;
-    height: 10px;
+    left: $dot-left;
+    width: $dot-width;
+    height: $dot-width;
     z-index: 400;
     box-shadow: 0px 0px 10px $primary;
 }
+ul.sub {
+  z-index: 30;
+  list-style-type: none;
+  position: relative;
+}
+ul.sub .nav-sub {
+  text-decoration: none;
+  /* unvisited link */
+  a:link {
+    color: $text-secondary;
+    text-decoration: none;
+  }
 
+  /* visited link */
+  a:visited {
+    color: $text-secondary;
+    text-decoration: none;
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: $text-secondary;
+    text-decoration: none;
+    background: $hover-primary;
+  }
+
+  a:active {
+    color: $text-primary;
+    text-decoration: none;
+    background: $hover-primary;
+  }
+}
