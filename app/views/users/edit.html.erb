@@ -1,0 +1,9 @@
+<%= form_for(@user) do |f| %>
+    <p class="input"><%= f.label :first_name %></p>
+    <p class="input"><%= f.text_field :first_name %></p>
+    <p class="input"><%= f.label :last_name %></p>
+    <p class="input"><%= f.text_field :last_name %></p>
+    <p class="input"><%= f.label :birthdate %></p>
+    <p class="input"><%= f.text_field :birthdate %></p>
+    <%= f.submit %>
+<% end %>
