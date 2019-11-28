@@ -10,13 +10,12 @@ class ArticlesController < ApplicationController
 
     # from here on it's to create all articles that are NOT checked as read AND/OR bookmarked
 
-    art_read = @articles_read.map { |article| article.id }
-    art_book = @articles_bookmarked.map { |article| article.id }
+    art_read = @articles_read.map { |user_article| user_article.article_id }
+    art_book = @articles_bookmarked.map { |user_article| user_article.article_id }
 
     @articles_upcoming = Article.where.not(id: art_read)
 
     @articles_upcoming = Article.all if @articles_upcoming.nil?
-
   end
 
   def show
@@ -25,6 +24,16 @@ class ArticlesController < ApplicationController
     # for testing point to first article if they are no flashcards for current article
     @flashcard = @article.flashcards.first || Article.first.flashcards.first
     @topic = @article.topic
+  end
+
+  def bookmark
+    @article = Article.find(params[:id])
+    @user_article = UserArticle.find_by(article: @article)
+    if @user_article.nil?
+      UserArticle.create(user: current_user, article: @article, bookmarked: true)
+    else
+      @user_article.update(bookmarked: true)
+    end
   end
 
   private
