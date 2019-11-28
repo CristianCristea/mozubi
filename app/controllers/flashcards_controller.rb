@@ -8,7 +8,7 @@ class FlashcardsController < ApplicationController
     if user_article.nil?
       UserArticle.create(
         user: current_user,
-        article: @article,
+        article: @flashcard.article,
         read: true
       )
     else
