@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_104514) do
+ActiveRecord::Schema.define(version: 2019_11_28_113721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.text "content"
-    t.boolean "right_answer"
+    t.boolean "right_answer", default: false
     t.bigint "flashcard_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -75,6 +75,16 @@ ActiveRecord::Schema.define(version: 2019_11_27_104514) do
     t.index ["user_id"], name: "index_user_articles_on_user_id"
   end
 
+  create_table "user_flashcards", force: :cascade do |t|
+    t.boolean "correct"
+    t.bigint "user_id"
+    t.bigint "flashcard_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flashcard_id"], name: "index_user_flashcards_on_flashcard_id"
+    t.index ["user_id"], name: "index_user_flashcards_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -100,5 +110,7 @@ ActiveRecord::Schema.define(version: 2019_11_27_104514) do
   add_foreign_key "topics", "professions"
   add_foreign_key "user_articles", "articles"
   add_foreign_key "user_articles", "users"
+  add_foreign_key "user_flashcards", "flashcards"
+  add_foreign_key "user_flashcards", "users"
   add_foreign_key "users", "professions"
 end

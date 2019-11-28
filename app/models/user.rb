@@ -9,4 +9,5 @@ class User < ApplicationRecord
   belongs_to :profession
   has_many :user_articles, dependent: :destroy
   has_many :articles, through: :user_articles
+  has_many :user_flashcards
 end

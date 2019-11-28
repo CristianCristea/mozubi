@@ -23,6 +23,13 @@ class ArticlesController < ApplicationController
     # for testing point to first article if they are no flashcards for current article
     @flashcard = @article.flashcards.first || Article.first.flashcards.first
     @topic = @article.topic
+    user_article = UserArticle.find_by(article: @article)
+
+    if user_article.nil?
+      @article_read = false
+    else
+      @article_read = user_article.read
+    end
   end
 
   def bookmark
