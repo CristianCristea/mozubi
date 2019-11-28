@@ -4,10 +4,15 @@ Rails.application.routes.draw do
 
   get "/dashboard", to: "pages#dashboard"
   resources :articles, only: [:index, :show] do
-    resources :flashcards, only: [:show]
     member do
       post "bookmark"
-      post "flashcard_answer_correct?"
     end
   end
+
+  resources :flashcards, only: [:show] do
+    member do
+      post "check_answer", to: "flashcards#check_answer"
+    end
+  end
+
 end

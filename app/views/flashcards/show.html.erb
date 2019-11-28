@@ -1,45 +1,13 @@
 
 <blockquote><%= @flashcard.content %></blockquote>
-<ol>
 
-</ol>
-
-<%#= simple_form_for @user_flashcard do |f| %>
-
-  <%# @flashcard.answers.each do |answer| %>
-
-    <%#= answer.content %>
-<%#= f.collection_radio_buttons %>
-
-    <%#= f.input :correct, as: :radio_buttons, collection: @flashcard.answers %>
-
-  <%# end %>
-
-<%# end %>
-
-<%= form_for(@user_flashcard) do |f| %>
-<% @flashcard.answers.each do |answer| %>
+<%= form_for check_answer_flashcard_path(@flashcard), url: {action: "check_answer"}, method: :post, html: { id: "flashcardAnswerForm", "data-form-submitted": false } do |f| %>
+  <% @flashcard.answers.each do |answer| %>
 
 
-  <%= radio_button_tag(:answer, answer.right_answer, false, id: answer.id) %>
-  <%= label_tag(answer.id, answer.content) %>
-<% end %>
-
-
-  <%#= f.collection_radio_buttons(
-    :flashcard_id, @flashcard.answers,
-    :id,
-    :content,
-    input_value: :right_answer
-  ) do |b|
-  %>
-
-
-    <%#= b.radio_button, value = "test" %>
-    <%#= b.label  %>
-
-
-  <%# end %>
+    <%= radio_button_tag(:answer, answer.right_answer, false, id: answer.id) %>
+    <%= label_tag(answer.id, answer.content) %>
+  <% end %>
 
   <%= f.submit "Submit" %>
 <% end %>
