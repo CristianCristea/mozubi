@@ -9,10 +9,14 @@ Rails.application.routes.draw do
     end
   end
 
+
+  resources :users, only: [:show, :edit, :update]
+
   resources :flashcards, only: [:show] do
     member do
       post "check_answer", to: "flashcards#check_answer"
     end
   end
+
 
 end

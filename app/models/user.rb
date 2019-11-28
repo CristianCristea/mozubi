@@ -9,5 +9,13 @@ class User < ApplicationRecord
   belongs_to :profession
   has_many :user_articles, dependent: :destroy
   has_many :articles, through: :user_articles
+
+
+  validates :first_name, presence: true, allow_blank: false, allow_nil: true
+  validates :last_name, presence: true, allow_blank: false, allow_nil: true
+
+
+
   has_many :user_flashcards
+
 end
