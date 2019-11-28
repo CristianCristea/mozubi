@@ -11,16 +11,16 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="row">
-        <div class="sidebar">
+      <div class="" style="display: flex;">
+        <div class="sidebar" style="flex-grow: 1">
           <%= render 'shared/sidebar' %>
         </div>
-        <% if request.path == articles_path %>
-          <div class="tree">
-              <%= render 'shared/tree-short' %>
+        <% if request.path =~ /#{articles_path}/ %>
+          <div class="tree" style="flex-grow: 1">
+            <%= render 'shared/tree' %>
           </div>
         <% end %>
-        <div class="content">
+        <div class="content" style="flex-grow: 2">
           <%= render 'shared/flashes' %>
           <%= yield %>
         </div>
