@@ -9,13 +9,12 @@ class ArticlesController < ApplicationController
 
     # from here on it's to create all articles that are NOT checked as read AND/OR bookmarked
 
-    art_read = @articles_read.map { |article| article.id }
-    art_book = @articles_bookmarked.map { |article| article.id }
+    art_read = @articles_read.map { |user_article| user_article.article_id }
+    art_book = @articles_bookmarked.map { |user_article| user_article.article_id }
 
     @articles_upcoming = Article.where.not(id: art_read)
 
     @articles_upcoming = Article.all if @articles_upcoming.nil?
-
   end
 
   def show

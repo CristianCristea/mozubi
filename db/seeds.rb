@@ -158,17 +158,44 @@ Chapter.create!(
 
 puts "Creating flashcards..."
 flashcard1 = Flashcard.create!(article: topic1_article1, content: "Which of these is not a various components of rail?")
-flashcard2 = Flashcard.create!(article: topic1_article2, content: "Which of these is not a various components of rail?")
+flashcard2 = Flashcard.create!(article: topic1_article1, content: "What is something that you should not do in rails… ")
+flashcard3 = Flashcard.create!(article: topic1_article1, content: "What is NOT a correct naming convention?")
+flashcard4 = Flashcard.create!(article: topic1_article2, content: "Representation of a resource is called... ")
+flashcard5 = Flashcard.create!(article: topic1_article2, content: "Rails application framework is called… ")
+flashcard6 = Flashcard.create!(article: topic1_article2, content: "What is something you should never do:")
+flashcard7 = Flashcard.create!(article: topic1_article2, content: "Mark had to choose between a career as a coder and as a")
 
 Answer.create!(flashcard: flashcard1, content: "Action pack")
 Answer.create!(flashcard: flashcard1, content: "Action model")
 Answer.create!(flashcard: flashcard1, content: "Action mailer")
 Answer.create!(flashcard: flashcard1, content: "Action development", right_answer: true)
 
-flashcard2 = Flashcard.create!(article: Article.first, content: "Representation of a resource is called... ")
+Answer.create!(flashcard: flashcard2, content: "Generate a controller")
+Answer.create!(flashcard: flashcard2, content: "Schaffolding",  right_answer: true)
+Answer.create!(flashcard: flashcard2, content: "Use the right naming convention")
+Answer.create!(flashcard: flashcard2, content: "Be DRY")
 
-Answer.create!(flashcard: flashcard2, content: "Ruby make")
-Answer.create!(flashcard: flashcard2, content: "Camel case")
-Answer.create!(flashcard: flashcard2, content: "Web page")
-Answer.create!(flashcard: flashcard2, content: "Action pack", right_answer: true)
+Answer.create!(flashcard: flashcard3, content: "snake_case")
+Answer.create!(flashcard: flashcard3, content: "kebab-case-yay")
+Answer.create!(flashcard: flashcard3, content: "SCREAMINGSNAKECASE",  right_answer: true)
+Answer.create!(flashcard: flashcard3, content: "lowerCamelCase")
 
+Answer.create!(flashcard: flashcard4, content: "Ruby make")
+Answer.create!(flashcard: flashcard4, content: "Camel case")
+Answer.create!(flashcard: flashcard4, content: "Web page")
+Answer.create!(flashcard: flashcard4, content: "Action pack", right_answer: true)
+
+Answer.create!(flashcard: flashcard5, content: "ActiveRecord", right_answer: true)
+Answer.create!(flashcard: flashcard5, content: "ActivePack")
+Answer.create!(flashcard: flashcard5, content: "ActionPack")
+Answer.create!(flashcard: flashcard5, content: "Web page")
+
+Answer.create!(flashcard: flashcard6, content: "Git add, commit and push every few hours")
+Answer.create!(flashcard: flashcard6, content: "Sudo install", right_answer: true)
+Answer.create!(flashcard: flashcard6, content: "Add comments in your code to show what you did")
+Answer.create!(flashcard: flashcard6, content: "Don’t make your own branche because your code is right anyways")
+
+Answer.create!(flashcard: flashcard7, content: "French pastery chef")
+Answer.create!(flashcard: flashcard7, content: "Football talent scout")
+Answer.create!(flashcard: flashcard7, content: "Opera singer", right_answer: true)
+Answer.create!(flashcard: flashcard7, content: "Dog trainer")
