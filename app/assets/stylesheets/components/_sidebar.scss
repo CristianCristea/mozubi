@@ -1,9 +1,8 @@
 .sidebar {
-  position: fixed;
+  position: sticky;
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: 100;
   padding: 0;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
   width: $sidebar-width;
@@ -54,5 +53,9 @@
   bottom: 0;
   align-items: center;
   justify-content: center;
+}
+
+.container-fluid {
+  padding: 0;
 }
 

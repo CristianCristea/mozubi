@@ -3,7 +3,6 @@ UserArticle.delete_all
 Chapter.delete_all
 UserArticle.delete_all
 Answer.delete_all
-UserFlashcard.delete_all
 Flashcard.delete_all
 Article.delete_all
 Topic.delete_all
@@ -51,6 +50,8 @@ topic5 = Topic.create!(
   profession: profession
 )
 
+
+
 puts "Creating articles..."
 topic1_article1 = Article.create!(
   title: "Active Record Basics",
@@ -71,13 +72,13 @@ topic2_article1 = Article.create!(
 )
 
 topic3_article1 = Article.create!(
-  title: "The Asset Pipeline 1",
+  title: "The Asset Pipeline",
   description: "The asset pipeline provides a framework to concatenate and minify or compress JavaScript and CSS assets. It also adds the ability to write these assets in other languages and pre-processors such as CoffeeScript, Sass and ERB. It allows assets in your application to be automatically combined with assets from other gems.",
   topic: topic3
 )
 
 topic3_article2 = Article.create!(
-  title: "The Asset Pipeline 2",
+  title: "The Asset Pipeline - in Production",
   description: "In the production environment Sprockets uses the fingerprinting scheme outlined above. By default Rails assumes assets have been precompiled and will be served as static assets by your web server. During the precompilation phase an SHA256 is generated from the contents of the compiled files, and inserted into the filenames as they are written to disk. These fingerprinted names are used by the Rails helpers in place of the manifest name.",
   topic: topic3
 )
@@ -92,7 +93,7 @@ topic4_article1 = Article.create!(
 
 topic4_article2 = Article.create!(
   title: "Built-in Helpers",
-  description: "Rails provides a bunch of view helper methods written in Ruby to assist you in generating HTML. Sometimes, you want to add a little Ajax to those elements, and Rails has got your back in those cases. Because of Unobtrusive JavaScript, the Rails Ajax helpers are actually in two parts: the JavaScript half and the Ruby half. Unless you have disabled the Asset Pipeline, rails-ujs provides the JavaScript half, and the regular Ruby view helpers add appropriate tags to your DOM. You can read below about the different events that are fired dealing with remote elements inside your application.",
+  description: "Rails provides a bunch of view helper methods written in Ruby to assist you in generating HTML. Sometimes, you want to add a little Ajax to those elements, and Rails has got your back in those cases. Because of Unobtrusive JavaScript, the Rails "Ajax helpers" are actually in two parts: the JavaScript half and the Ruby half. Unless you have disabled the Asset Pipeline, rails-ujs provides the JavaScript half, and the regular Ruby view helpers add appropriate tags to your DOM. You can read below about the different events that are fired dealing with remote elements inside your application.",
   topic: topic4
 )
 
@@ -100,7 +101,7 @@ topic5_article1 = Article.create!(
   title: "Key aspects of constants",
   description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
   topic: topic5
-)
+) 
 
 puts "Creating article chapters..."
 

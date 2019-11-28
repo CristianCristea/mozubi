@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_topics, only: [:show, :index]
+  before_action :link_topic, only: [:show, :index]
 
   def index
     @articles = Article.all
@@ -23,6 +24,13 @@ class ArticlesController < ApplicationController
     # for testing point to first article if they are no flashcards for current article
     @flashcard = @article.flashcards.first || Article.first.flashcards.first
     @topic = @article.topic
+    user_article = UserArticle.find_by(article: @article)
+
+    if user_article.nil?
+      @article_read = false
+    else
+      @article_read = user_article.read
+    end
   end
 
   def bookmark
@@ -40,5 +48,9 @@ class ArticlesController < ApplicationController
   def set_topics
     @all_topics = Topic.all
     @all_articles = Article.all
+  end
+
+  def link_topic
+    @article = current_user.profession.topics.first.articles
   end
 end
