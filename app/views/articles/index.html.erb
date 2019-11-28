@@ -84,13 +84,13 @@
     </div>
     <div id="carouselRight" class="carousel">
       <div class="carousel-inner">
-        <% @articles_bookmarked.each_with_index do |article, index| %>
+        <% @articles_bookmarked.each_with_index do |user_article, index| %>
           <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
-            <p class="card-carousel-header-title"><strong><%= article.title %></strong></p>
+            <p class="card-carousel-header-title"><strong><%= user_article.article.title %></strong></p>
             <p class='card-carousel-header-count'><%= index + 1 %> / <%= @articles_bookmarked.count %></p>
             <hr class="card-carousel-division py-1">
-            <p class="card-carousel-text"><%=h truncate(article.description, :length => 250) %></p>
-            <%= link_to "Read more", article, class: "btn carousel-btn btn-primary" %>
+            <p class="card-carousel-text"><%=h truncate(user_article.article.description, :length => 250) %></p>
+            <%= link_to "Read more", user_article.article, class: "btn carousel-btn btn-primary" %>
           </div>
         <% end %>
       </div>

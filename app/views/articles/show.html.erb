@@ -14,10 +14,12 @@
 
 
   <div class=" my-5 d-flex justify-content-between align-items-center">
-  <h3 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Read" if @article_read %></h3>
-  <button type="button" class="btn btn-primary" id="two">
+
+    <h3 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Read" if @article_read %></h3>
+
+    <%= link_to bookmark_article_path(@article), method: :post, class: "btn btn-primary", id: "two" do %>
     <i class="material-icons-sharp">bookmark</i>
-  </button>
+    <% end %>
   </div>
 
   <div class="row">

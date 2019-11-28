@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get "/dashboard", to: "pages#dashboard"
   resources :articles, only: [:index, :show] do
     resources :flashcards, only: [:show]
+    member do
+      post "bookmark"
+      post "flashcard_answer_correct?"
+    end
   end
-
-  resources :user_flashcards, only: :create
 end
