@@ -14,7 +14,7 @@
 
 
   <div class=" my-5 d-flex justify-content-between align-items-center">
-  <h3 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Read" if UserArticle.exists?(article: @article) %></h3>
+  <h3 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Read" if @article_read %></h3>
   <button type="button" class="btn btn-primary" id="two">
     <i class="material-icons-sharp">bookmark</i>
   </button>
