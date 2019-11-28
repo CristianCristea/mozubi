@@ -3,6 +3,7 @@ UserArticle.delete_all
 Chapter.delete_all
 UserArticle.delete_all
 Answer.delete_all
+UserFlashcard.delete_all
 Flashcard.delete_all
 Article.delete_all
 Topic.delete_all

@@ -10,7 +10,8 @@
     </nav>
   </div>
   <div class=" my-5 d-flex justify-content-between align-items-center">
-  <h3 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Read" if UserArticle.exists?(article: @article) %></h3>
+
+    <h3 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Read" if @article_read %></h3>
 
     <%= link_to bookmark_article_path(@article), method: :post, class: "btn btn-primary", id: "two" do %>
     <i class="material-icons-sharp">bookmark</i>
@@ -61,7 +62,7 @@
     </div>
   </div>
     <div class="text-right my-5">
-      <%= link_to "Go to Flashcards",  article_flashcard_path(@article, @flashcard), class: "btn btn-primary mt-5" %>
+      <%= link_to "Go to Flashcards", @flashcard, class: "btn btn-primary mt-5" %>
     </div>
   </div>
 </div>
