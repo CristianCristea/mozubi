@@ -1,7 +1,45 @@
 
 <blockquote><%= @flashcard.content %></blockquote>
 <ol>
-<% @flashcard.answers.each do |answer| %>
-  <li><%= answer.content %></li>
-<% end %>
+
 </ol>
+
+<%#= simple_form_for @user_flashcard do |f| %>
+
+  <%# @flashcard.answers.each do |answer| %>
+
+    <%#= answer.content %>
+<%#= f.collection_radio_buttons %>
+
+    <%#= f.input :correct, as: :radio_buttons, collection: @flashcard.answers %>
+
+  <%# end %>
+
+<%# end %>
+
+<%= form_for(@user_flashcard) do |f| %>
+<% @flashcard.answers.each do |answer| %>
+
+
+  <%= radio_button_tag(:answer, answer.right_answer, false, id: answer.id) %>
+  <%= label_tag(answer.id, answer.content) %>
+<% end %>
+
+
+  <%#= f.collection_radio_buttons(
+    :flashcard_id, @flashcard.answers,
+    :id,
+    :content,
+    input_value: :right_answer
+  ) do |b|
+  %>
+
+
+    <%#= b.radio_button, value = "test" %>
+    <%#= b.label  %>
+
+
+  <%# end %>
+
+  <%= f.submit "Submit" %>
+<% end %>

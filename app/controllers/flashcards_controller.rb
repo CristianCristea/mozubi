@@ -1,5 +1,6 @@
 class FlashcardsController < ApplicationController
   def show
+    @user_flashcard = UserFlashcard.new
     @article = Article.find(params[:article_id])
     @flashcard = Flashcard.find(params[:id])
     user_article = UserArticle.find_by(article: @article)

@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show] do
     resources :flashcards, only: [:show]
   end
+
+  resources :user_flashcards, only: :create
 end
