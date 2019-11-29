@@ -9,13 +9,14 @@
     <%= label_tag(answer.id, answer.content) %>
   <% end %>
 
-  <%= f.submit "Submit" %>
+  <%= f.submit "Next", class: "d-none" %>
+  <button id="showResultBtn">Check</button>
 <% end %>
 
-  <% if @article_flashcards.last.id != params[:id].to_i %>
-    <%= link_to "Next", flashcard_path(
+  <%# if @article_flashcards.last.id != params[:id].to_i %>
+    <%#= link_to "Check", flashcard_path(
       @article_flashcards[@article_flashcards.index(@flashcard) + 1]
-    ) %>
-  <% else %>
-    <%= link_to "Results", flashcard_results_path %>
-  <% end %>
+    ), id: "showResultBtn" %>
+  <%# else %>
+    <%#= link_to "Results", flashcard_results_path %>
+  <%# end %>

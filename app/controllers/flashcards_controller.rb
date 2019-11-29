@@ -5,8 +5,7 @@ class FlashcardsController < ApplicationController
     @flashcard = Flashcard.find(params[:id])
     @user_flashcard = UserFlashcard.new
     user_article = UserArticle.find_by(article: @article)
-    @article_flashcards = @flashcard.article.flashcards
-# raise
+
     if user_article.nil?
       UserArticle.create(
         user: current_user,
@@ -21,11 +20,18 @@ class FlashcardsController < ApplicationController
 
   def check_answer
     @flashcard = Flashcard.find(params[:id])
-    right_answer = set_answer == "true"
+    @article_flashcards = @flashcard.article.flashcards
+    right_answer = set_answer["answer"] == "true"
+
     UserFlashcard.create!(user: current_user, flashcard: @flashcard, correct: right_answer)
+    redirect_to next_flashcard
   end
 
   def results
+    @flashcards_played = UserFlashcard.last.flashcard.article.flashcards.count
+    @correct_answers = UserFlashcard.where(correct: true).count
+    # change UserFlashcard with UserArticle, get access to flashcards over article
+    render "flashcards/results"
   end
 
   private
@@ -35,6 +41,14 @@ class FlashcardsController < ApplicationController
   end
 
   def handle_record_not_found
-    redirect_to flashcard_results_path
+    redirect_to root_path
+  end
+
+  def next_flashcard
+    if @article_flashcards.last.id != params[:id].to_i
+      flashcard_path(@article_flashcards[@article_flashcards.index(@flashcard) + 1])
+      else
+      flashcards_results_path
+    end
   end
 end
