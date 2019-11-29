@@ -1,4 +1,7 @@
 <div class="top-bar">
   <h2 class="display-4"><%= (current_user.exam_date.to_date - Date.current).to_i %> days to exam</h2>
-  <progress max="<%= (current_user.exam_date.to_date - current_user.created_at.to_date).to_i %>" value="<%= ((current_user.exam_date.to_date - current_user.created_at.to_date).to_i) - ((current_user.exam_date.to_date - Date.current).to_i) %>"></progress>
+  <progress max="<%= (current_user.exam_date.to_date - Date.new(2019, 11, 1)).to_i %>" value="<%= ((current_user.exam_date.to_date - Date.new(2019, 11, 1)).to_i) - ((current_user.exam_date.to_date - Date.current).to_i) %>"></progress>
 </div>
+
+<!-- current_user.created_at.to_date
+current_user.created_at.to_date -->

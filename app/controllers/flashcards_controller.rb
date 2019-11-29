@@ -1,8 +1,9 @@
 class FlashcardsController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
+
   def show
-    @user_flashcard = UserFlashcard.new
-    #@article = Article.find(params[:article_id])
     @flashcard = Flashcard.find(params[:id])
+    @user_flashcard = UserFlashcard.new
     user_article = UserArticle.find_by(article: @article)
 
     if user_article.nil?
@@ -14,17 +15,40 @@ class FlashcardsController < ApplicationController
     else
       user_article.update(read: true)
     end
+
   end
 
   def check_answer
     @flashcard = Flashcard.find(params[:id])
-    UserFlashcard.create!(user: current_user, flashcard: @flashcard, correct: set_answer)
-    # redirect_to @flashcard
+    @article_flashcards = @flashcard.article.flashcards
+    right_answer = set_answer["answer"] == "true"
+
+    UserFlashcard.create!(user: current_user, flashcard: @flashcard, correct: right_answer)
+    redirect_to next_flashcard
+  end
+
+  def results
+    @flashcards_played = UserFlashcard.last.flashcard.article.flashcards.count
+    @correct_answers = UserFlashcard.where(correct: true).count
+    # change UserFlashcard with UserArticle, get access to flashcards over article
+    render "flashcards/results"
   end
 
   private
 
   def set_answer
     params.permit(:answer)
+  end
+
+  def handle_record_not_found
+    redirect_to root_path
+  end
+
+  def next_flashcard
+    if @article_flashcards.last.id != params[:id].to_i
+      flashcard_path(@article_flashcards[@article_flashcards.index(@flashcard) + 1])
+      else
+      flashcards_results_path
+    end
   end
 end
