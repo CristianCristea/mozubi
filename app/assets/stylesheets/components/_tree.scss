@@ -18,7 +18,6 @@ $height: 50px;
 $height-half: calc(#{$height} / 2);
 
 .tree {
-  // position: absolute;
   top: 0;
   bottom: 0;
   z-index: 150;
@@ -27,20 +26,16 @@ $height-half: calc(#{$height} / 2);
   min-width: $width-tree;
   margin-left: 0px;
 }
-
 .tree-sticky {
   background-color: $secondary;
   position: absolute;
   height: 100vh;
-  // position: relative;
   top: 0;
-  // width: $width-tree;
   height: calc(100vh - 0px);
   overflow-x: hidden;
   overflow-y: auto;
   width: $width-tree;
 }
-
 @keyframes expand{
   0% {
     width: $width-tree;
@@ -49,13 +44,11 @@ $height-half: calc(#{$height} / 2);
     width: $width-expand;
   }
 }
-
 .sticky-div {
     position: absolute;
     top: 0;
     bottom: 0;
 }
-
 @supports ((position: -webkit-sticky) or (position: sticky)) {
   .tree-sticky {
     position: -webkit-sticky;
@@ -66,7 +59,9 @@ $height-half: calc(#{$height} / 2);
   width: $width-expand;
   animation: expand .3s ease-in;
 }
-
+.close-tree {
+  transition: .3s ease-out;
+}
 .tree .nav-link {
   height: $height;
   display: flex;
@@ -76,7 +71,6 @@ $height-half: calc(#{$height} / 2);
   line-height: 2rem;
 }
 .tree-sticky.show .tree-item {
-  // padding: 10px;
   padding-left: $width-tree;
   width: 100%;
   color: $text-secondary;
@@ -101,6 +95,7 @@ $height-half: calc(#{$height} / 2);
 }
 .gone {
   display: none;
+  transition-delay: .0s;
 }
 .tree-sticky.show .gone {
   display: block;
@@ -112,21 +107,6 @@ $height-half: calc(#{$height} / 2);
 }
 .material-icons-sharp {
   font-size: 24px;
-}
-.search {
-  // position: sticky;
-  width: 100%;
-  height: $height;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  background-color: #719944;
-  opacity: 1;
-  color: white;
-  z-index: 30;
-}
-#search-icon{
-  margin-left: $search-left;
 }
 .breadcrumb {
   z-index: 10;
@@ -140,6 +120,9 @@ ul.list {
     list-style-type: none;
     position: relative;
     min-height: 100vh;
+}
+ul.list .active {
+  text-shadow: 0px 0px 5px red;
 }
 ul.list:before {
     content: ' ';
@@ -158,7 +141,7 @@ ul.list > li {
 }
 ul.list > li:before {
     content: ' ';
-    background: $primary;
+    background: $text-secondary;
     display: inline-block;
     position: absolute;
     border-radius: 50%;
@@ -167,6 +150,12 @@ ul.list > li:before {
     height: $dot-width;
     z-index: 400;
     box-shadow: 0px 0px 10px $primary;
+}
+ul.list > li:before .read {
+    background: black;
+}
+li.read {
+  background-color: red;
 }
 ul.sub {
   z-index: 30;
