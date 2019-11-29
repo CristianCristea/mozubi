@@ -1,9 +1,4 @@
 import "bootstrap";
-// document
-//   .getElementById("two")
-//   .addEventListener("click", e =>
-//     e.currentTarget.classList.toggle("change-button-background")
-//   );
 
 // check flashcard answer
 const form = document.getElementById("flashcardAnswerForm");
@@ -26,21 +21,3 @@ showResultBtn.addEventListener("click", e => {
     .nextElementSibling.classList.add("correct-answer");
   submitBtn.classList.remove("d-none");
 });
-
-// form.addEventListener("submit", e => {
-//   if (e.currentTarget.getAttribute("data-form-submitted") == "false") {
-//     e.currentTarget.setAttribute("data-form-submitted", "true");
-//     console.log(e.currentTarget.getAttribute("data-form-submitted"));
-//     console.log(
-//       e.currentTarget
-//         .querySelector("input[value='true']")
-//         .nextElementSibling.classList.add("correct-answer")
-//     );
-//   }
-// });
-
-// inputs.forEach(inputEl => {
-//   if (inputEl.value == true) {
-//     inputEl.nextElementSibling.classList.add("correct-answer");
-//   }
-// });
