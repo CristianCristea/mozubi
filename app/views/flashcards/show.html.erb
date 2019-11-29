@@ -11,3 +11,11 @@
 
   <%= f.submit "Submit" %>
 <% end %>
+
+  <% if @article_flashcards.last.id != params[:id].to_i %>
+    <%= link_to "Next", flashcard_path(
+      @article_flashcards[@article_flashcards.index(@flashcard) + 1]
+    ) %>
+  <% else %>
+    <%= link_to "Results", flashcard_results_path %>
+  <% end %>
