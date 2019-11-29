@@ -1,9 +1,35 @@
-<div class="jumbotron">
-  <h1 class="display-4">Welcome to Mozubi!</h1>
-  <p class="lead">This is the solution for German apprentencis that want to pass their final exam.</p>
-  <hr class="my-4">
-  <p>On this platform, an apprentice can read relevant articles, practise via quizes and exam simulations.</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Goat for it!</a>
-  <%= link_to  "Dashboard", dashboard_path %>
-  <%= link_to  "Articles", articles_path %>
+<div class="banner">
+  <div class="banner-landing" style="background-image: url(https://images.unsplash.com/photo-1569271836752-ed9351b75521?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9);height: 800px;">
+    <h1 class="banner-h1">Welcome to Mozubi!</h1>
+    <p class="banner-p">The platform where apprentices can read relevant articles,</p>
+    <p class="banner-p">practise via quizes and exam simulations.</p>
+    <%= link_to "One click sign in", dashboard_path, class: "btn landing-btn btn-primary" %>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="land-title">
+    <h2 class="text-center">This is how it works</h2>
+  </div>
+  <div class="card-landingpage">
+
+    <div class="card-land">
+      <p class="card-land-icon"><i class="fas fa-book"></i></p>
+      <h4>Learn</h4>
+      <p>Read all relevant articles at one place</p>
+    </div>
+
+    <div class="card-land">
+      <p class="card-land-icon"><i class="fas fa-question"></i></p>
+      <h4>Quiz</h4>
+      <p>Train yourself on topics with flashcards</p>
+    </div>
+
+    <div class="card-land">
+      <p class="card-land-icon"><i class="fas fa-pen"></i></p>
+      <h4>Excel</h4>
+      <p>Challenge yourself with exam simulations</p>
+    </div>
+
+  </div>
 </div>

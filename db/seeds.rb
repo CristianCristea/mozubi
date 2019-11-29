@@ -20,7 +20,7 @@ user = User.create!(
         first_name: "Bob",
         last_name: "McDonald",
         birthdate: Date.new(1986, 4, 10),
-        exam_date: Date.new(2020, 9, 1),
+        exam_date: Date.new(2020, 3, 1),
         profession: profession
     )
 
@@ -300,6 +300,32 @@ flashcard3 = Flashcard.create!(article: topic1_article1, content: "What is NOT a
 flashcard4 = Flashcard.create!(article: topic1_article2, content: "Representation of a resource is called... ")
 flashcard5 = Flashcard.create!(article: topic1_article2, content: "Rails application framework is called… ")
 flashcard6 = Flashcard.create!(article: topic1_article2, content: "What is something you should never do:")
+flashcard7 = Flashcard.create!(article: topic2_article1, content: "Which of these is not a various components of rail?")
+flashcard8 = Flashcard.create!(article: topic2_article1, content: "What is something that you should not do in rails… ")
+flashcard9 = Flashcard.create!(article: topic2_article1, content: "What is NOT a correct naming convention?")
+flashcard10 = Flashcard.create!(article: topic3_article1, content: "Representation of a resource is called... ")
+flashcard11 = Flashcard.create!(article: topic3_article1, content: "Rails application framework is called… ")
+flashcard12 = Flashcard.create!(article: topic3_article1, content: "What is something you should never do:")
+flashcard13 = Flashcard.create!(article: topic3_article2, content: "Which of these is not a various components of rail?")
+flashcard14 = Flashcard.create!(article: topic3_article2, content: "What is something that you should not do in rails… ")
+flashcard15 = Flashcard.create!(article: topic3_article2, content: "What is NOT a correct naming convention?")
+flashcard16 = Flashcard.create!(article: topic4_article1, content: "Representation of a resource is called... ")
+flashcard17 = Flashcard.create!(article: topic4_article1, content: "Rails application framework is called… ")
+flashcard18 = Flashcard.create!(article: topic4_article1, content: "What is something you should never do:")
+flashcard19 = Flashcard.create!(article: topic4_article2, content: "Which of these is not a various components of rail?")
+flashcard20 = Flashcard.create!(article: topic4_article2, content: "What is something that you should not do in rails… ")
+flashcard21 = Flashcard.create!(article: topic4_article2, content: "What is NOT a correct naming convention?")
+flashcard22 = Flashcard.create!(article: topic5_article1, content: "Representation of a resource is called... ")
+flashcard23 = Flashcard.create!(article: topic5_article1, content: "Rails application framework is called… ")
+flashcard24 = Flashcard.create!(article: topic5_article1, content: "What is something you should never do:")
+flashcard25 = Flashcard.create!(article: topic1_article1, content: "Mark had to choose between a career as a coder and as a")
+flashcard26 = Flashcard.create!(article: topic1_article2, content: "Mark had to choose between a career as a coder and as a")
+flashcard27 = Flashcard.create!(article: topic2_article1, content: "Mark had to choose between a career as a coder and as a")
+flashcard28 = Flashcard.create!(article: topic3_article1, content: "Mark had to choose between a career as a coder and as a")
+flashcard29 = Flashcard.create!(article: topic3_article2, content: "Mark had to choose between a career as a coder and as a")
+flashcard30 = Flashcard.create!(article: topic4_article1, content: "Mark had to choose between a career as a coder and as a")
+flashcard31 = Flashcard.create!(article: topic4_article2, content: "Mark had to choose between a career as a coder and as a")
+flashcard32 = Flashcard.create!(article: topic5_article1, content: "Mark had to choose between a career as a coder and as a")
 
 Answer.create!(flashcard: flashcard1, content: "Action pack")
 Answer.create!(flashcard: flashcard1, content: "Action model")
@@ -329,5 +355,134 @@ Answer.create!(flashcard: flashcard5, content: "Web page")
 Answer.create!(flashcard: flashcard6, content: "Git add, commit and push every few hours")
 Answer.create!(flashcard: flashcard6, content: "Sudo install", right_answer: true)
 Answer.create!(flashcard: flashcard6, content: "Add comments in your code to show what you did")
-Answer.create!(flashcard: flashcard6, content: "Don’t make your own branche because your code is right anyways")
+Answer.create!(flashcard: flashcard6, content: "Don’t make your own branch because your code is right anyways")
 
+Answer.create!(flashcard: flashcard7, content: "Action pack")
+Answer.create!(flashcard: flashcard7, content: "Action model")
+Answer.create!(flashcard: flashcard7, content: "Action mailer")
+Answer.create!(flashcard: flashcard7, content: "Action development", right_answer: true)
+
+Answer.create!(flashcard: flashcard8, content: "Generate a controller")
+Answer.create!(flashcard: flashcard8, content: "Schaffolding",  right_answer: true)
+Answer.create!(flashcard: flashcard8, content: "Use the right naming convention")
+Answer.create!(flashcard: flashcard8, content: "Be DRY")
+
+Answer.create!(flashcard: flashcard9, content: "snake_case")
+Answer.create!(flashcard: flashcard9, content: "kebab-case-yay")
+Answer.create!(flashcard: flashcard9, content: "SCREAMINGSNAKECASE",  right_answer: true)
+Answer.create!(flashcard: flashcard9, content: "lowerCamelCase")
+
+Answer.create!(flashcard: flashcard10, content: "Ruby make")
+Answer.create!(flashcard: flashcard10, content: "Camel case")
+Answer.create!(flashcard: flashcard10, content: "Web page")
+Answer.create!(flashcard: flashcard10, content: "Action pack", right_answer: true)
+
+Answer.create!(flashcard: flashcard11, content: "ActiveRecord", right_answer: true)
+Answer.create!(flashcard: flashcard11, content: "ActivePack")
+Answer.create!(flashcard: flashcard11, content: "ActionPack")
+Answer.create!(flashcard: flashcard11, content: "Web page")
+
+Answer.create!(flashcard: flashcard12, content: "Git add, commit and push every few hours")
+Answer.create!(flashcard: flashcard12, content: "Sudo install", right_answer: true)
+Answer.create!(flashcard: flashcard12, content: "Add comments in your code to show what you did")
+Answer.create!(flashcard: flashcard12, content: "Don’t make your own branch because your code is right anyways")
+
+Answer.create!(flashcard: flashcard13, content: "Action pack")
+Answer.create!(flashcard: flashcard13, content: "Action model")
+Answer.create!(flashcard: flashcard13, content: "Action mailer")
+Answer.create!(flashcard: flashcard13, content: "Action development", right_answer: true)
+
+Answer.create!(flashcard: flashcard14, content: "Generate a controller")
+Answer.create!(flashcard: flashcard14, content: "Schaffolding",  right_answer: true)
+Answer.create!(flashcard: flashcard14, content: "Use the right naming convention")
+Answer.create!(flashcard: flashcard14, content: "Be DRY")
+
+Answer.create!(flashcard: flashcard15, content: "snake_case")
+Answer.create!(flashcard: flashcard15, content: "kebab-case-yay")
+Answer.create!(flashcard: flashcard15, content: "SCREAMINGSNAKECASE",  right_answer: true)
+Answer.create!(flashcard: flashcard15, content: "lowerCamelCase")
+
+Answer.create!(flashcard: flashcard16, content: "Ruby make")
+Answer.create!(flashcard: flashcard16, content: "Camel case")
+Answer.create!(flashcard: flashcard16, content: "Web page")
+Answer.create!(flashcard: flashcard16, content: "Action pack", right_answer: true)
+
+Answer.create!(flashcard: flashcard17, content: "ActiveRecord", right_answer: true)
+Answer.create!(flashcard: flashcard17, content: "ActivePack")
+Answer.create!(flashcard: flashcard17, content: "ActionPack")
+Answer.create!(flashcard: flashcard17, content: "Web page")
+
+Answer.create!(flashcard: flashcard18, content: "Git add, commit and push every few hours")
+Answer.create!(flashcard: flashcard18, content: "Sudo install", right_answer: true)
+Answer.create!(flashcard: flashcard18, content: "Add comments in your code to show what you did")
+Answer.create!(flashcard: flashcard18, content: "Don’t make your own branch because your code is right anyways")
+
+Answer.create!(flashcard: flashcard19, content: "Action pack")
+Answer.create!(flashcard: flashcard19, content: "Action model")
+Answer.create!(flashcard: flashcard19, content: "Action mailer")
+Answer.create!(flashcard: flashcard19, content: "Action development", right_answer: true)
+
+Answer.create!(flashcard: flashcard20, content: "Generate a controller")
+Answer.create!(flashcard: flashcard20, content: "Schaffolding",  right_answer: true)
+Answer.create!(flashcard: flashcard20, content: "Use the right naming convention")
+Answer.create!(flashcard: flashcard20, content: "Be DRY")
+
+Answer.create!(flashcard: flashcard21, content: "snake_case")
+Answer.create!(flashcard: flashcard21, content: "kebab-case-yay")
+Answer.create!(flashcard: flashcard21, content: "SCREAMINGSNAKECASE",  right_answer: true)
+Answer.create!(flashcard: flashcard21, content: "lowerCamelCase")
+
+Answer.create!(flashcard: flashcard22, content: "Ruby make")
+Answer.create!(flashcard: flashcard22, content: "Camel case")
+Answer.create!(flashcard: flashcard22, content: "Web page")
+Answer.create!(flashcard: flashcard22, content: "Action pack", right_answer: true)
+
+Answer.create!(flashcard: flashcard23, content: "ActiveRecord", right_answer: true)
+Answer.create!(flashcard: flashcard23, content: "ActivePack")
+Answer.create!(flashcard: flashcard23, content: "ActionPack")
+Answer.create!(flashcard: flashcard23, content: "Web page")
+
+Answer.create!(flashcard: flashcard24, content: "Git add, commit and push every few hours")
+Answer.create!(flashcard: flashcard24, content: "Sudo install", right_answer: true)
+Answer.create!(flashcard: flashcard24, content: "Add comments in your code to show what you did")
+Answer.create!(flashcard: flashcard24, content: "Don’t make your own branch because your code is right anyways")
+
+Answer.create!(flashcard: flashcard25, content: "French pastery chef")
+Answer.create!(flashcard: flashcard25, content: "Football talent scout")
+Answer.create!(flashcard: flashcard25, content: "Opera singer", right_answer: true)
+Answer.create!(flashcard: flashcard25, content: "Dog trainer")
+
+Answer.create!(flashcard: flashcard26, content: "French pastery chef")
+Answer.create!(flashcard: flashcard26, content: "Football talent scout")
+Answer.create!(flashcard: flashcard26, content: "Opera singer", right_answer: true)
+Answer.create!(flashcard: flashcard26, content: "Dog trainer")
+
+Answer.create!(flashcard: flashcard27, content: "French pastery chef")
+Answer.create!(flashcard: flashcard27, content: "Football talent scout")
+Answer.create!(flashcard: flashcard27, content: "Opera singer", right_answer: true)
+Answer.create!(flashcard: flashcard27, content: "Dog trainer")
+
+Answer.create!(flashcard: flashcard28, content: "French pastery chef")
+Answer.create!(flashcard: flashcard28, content: "Football talent scout")
+Answer.create!(flashcard: flashcard28, content: "Opera singer", right_answer: true)
+Answer.create!(flashcard: flashcard28, content: "Dog trainer")
+
+Answer.create!(flashcard: flashcard29, content: "French pastery chef")
+Answer.create!(flashcard: flashcard29, content: "Football talent scout")
+Answer.create!(flashcard: flashcard29, content: "Opera singer", right_answer: true)
+Answer.create!(flashcard: flashcard29, content: "Dog trainer")
+
+Answer.create!(flashcard: flashcard30, content: "French pastery chef")
+Answer.create!(flashcard: flashcard30, content: "Football talent scout")
+Answer.create!(flashcard: flashcard30, content: "Opera singer", right_answer: true)
+Answer.create!(flashcard: flashcard30, content: "Dog trainer")
+
+Answer.create!(flashcard: flashcard31, content: "French pastery chef")
+Answer.create!(flashcard: flashcard31, content: "Football talent scout")
+Answer.create!(flashcard: flashcard31, content: "Opera singer", right_answer: true)
+Answer.create!(flashcard: flashcard31, content: "Dog trainer")
+
+Answer.create!(flashcard: flashcard32, content: "French pastery chef")
+Answer.create!(flashcard: flashcard32, content: "Football talent scout")
+Answer.create!(flashcard: flashcard32, content: "Opera singer", right_answer: true)
+Answer.create!(flashcard: flashcard32, content: "Dog trainer")

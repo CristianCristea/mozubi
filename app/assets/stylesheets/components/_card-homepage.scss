@@ -1,0 +1,33 @@
+.container-landing {
+  width: 800px;
+  align-items: center;
+}
+
+.card-land p {
+  opacity: .5;
+}
+
+.card-land {
+  width: 200px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgb(230,230,230);
+  background-color: white;
+}
+
+.card-landingpage {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.card-land-icon {
+  font-size: 40px;
+}
+
+.land-title {
+  padding-top: 50px;
+  padding-bottom: 30px;
+}

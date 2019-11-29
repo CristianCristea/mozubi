@@ -1,41 +1,55 @@
 <!-- <nav class="d-none d-md-block bg-light"> -->
-  <!-- <a class="btn multi-collapse" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> -->
-    <div class="tree-sticky">
-      <div class="search">
-        <i class="material-icons-sharp" id="search-icon">search</i>
-        <%#= render 'shared/searchbar' %>
+  <div class="close-tree tree-sticky <%= articles_class? %>">
+    <div class="search">
+      <i class="material-icons-sharp" id="search-icon">search</i>
+      <div class="hidden searchbar">
+        <%= render 'shared/searchbar' %>
       </div>
+    </div>
+    <div class="open">
       <ul class="nav list">
         <% @all_topics.each do |topic| %>
-        <!-- <li class="nav-item"> -->
-          <li class="tree-item">
-          <!-- <div class="collapse" id="collapseExample"> -->
+          <% if topic.articles.map { |article| @art_read.include?(article.id) }  %>
+              <li class="tree-item">
+            <% else %>
+              <li class="tree-item">
+            <% end %>
+            <%# raise %>
             <div class="hidden">
               <%= topic.name %>
               <div class="gone">
                 <ul class="sub">
                   <% topic.articles.each do |article| %>
-                    <li class="nav-sub">
-                        <%= link_to article, class: "#{current_class?(topic)}" do %>
-                          <%= article.title %>
-                        <% end %>
+                    <% if @art_read.include?(article.id) %>
+                      <li class="nav-sub read">
+                    <% else %>
+                      <li class="nav-sub">
+                    <% end %>
+                      <%= link_to article, class: "#{article_class?(article)}" do %>
+                        <%= article.title %>
+                      <%# raise %>
+                      <% end %>
                     </li>
                   <% end %>
                 </ul>
               </div>
             </div>
-          <!-- </div> -->
           </li>
-        <!-- </li> -->
         <% end %>
       </ul>
     </div>
-  <!-- </a> -->
+  </div>
 <!-- </nav> -->
 
 <script>
-  var tree = document.querySelector(".tree-sticky")
-  tree.addEventListener("click", function() {
-    tree.classList.toggle("show")
+  const tree = document.querySelector(".tree-sticky")
+  tree.addEventListener("click", (e) => {
+    tree.classList.toggle("show");
   })
+  const search = document.querySelector(".searchbar")
+search.addEventListener("click", (e) => {
+    e.stopPropagation();
+  })
+
+
 </script>

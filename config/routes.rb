@@ -19,5 +19,6 @@ Rails.application.routes.draw do
     end
   end
 
+  get "flashcards-results", to: "flashcards#results"
 
 end
