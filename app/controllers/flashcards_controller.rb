@@ -3,13 +3,14 @@ class FlashcardsController < ApplicationController
 
   def show
     @flashcard = Flashcard.find(params[:id])
+    @article = @flashcard.article
     @user_flashcard = UserFlashcard.new
     user_article = UserArticle.find_by(article: @article)
 
     if user_article.nil?
       UserArticle.create(
         user: current_user,
-        article: @flashcard.article,
+        article: @article,
         read: true
       )
     else
