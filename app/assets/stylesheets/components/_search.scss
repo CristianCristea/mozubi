@@ -1,0 +1,18 @@
+.search {
+  // position: sticky;
+  width: 100%;
+  height: $height;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  background-color: #719944;
+  opacity: 1;
+  color: white;
+  z-index: 30;
+}
+#search-icon{
+  margin-left: $search-left;
+}
+.searchbar {
+  left: $line-left;
+}
