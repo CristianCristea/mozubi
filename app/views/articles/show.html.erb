@@ -13,9 +13,15 @@
 
     <h3 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Read" if @article_read %></h3>
 
-    <%= link_to bookmark_article_path(@article), method: :post, class: "btn btn-primary", id: "two" do %>
-    <i class="material-icons-sharp">bookmark</i>
+  <% if @article.bookmarked_for?(current_user) %>
+    <%= link_to unbookmark_article_path(@article), method: :patch do %>
+      <i class="material-icons-sharp" id="two">bookmark</i>
     <% end %>
+  <% else %>
+    <%= link_to bookmark_article_path(@article), method: :post do %>
+      <i class="material-icons-sharp" id="two">bookmark_border</i>
+    <% end %>
+  <% end %>
   </div>
   <div class="row">
     <div class="container pl-0">
@@ -66,3 +72,11 @@
     </div>
   </div>
 </div>
+
+<!-- <script>
+  document
+  .getElementById("two")
+  .addEventListener("click", e =>
+    e.currentTarget.classList.toggle("change-button-background")
+  );
+</script> -->

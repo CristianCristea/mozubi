@@ -18,4 +18,16 @@ class User < ApplicationRecord
 
   has_many :user_flashcards
 
+  def bookmarked_articles
+    Article.joins(:user_articles).where(user_articles: {user: self, bookmarked: true})
+  end
+
+  def read_articles
+    Article.joins(:user_articles).where(user_articles: {user: self, read: true})
+  end
+
+  def upcoming_articles
+    Article.left_outer_joins(:user_articles).where(user_articles: {article_id: nil})
+  end
+
 end
