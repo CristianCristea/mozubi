@@ -4,22 +4,15 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    @articles_read = UserArticle.where(user: current_user, read: true)
-
-    @articles_bookmarked = UserArticle.where(user: current_user, bookmarked: true)
-
-    # from here on it's to create all articles that are NOT checked as read AND/OR bookmarked
-
-    art_read = @articles_read.map { |user_article| user_article.article_id }
-    art_book = @articles_bookmarked.map { |user_article| user_article.article_id }
-
-    @articles_upcoming = Article.where.not(id: art_read)
-
-    @articles_upcoming = Article.all if @articles_upcoming.nil?
+    @articles_read = current_user.read_articles
+    @articles_bookmarked = current_user.bookmarked_articles
+    @articles_upcoming = current_user.upcoming_articles
+    @articles_upcoming = Article.all if @articles_upcoming.empty?
   end
 
   def show
     @article = Article.find(params[:id])
+    # @article_read = @article.article_read?(current_user)
     # change to first not finished card
     # for testing point to first article if they are no flashcards for current article
     @flashcard = @article.flashcards.first || Article.first.flashcards.first
@@ -35,12 +28,14 @@ class ArticlesController < ApplicationController
 
   def bookmark
     @article = Article.find(params[:id])
-    @user_article = UserArticle.find_by(article: @article)
-    if @user_article.nil?
-      UserArticle.create(user: current_user, article: @article, bookmarked: true)
-    else
-      @user_article.update(bookmarked: true)
-    end
+    @article.bookmark_for!(current_user)
+    redirect_to @article
+  end
+
+  def unbookmark
+    @article = Article.find(params[:id])
+    @article.unbookmark_for!(current_user)
+    redirect_to @article
   end
 
   private
