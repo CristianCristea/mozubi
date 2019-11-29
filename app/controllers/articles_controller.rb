@@ -1,19 +1,17 @@
 class ArticlesController < ApplicationController
   before_action :set_topics, only: [:show, :index]
   before_action :link_topic, only: [:show, :index]
+  before_action :articles_read, only: [:show, :index]
 
   def index
     @articles = Article.all
-    @articles_read = UserArticle.where(user: current_user, read: true)
-
     @articles_bookmarked = UserArticle.where(user: current_user, bookmarked: true)
 
     # from here on it's to create all articles that are NOT checked as read AND/OR bookmarked
 
-    art_read = @articles_read.map { |user_article| user_article.article_id }
     art_book = @articles_bookmarked.map { |user_article| user_article.article_id }
 
-    @articles_upcoming = Article.where.not(id: art_read)
+    @articles_upcoming = Article.where.not(id: @art_read)
 
     @articles_upcoming = Article.all if @articles_upcoming.nil?
   end
@@ -44,6 +42,12 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def articles_read
+    @articles_read = UserArticle.where(user: current_user, read: true)
+    @art_read = @articles_read.map { |user_article| user_article.article_id }
+    @read_topics = current_user.user_articles.where(read:true)
+  end
 
   def set_topics
     @all_topics = Topic.all
