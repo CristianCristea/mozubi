@@ -7,44 +7,42 @@
       </div>
 
       <div class="card-body text-center">
-        <div class="card-body-title">
-          <div>
-            <p>Current article:</p>
-            <p><%= @current_topic.name %></p>
+        <div class="card-body-main">
+          <div class='card-body-title'>
+            <p class='card-current-title-label'>Your topic is:</p>
+            <h3 class='card-current-title-title'><%= @current_topic.name %></h3>
           </div>
           <div class="round-progress-bar">
-            <svg
-              class="progress-ring"
-              width="120"
-              height="120">
-              <circle
-                class="progress-ring__circle"
-                stroke="#6a5cf7"
-                stroke-width="6"
-                fill="transparent"
-                r="52"
-                cx="60"
-                cy="60"/>
-            </svg>
+          <svg
+            class="progress-ring"
+            width="120"
+            height="120">
+            <circle
+              class="progress-ring__circle"
+              stroke="#6a5cf7"
+              stroke-width="6"
+              fill="transparent"
+              r="52"
+              cx="60"
+              cy="60"/>
+          </svg>
           </div>
         </div>
         <div class="card-body-topics">
           <% @current_topic.articles.each do |article| %>
-            <li> <%= article.title %></li>
+            <div class="card-body-topic-title">
+              <%= article.title %>
+            </div>
+            <div class="card-body-topic-status">
+              <%= @not_read_articles.include?(article) ? 'read' : 'not read' %>
+            </div>
           <% end %>
         </div>
-        <div>
-          <% @current_topic.articles.each do |article| %>
-            <% if @not_read_articles.include?(article) %>
-              <p>not read</p>
-            <% else %>
-              <p>read</p>
-            <% end %>
-           <% end %>
-        </div>
+
       </div>
       <div class="card-footer">
-
+        <div class="card-text">Reads: <%= @article_index %> / <%= @current_topic.articles.count %></div>
+        <%= link_to  "Continue", @current_article, class: "btn btn-secondary" %>
       </div>
     </div> <!-- ./card -->
     <div class="dashboard-cards-right">
@@ -70,9 +68,8 @@
                 cy="60"/>
             </svg>
           </div>
-          <hr class="py-1">
-          <p class="card-title">Flashcards:</p>
-          <p class="card-text"><%= @current_article.title %></p>
+<!--           <p class="card-title">Flashcards:</p>
+          <p class="card-text"><%= @current_article.title %></p> -->
         </div>
       </div> <!-- ./card -->
       <div class="card card-progress-bar-right">
@@ -97,8 +94,6 @@
                 cy="60"/>
             </svg>
           </div>
-          <hr class="py-1">
-          <p class="card-title">Test yourself</p>
         </div>
       </div> <!-- ./card -->
     </div>
