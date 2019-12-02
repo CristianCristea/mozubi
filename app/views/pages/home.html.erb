@@ -1,13 +1,36 @@
 <div class="banner">
-  <div class="banner-landing" style="background-image: url(https://images.unsplash.com/photo-1569271836752-ed9351b75521?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9);height: 800px;">
-    <h1 class="banner-h1">Welcome to Mozubi!</h1>
-    <p class="banner-p">The platform where apprentices can read relevant articles,</p>
-    <p class="banner-p">practise via quizes and exam simulations.</p>
-    <%= link_to "One click sign in", dashboard_path, class: "btn landing-btn btn-primary" %>
+  <div class="banner-landing" style="background-image: url(https://images.unsplash.com/photo-1495465798138-718f86d1a4bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
+    <div class="row">
+      <div class="half">
+        <h1 class="text-one">Digital learning o</h1>
+        <%= link_to "Join the Movement!", dashboard_path, class: "btn landing-btn btn-primary" %>
+      </div>
+      <div class="second-half">
+        <h1 class="text-two">r dusty books?</h1>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="container-fluid">
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Mozubi</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Für Azubis</div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Für Unternehmen</div>
+</div>
+
+<!-- <div class="container-fluid">
   <div class="land-title">
     <h2 class="text-center">This is how it works</h2>
   </div>
@@ -33,3 +56,4 @@
 
   </div>
 </div>
+ -->

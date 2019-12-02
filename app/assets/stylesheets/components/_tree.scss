@@ -8,6 +8,7 @@ $width-expand: calc(#{$sidebar-width} * 3);
 
 $line-width: 2px;
 $line-left: calc(#{$width-half} - (#{$line-width} / 2));
+$line-width-double: calc(#{$line-width} * 2);
 
 $dot-width: $width-fourth;
 $dot-left: calc(#{$width-half} - (#{$dot-width} / 2));
@@ -27,7 +28,7 @@ $height-half: calc(#{$height} / 2);
   margin-left: 0px;
 }
 .tree-sticky {
-  background-color: $secondary;
+  background-color: $text-secondary;
   position: absolute;
   height: 100vh;
   top: 0;
@@ -73,14 +74,18 @@ $height-half: calc(#{$height} / 2);
 .tree-sticky.show .tree-item {
   padding-left: $width-tree;
   width: 100%;
-  color: $text-secondary;
+  color: $text-primary;
 }
-.tree .tree-item:hover {
-  background-color: $hover-primary;
-  width: 100%;
+.tree-item {
+  font-size: 14px;
+  letter-spacing: -.5px;
 }
-.tree .tree-item.active {
-  background-color: $hover-primary;
+// .tree .tree-item:hover {
+//   background-color: $hover-primary;
+//   width: 100%;
+// }
+.tree .tree-item.active ul.list:before {
+    background: $primary;
 }
 .tree .nav-sub {
   list-style: none;
@@ -115,72 +120,82 @@ ul {
   padding-inline-start: $line-left;
 }
 ul.list {
-    background-color: $secondary;
-    z-index: 30;
+    // background-color: $secondary;
     list-style-type: none;
     position: relative;
     min-height: 100vh;
+    font-weight: 200;
 }
 ul.list .active {
-  text-shadow: 0px 0px 5px red;
+  font-weight: 900;
 }
-ul.list:before {
-    content: ' ';
-    background: $text-secondary;
-    display: inline-block;
-    position: absolute;
-    left: $line-left;
-    width: $line-width;
-    height: 100%;
-    z-index: 400;
-}
+// ul.list > li:before {
+//     content: ' ';
+//     background: $secondary;
+//     display: inline-block;
+//     position: absolute;
+//     left: $line-left;
+//     width: $line-width;
+//     height: 150px;
+// }
 ul.list > li {
     text-decoration: none;
     display: flex;
     align-items: center;
 }
+// .nav-sub.read:after {
+//   content: ' ';
+//   background: $success;
+//   display: inline-block;
+//   position: absolute;
+//   right: 0;
+//   width: $line-width-double;
+//   height: 1rem;
+//   z-index: 80;
+// }
+ul.list > li.read:before {
+  content: ' ';
+  background: $success;
+  display: inline-block;
+  position: absolute;
+  left: $line-left;
+  width: $line-width-double;
+  height: 100%;
+  top: 0px;
+}
 ul.list > li:before {
-    content: ' ';
-    background: $text-secondary;
-    display: inline-block;
-    position: absolute;
-    border-radius: 50%;
-    left: $dot-left;
-    width: $dot-width;
-    height: $dot-width;
-    z-index: 400;
-    box-shadow: 0px 0px 10px $primary;
-}
-ul.list > li:before .read {
-    background: black;
-}
-li.read {
-  background-color: red;
+  content: ' ';
+  background: $secondary;
+  display: inline-block;
+  position: absolute;
+  left: $line-left;
+  width: $line-width-double;
+  height: 150px;
 }
 ul.sub {
-  z-index: 30;
   list-style-type: none;
   position: relative;
 }
 ul.sub .nav-sub {
   text-decoration: none;
+  font-size: 0.8rem;
   /* unvisited link */
   a:link {
-    color: $text-secondary;
+    color: $text-primary;
     text-decoration: none;
   }
 
   /* visited link */
   a:visited {
-    color: $text-secondary;
+    color: $text-primary;
     text-decoration: none;
   }
 
   /* mouse over link */
   a:hover {
-    color: $text-secondary;
+    color: $text-primary;
     text-decoration: none;
-    background: $hover-primary;
+    font-weight: 900;
   }
 
   a:active {
