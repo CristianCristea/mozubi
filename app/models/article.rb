@@ -4,6 +4,7 @@ class Article < ApplicationRecord
   has_many :chapters, dependent: :destroy
   has_many :user_articles, dependent: :destroy
   has_many :users, through: :user_articles
+  has_many :user_flashcards, dependent: :destroy
 
   def bookmarked_for?(user)
     UserArticle.where(user: user, article: self, bookmarked: true).present?
