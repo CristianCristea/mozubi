@@ -1,22 +1,36 @@
 
-<blockquote><%= @flashcard.content %></blockquote>
 
-<%= form_for check_answer_flashcard_path(@flashcard), url: {action: "check_answer"}, method: :post, html: { id: "flashcardAnswerForm", "data-form-submitted": false } do |f| %>
-  <% @flashcard.answers.each do |answer| %>
+<div class="row mt-5 justify-content-center">
+    <div class="card flashcard" style="width: 50rem;">
+      <div class="card-body">
+        <div class="flashcard-header">
+          <h6 class="card-subtitle mb-2 text-muted">Question
+            <%=  @article.flashcards.index(@flashcard) + 1 %> from <%= @article.flashcards.count %>
+          </h6>
+          <p class="card-text">
+            <%= @flashcard.content %>
+          </p>
+        </div>
 
+        <%= form_for check_answer_flashcard_path(@flashcard), url: {action: "check_answer"}, method: :post, html: { id: "flashcardAnswerForm", "data-form-submitted": false } do |f| %>
+          <% @flashcard.answers.each do |answer| %>
 
-    <%= radio_button_tag(:answer, answer.right_answer, false, id: answer.id) %>
-    <%= label_tag(answer.id, answer.content) %>
-  <% end %>
+             <div class="flashcard-answer">
+                <%= radio_button_tag(:answer, answer.right_answer, false, id: answer.id) %>
+                <%= label_tag(answer.id, class: "card-text") do %>
+                <span class="flashcard-answer-round"></span>
+                <%= answer.content %>
+                <% end %>
+             </div>
 
-  <%= f.submit "Next", class: "d-none" %>
-  <button id="showResultBtn">Check</button>
-<% end %>
+          <% end %>
 
-  <%# if @article_flashcards.last.id != params[:id].to_i %>
-    <%#= link_to "Check", flashcard_path(
-      @article_flashcards[@article_flashcards.index(@flashcard) + 1]
-    ), id: "showResultBtn" %>
-  <%# else %>
-    <%#= link_to "Results", flashcard_results_path %>
-  <%# end %>
+            <%= f.submit "Next", class: "d-none flashcard-btn btn btn-primary" %>
+            <button id="showResultBtn" class="flashcard-btn btn btn-primary">Check</button>
+
+        <% end %>
+
+      </div>
+    </div>
+</div>
+

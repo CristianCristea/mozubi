@@ -10,11 +10,8 @@ class User < ApplicationRecord
   has_many :user_articles, dependent: :destroy
   has_many :articles, through: :user_articles
 
-
   validates :first_name, presence: true, allow_blank: false, allow_nil: true
   validates :last_name, presence: true, allow_blank: false, allow_nil: true
-
-
 
   has_many :user_flashcards
 
@@ -30,4 +27,16 @@ class User < ApplicationRecord
     Article.left_outer_joins(:user_articles).where(user_articles: {article_id: nil})
   end
 
+
+  # def read?(an_article)
+  #   read_articles.include?(an_article)
+  # end
+
+  # # TODO: Refactor to do this logic in ActiveRecord - not pure Ruby (for later)
+  # def read_topic?(a_topic)
+  #   a_topic.articles.all? do |article|
+  #     read?(article)
+  #   end
+  # end
 end
+

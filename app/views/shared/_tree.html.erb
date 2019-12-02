@@ -9,14 +9,15 @@
     <div class="open">
       <ul class="nav list">
         <% @all_topics.each do |topic| %>
-          <% if topic.articles.map { |article| @art_read.include?(article.id) }  %>
+          <% if topic.articles.all? { |article| @art_read.include?(article.id) } %>
+          <%# topic.articles.map { |article| @art_read.include?(article.id) } %>
+              <li class="tree-item read">
+          <% else %>
               <li class="tree-item">
-            <% else %>
-              <li class="tree-item">
-            <% end %>
+          <% end %>
             <%# raise %>
             <div class="hidden">
-              <%= topic.name %>
+              <%= topic.name.upcase %>
               <div class="gone">
                 <ul class="sub">
                   <% topic.articles.each do |article| %>
