@@ -50,7 +50,9 @@
   margin: 0;
 }
 
-.carousel-inner, .carousel-item, #carouselMiddle {
+.carousel-inner,
+.carousel-item,
+#carouselMiddle {
   position: static;
 }
 
@@ -65,11 +67,6 @@
 
 .card-carousel-division {
   width: 65%;
-}
-
-.btn-primary {
-  background-color: $secondary;
-  border: none;
 }
 
 .carousel-btn-1 {
@@ -89,12 +86,14 @@
   justify-content: space-between;
 }
 
-.carousel-control-prev, .carousel-control-next {
+.carousel-control-prev,
+.carousel-control-next {
   position: relative;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
   background-image: none;
   color: $primary !important;
   font-size: 25px;
- }
+}
