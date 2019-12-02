@@ -4,6 +4,7 @@ class FlashcardsController < ApplicationController
   def show
     @flashcard = Flashcard.find(params[:id])
     @article = @flashcard.article
+    # @article_flashcards = @article.flashcards
     @user_flashcard = UserFlashcard.new
     user_article = UserArticle.find_by(article: @article)
 
