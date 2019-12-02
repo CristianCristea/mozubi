@@ -1,7 +1,7 @@
 <%= render "shared/top-bar" %>
 <div class="dashboard-cards">
     <div class="card card-progress-bar-left">
-      <div class="card-header">
+      <div class="card-dashboard-header">
         <h4 class="card-header-title">Today's article</h4>
         <i class="fa fa-book card-title-icon" aria-hidden="true"></i>
       </div>
@@ -34,7 +34,7 @@
               <%= article.title %>
             </div>
             <div class="card-body-topic-status">
-              <%= @not_read_articles.include?(article) ? 'read' : 'not read' %>
+              <%= @not_read_articles.include?(article) ? 'not read' : 'read' %>
             </div>
           <% end %>
         </div>
@@ -47,7 +47,7 @@
     </div> <!-- ./card -->
     <div class="dashboard-cards-right">
       <div class="card card-progress-bar-right">
-        <div class="card-header">
+        <div class="card-dashboard-header">
           <h4 class="card-header-title">Flashcards</h4>
           <i class="fa fa-clone card-title-icon" aria-hidden="true"></i>
         </div>
@@ -73,7 +73,7 @@
         </div>
       </div> <!-- ./card -->
       <div class="card card-progress-bar-right">
-        <div class="card-header">
+        <div class="card-dashboard-header">
           <h4 class="card-header-title">Prep Exams</h4>
           <i class="fa fa-question card-title-icon" aria-hidden="true"></i>
         </div>
