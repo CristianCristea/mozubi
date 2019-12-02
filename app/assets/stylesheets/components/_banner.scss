@@ -1,8 +1,12 @@
+$banner-height: 70vh;
+
 .banner-landing {
   background-size: cover;
   background-position: center;
   background-position: center bottom;
   max-width: 100%;
+  height: $banner-height;
+  transform: scaleX(-1);
 }
 
 .banner-h1 {
@@ -15,4 +19,9 @@
   color: $text-secondary;
   font-size: 20px;
   margin-left: 50px;
+}
+
+.banner .row {
+  margin-right: 0;
+  margin-left: 0;
 }
