@@ -1,1 +1,48 @@
 // Specific CSS for your home-page
+$margin-top: 20%;
+$button-margin-top: calc(#{$banner-height} / 3);
+
+.half {
+  background-color: rgba(0,0,0,.3);
+  height: $banner-height;
+  width: 50%;
+  left: 0;
+  top: 0;
+  transform: scaleX(-1);
+}
+.second-half {
+  background-color: rgba(0,0,0,.7);
+  height: $banner-height;
+  width: 50%;
+  left: 0;
+  top: 0;
+  transform: scaleX(-1);
+}
+.text-one {
+  color: black;
+  margin-top: $margin-top;
+  text-align: left;
+  text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
+  font-size: 48px;
+  width: 80%;
+}
+.text-two {
+  color: rgba(255, 255, 255, .8);
+  margin-top: $margin-top;
+  text-align: right;
+  font-size: 48px;
+}
+.landing-btn {
+  margin-left: 50%;
+  margin-top: $button-margin-top;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  padding: 1rem;
+  border-radius: 2px;
+  background-color: $primary;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, .4);
+}
+ .nav-tabs {
+  margin-top: 2%;
+  padding-left: 50px;
+ }

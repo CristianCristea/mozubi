@@ -28,12 +28,12 @@
 .sidebar .nav-link {
   height: 80px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 0;
   color: $text-secondary;
   font-size: 1rem;
   line-height: 2rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .sidebar .nav-item:hover {
@@ -59,3 +59,14 @@
   padding: 0;
 }
 
+.icon {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+}
+.icon p {
+  font-size: 12px;
+  line-height: 14px;
+}

@@ -42,6 +42,10 @@ class ArticlesController < ApplicationController
 
   private
 
+  def read_articles
+    Article.joins(:user_articles).where(user_articles: {user: self, read: true})
+  end
+
   def articles_read
     @articles_read = UserArticle.where(user: current_user, read: true)
     @art_read = @articles_read.map { |user_article| user_article.article_id }
