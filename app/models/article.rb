@@ -18,6 +18,14 @@ class Article < ApplicationRecord
     UserArticle.find_by(user: user, article: self).update(bookmarked: false)
   end
 
+  def reset_article_flashcards
+    UserFlashcard.where(article: self).delete_all
+  end
+
+  def flashcards_started?
+   self.user_flashcards.any?
+  end
+
   # def article_read?(user)
   #   UserArticle.find_by(user: user, article: self, read: true).read
   # end

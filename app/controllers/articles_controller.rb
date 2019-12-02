@@ -15,10 +15,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    reset_article_flashcards(@article) if article_flashcards_started?(@article)
-    # @article_read = @article.article_read?(current_user)
-    # change to first not finished card
-    # for testing point to first article if they are no flashcards for current article
+    @article.reset_article_flashcards if @article.flashcards_started?
+
     @flashcard = @article.flashcards.first
     @topic = @article.topic
     user_article = UserArticle.find_by(article: @article)
@@ -57,13 +55,5 @@ class ArticlesController < ApplicationController
 
   def link_topic
     @article = current_user.profession.topics.first.articles
-  end
-
-  def reset_article_flashcards(article)
-    UserFlashcard.where(article: article).delete_all
-  end
-
-  def article_flashcards_started?(article)
-    Article.first.user_flashcards.any?
   end
 end
