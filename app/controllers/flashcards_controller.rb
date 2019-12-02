@@ -21,17 +21,20 @@ class FlashcardsController < ApplicationController
 
   def check_answer
     @flashcard = Flashcard.find(params[:id])
-    @article_flashcards = @flashcard.article.flashcards
+    @article = @flashcard.article
+    @article_flashcards = @article.flashcards
     right_answer = set_answer["answer"] == "true"
 
-    UserFlashcard.create!(user: current_user, flashcard: @flashcard, correct: right_answer)
+    UserFlashcard.create!(user: current_user, flashcard: @flashcard, correct: right_answer, article: @article)
     redirect_to next_flashcard
   end
 
   def results
-    @flashcards_played = UserFlashcard.last.flashcard.article.flashcards.count
-    @correct_answers = UserFlashcard.where(correct: true).count
-    # change UserFlashcard with UserArticle, get access to flashcards over article
+    # @flashcards_played = UserFlashcard.where(article: UserFlashcard.last.flashcard.article)
+    @article = UserFlashcard.last.flashcard.article
+    @flashcards_played = UserFlashcard.where(article: @article)
+    @correct_answers = UserFlashcard.where(article: @article, correct: true)
+
     render "flashcards/results"
   end
 

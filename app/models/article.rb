@@ -4,6 +4,7 @@ class Article < ApplicationRecord
   has_many :chapters, dependent: :destroy
   has_many :user_articles, dependent: :destroy
   has_many :users, through: :user_articles
+  has_many :user_flashcards, dependent: :destroy
 
   def bookmarked_for?(user)
     UserArticle.where(user: user, article: self, bookmarked: true).present?
@@ -15,6 +16,14 @@ class Article < ApplicationRecord
 
   def unbookmark_for!(user)
     UserArticle.find_by(user: user, article: self).update(bookmarked: false)
+  end
+
+  def reset_article_flashcards
+    UserFlashcard.where(article: self).delete_all
+  end
+
+  def flashcards_started?
+   self.user_flashcards.any?
   end
 
   # def article_read?(user)
