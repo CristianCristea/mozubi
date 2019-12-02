@@ -1,0 +1,71 @@
+.flashcard {
+  p,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .card-body {
+    padding: 0;
+  }
+
+  .card-text {
+    font-size: 1.1rem;
+  }
+
+  label {
+    display: block;
+    padding: 1.4rem 2rem;
+
+    width: 100%;
+    height: 100%;
+    padding-left: 50px;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  label span {
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    border: 1px solid #eaeaea;
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    transition: all 0.2s linear;
+  }
+
+  .flashcard-answer-round {
+    border-radius: 50%;
+  }
+
+  /* check the button */
+  input[type="radio"]:checked + label {
+    .flashcard-answer-round {
+      border: 1px solid $primary;
+      background-color: $primary;
+    }
+  }
+}
+
+.flashcard-header {
+  padding: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.flashcard-btn {
+  width: 8rem;
+  margin: 2rem;
+}
+// .flashcard-answer {
+//   border: 1px solid transparent;
+// }
