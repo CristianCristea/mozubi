@@ -28,15 +28,15 @@ class User < ApplicationRecord
   end
 
 
-  def read?(an_article)
-    read_articles.include?(an_article)
-  end
+  # def read?(an_article)
+  #   read_articles.include?(an_article)
+  # end
 
-  # TODO: Refactor to do this logic in ActiveRecord - not pure Ruby (for later)
-  def read_topic?(a_topic)
-    a_topic.articles.all? do |article|
-      read?(article)
-    end
-  end
+  # # TODO: Refactor to do this logic in ActiveRecord - not pure Ruby (for later)
+  # def read_topic?(a_topic)
+  #   a_topic.articles.all? do |article|
+  #     read?(article)
+  #   end
+  # end
 end
 
