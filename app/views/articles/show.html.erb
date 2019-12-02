@@ -9,6 +9,7 @@
       </ol>
     </nav>
   </div>
+
   <div class=" my-5 d-flex justify-content-between align-items-center">
 
     <h3 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Read" if @article_read %></h3>
@@ -31,14 +32,14 @@
       <div class="card">
     <!-- Card header -->
         <div class="card-header" role="tab" id="headingOne1">
-          <a class="nounderline" data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
+          <a class="nounderline" data-toggle="collapse" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
           <h5 class="my-2 d-flex justify-content-between">Description
             <i class="fas fa-angle-down rotate-icon"></i>
           </h5>
           </a>
         </div>
     <!-- Card body -->
-        <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+        <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1">
           <div class="card-body">
             <p><%= @article.description %></p>
           </div>
@@ -50,15 +51,15 @@
     <!-- Card header -->
         <% @article.chapters.each do |chapter| %>
           <div class="card-header" role="tab" id="heading<%= chapter.id %>">
-            <a class="collapsed nounderline" data-toggle="collapse" data-parent="#accordionEx" href="#collapse<%= chapter.id %>" aria-expanded="false" aria-controls="collapseTwo2">
+            <a class="nounderline" data-toggle="collapse" href="#collapse<%= chapter.id %>" aria-expanded="true" aria-controls="collapseTwo2">
             <h5 class="my-2 d-flex justify-content-between">
               <%= chapter.title %>
-              <i class="fas fa-angle-down rotate-icon"></i>
+              <i class="fas fa-angle-down"></i>
             </h5>
             </a>
           </div>
     <!-- Card body -->
-        <div id="collapse<%= chapter.id %>" class="collapse" role="tabpanel" aria-labelledby="heading<%= chapter.id %>" data-parent="#accordionEx">
+        <div id="collapse<%= chapter.id %>" class="collapse show" role="tabpanel" aria-labelledby="heading<%= chapter.id %>" aria-expanded="true">
           <div class="card-body">
             <p><%= chapter.content %></p>
           </div>
