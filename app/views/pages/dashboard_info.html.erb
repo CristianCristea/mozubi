@@ -7,44 +7,28 @@
       </div>
 
       <div class="card-body text-center">
-        <div class="card-body-title">
-          <div>
-            <p>Current article:</p>
-            <p><%= @current_topic.name %></p>
-          </div>
-          <div class="round-progress-bar">
-            <svg
-              class="progress-ring"
-              width="120"
-              height="120">
-              <circle
-                class="progress-ring__circle"
-                stroke="#6a5cf7"
-                stroke-width="6"
-                fill="transparent"
-                r="52"
-                cx="60"
-                cy="60"/>
-            </svg>
-          </div>
+        <div class="round-progress-bar">
+          <svg
+            class="progress-ring"
+            width="120"
+            height="120">
+            <circle
+              class="progress-ring__circle"
+              stroke="#6a5cf7"
+              stroke-width="6"
+              fill="transparent"
+              r="52"
+              cx="60"
+              cy="60"/>
+          </svg>
         </div>
-        <div class="card-body-topics">
-          <% @current_topic.articles.each do |article| %>
-            <li> <%= article.title %></li>
-          <% end %>
+        <hr class="py-1">
+        <p class="card-title">Next article:</p>
+        <p class="card-text"><%= @current_article.title %></p>
+        <div class="card-footer">
+          <div class="card-text">Reads: <%= @article_index %> / <%= @current_topic.articles.count %></div>
+          <%= link_to  "Continue", @current_article, class: "btn btn-secondary" %>
         </div>
-        <div>
-          <% @current_topic.articles.each do |article| %>
-            <% if @not_read_articles.include?(article) %>
-              <p>not read</p>
-            <% else %>
-              <p>read</p>
-            <% end %>
-           <% end %>
-        </div>
-      </div>
-      <div class="card-footer">
-
       </div>
     </div> <!-- ./card -->
     <div class="dashboard-cards-right">
@@ -70,9 +54,6 @@
                 cy="60"/>
             </svg>
           </div>
-          <hr class="py-1">
-          <p class="card-title">Flashcards:</p>
-          <p class="card-text"><%= @current_article.title %></p>
         </div>
       </div> <!-- ./card -->
       <div class="card card-progress-bar-right">
@@ -97,8 +78,6 @@
                 cy="60"/>
             </svg>
           </div>
-          <hr class="py-1">
-          <p class="card-title">Test yourself</p>
         </div>
       </div> <!-- ./card -->
     </div>

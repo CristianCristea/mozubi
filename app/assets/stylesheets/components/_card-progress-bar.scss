@@ -1,62 +1,87 @@
-.card-progress-bar {
-  width: 320px;
-  height: 400px;
+.card-progress-bar-left {
+  width: 820px;
+  height: 500px;
   margin: 100px auto;
+  display: grid;
+  grid-template-rows: 1fr 6fr 2fr;
 
-  .card-header {
-    background-color: $primary;
-    color: $text-secondary;
-    padding: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  & > div {
+    border: 1px solid black;
   }
+}
 
-  .card-header-title {
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 1.4rem;
-    font-size: 1.4rem;
-    letter-spacing: 1px;
-    margin: 0;
+.dashboard-cards-right{
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+.card-progress-bar-right {
+  width: 350px;
+  height: 225px;
+  margin: 50px auto;
+}
+
+.card-header {
+  background-color: $primary;
+  color: $text-secondary;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header-title {
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+.card-title-icon {
+  font-size: 1.4rem;
+}
+
+hr {
+  width: 70%;
+}
+
+.card-body {
+  div {
+    border: 1px solid black;
   }
+  display: grid;
+  grid-template-rows: 40% 1fr;
 
-  .card-title-icon {
-    font-size: 1.4rem;
+  &-topics {
+    display: grid;
+
   }
+}
 
-  hr {
-    width: 70%;
-  }
+.card-text {
+  font-weight: 300;
+  font-size: 1.3rem;
+}
 
-  .card-body {
-    margin-bottom: 10px;
-  }
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+}
 
-  .card-text {
-    font-weight: 300;
-    font-size: 1.3rem;
-  }
+.card-footer {
+  border-top: none;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 10px 0 10px;
 
-  .card-title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin: 0;
-  }
+  .btn-secondary {
+    color: #fff;
 
-  .card-footer {
-    border-top: none;
-    display: flex;
-    justify-content: space-between;
-    background: #fff;
-    padding: 10px 0 10px;
-
-    .btn-secondary {
+    &:focus {
       color: #fff;
-
-      &:focus {
-        color: #fff;
-      }
     }
   }
 }
