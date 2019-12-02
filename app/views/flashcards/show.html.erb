@@ -1,7 +1,7 @@
 
 
 <div class="row justify-content-center">
-  <div class="card mb-3" style="width: 40rem; margin-top: 10rem;">
+  <div class="card mb-3" style="width: 50rem; margin-top: 10rem;">
     <div class="card-header">Question:</div>
     <div class="card-body">
       <h4 class="card-title"><%= @flashcard.content %></h4>
@@ -12,32 +12,15 @@
 <%= form_for check_answer_flashcard_path(@flashcard), url: {action: "check_answer"}, method: :post, html: { id: "flashcardAnswerForm", "data-form-submitted": false } do |f| %>
   <% @flashcard.answers.each do |answer| %>
 
-
-<div class="row justify-content-center">
-  <div class="custom-control custom-radio">
-    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-    <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
-
-         <%= radio_button_tag(:answer, answer.right_answer, false, id: answer.id, class: "custom-control-input") %>
-        <%= label_tag(answer.id, answer.content, class: "custom-control-label") %>
-
-  </div>
-
-
-
-</div>
-
+    <div class="row justify-content-center">
+      <%= radio_button_tag(:answer, answer.right_answer, false, id: answer.id) %>
+      <%= label_tag(answer.id, answer.content) %>
+    </div>
 
   <% end %>
-
-  <%= f.submit "Next", class: "d-none" %>
-  <button id="showResultBtn">Check</button>
+  <div class="row justify-content-center">
+    <%= f.submit "Next", class: "d-none" %>
+    <button id="showResultBtn">Check</button>
+  </div>
 <% end %>
 
-  <%# if @article_flashcards.last.id != params[:id].to_i %>
-    <%#= link_to "Check", flashcard_path(
-      @article_flashcards[@article_flashcards.index(@flashcard) + 1]
-    ), id: "showResultBtn" %>
-  <%# else %>
-    <%#= link_to "Results", flashcard_results_path %>
-  <%# end %>
