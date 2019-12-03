@@ -21,4 +21,6 @@ Rails.application.routes.draw do
 
   get "flashcards-results", to: "flashcards#results"
 
+  get "profile", to: "users#show"
+
 end

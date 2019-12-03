@@ -39,8 +39,11 @@
         <% end %>
       </li>
       <li class="nav-item bottom">
-        <%= link_to dashboard_path, class: "nav-link" do  %>
-          <i class="material-icons-sharp">person</i>
+        <%= link_to profile_path, class: "nav-link #{current_class?(profile_path)}" do  %>
+          <div class="icon">
+            <i class="material-icons-sharp">person</i>
+            <p>Profile</p>
+          </div>
         <% end %>
       </li>
     </ul>
