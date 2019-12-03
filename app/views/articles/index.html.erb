@@ -1,111 +1,80 @@
 <div class="container-library">
-  <div class="card-carousel">
-    <div class="card-carousel-header">
-      <div>
-        <%= @articles_read.count %> Completed
-      </div>
-      <div>
-        <i class="fas fa-check"></i>
-      </div>
-    </div>
+  <div class="row justify-content-center">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Bookmarked articles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Your next read</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Completed articles</a>
+      </li>
+    </ul>
 
-    <div id="carouselLeft" class="carousel">
-      <div class="carousel-inner">
-        <% @articles_read.each.with_index do |user_article, index| %>
-          <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
-            <p class="card-carousel-header-title"><strong><%= user_article.title %></strong></p>
-            <p class='card-carousel-header-count'><%= index + 1 %> / <%= @articles_read.count %></p>
-            <hr class="card-carousel-division py-1">
-            <p class="card-carousel-text"><%=h truncate(user_article.description, :length => 250) %></p>
-            <%= link_to "Read again", user_article, class: "btn carousel-btn-1 btn-primary" %>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="container-fluid">
+          <div class="card-library">
+            <div class="card-library-header">
+              <div>
+                Articles bookmarked: <%= @articles_bookmarked.count %>
+              </div>
+              <div>
+                <i class="far fa-bookmark"></i>
+              </div>
+            </div>
+            <div class="card-library-body">
+              <% @articles_bookmarked.each.with_index do |user_article, index| %>
+                 <%= link_to user_article do %>
+                  <p class="card-library-item"><%= user_article.title %></p>
+                <% end %>
+              <% end %>
+            </div>
           </div>
-        <% end %>
+        </div>
       </div>
-    </div>
-
-    <div class="card-carousel-bottom">
-
-      <div class="card-carousel-arrows">
-        <a class="carousel-control-prev" href="#carouselLeft" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselLeft" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="card-carousel">
-    <div class="card-carousel-header">
-      <div>
-        <%= @articles_upcoming.count %> Upcoming
-      </div>
-      <div>
-        <i class="fas fa-arrow-right"></i>
-      </div>
-    </div>
-    <div id="carouselMiddle" class="carousel">
-      <div class="carousel-inner">
-        <% @articles_upcoming.each_with_index do |article, index| %>
-          <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
-            <p class="card-carousel-header-title"><strong><%= article.title %></strong></p>
-            <p class='card-carousel-header-count'><%= index + 1 %> / <%= @articles_upcoming.count %></p>
-            <hr class="card-carousel-division py-1">
-            <p class="card-carousel-text"><%=h truncate(article.description, :length => 250) %></p>
-            <%= link_to "Continue", article, class: "btn carousel-btn-2 btn-primary" %>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="container-fluid">
+          <div class="card-library">
+            <div class="card-library-header">
+              <div>
+                Upcoming articles: <%= @articles_upcoming.count %>
+              </div>
+              <div>
+                <i class="far fa-newspaper"></i>
+              </div>
+            </div>
+            <div class="card-library-body">
+              <% @articles_upcoming.each_with_index do |article, index| %>
+                <%= link_to article do %>
+                  <p class="card-library-item"><%= article.title %></p>
+                <% end %>
+              <% end %>
+            </div>
           </div>
-        <% end %>
+        </div>
       </div>
-    </div>
-
-    <div class="card-carousel-bottom">
-      <div class="card-carousel-arrows">
-        <a class="carousel-control-prev" href="#carouselMiddle" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselMiddle" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="card-carousel">
-    <div class="card-carousel-header">
-      <div>
-        <%= @articles_bookmarked.count %> Bookmarked
-      </div>
-      <div>
-        <i class="far fa-bookmark"></i>
-      </div>
-    </div>
-    <div id="carouselRight" class="carousel">
-      <div class="carousel-inner">
-        <% @articles_bookmarked.each.with_index do |user_article, index| %>
-          <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
-            <p class="card-carousel-header-title"><strong><%= user_article.title %></strong></p>
-            <p class='card-carousel-header-count'><%= index + 1 %> / <%= @articles_bookmarked.count %></p>
-            <hr class="card-carousel-division py-1">
-            <p class="card-carousel-text"><%=h truncate(user_article.description, :length => 250) %></p>
-            <%= link_to "Read more", user_article, class: "btn carousel-btn-1 btn-primary" %>
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="container-fluid">
+          <div class="card-library">
+            <div class="card-library-header">
+              <div>
+                Articles completed: <%= @articles_read.count %>
+              </div>
+              <div>
+                <i class="fas fa-check"></i>
+              </div>
+            </div>
+            <div class="card-library-body">
+              <% @articles_read.each.with_index do |user_article, index| %>
+                  <%= link_to user_article do %>
+                    <p class="card-library-item"><%= user_article.title %></p>
+                  <% end %>
+              <% end %>
+            </div>
           </div>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="card-carousel-bottom">
-      <div class="card-carousel-arrows">
-        <a class="carousel-control-prev" href="#carouselRight" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselRight" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-          <span class="sr-only">Next</span>
-        </a>
+        </div>
       </div>
     </div>
   </div>
