@@ -1,0 +1,112 @@
+<div class="container-library">
+  <div class="card-carousel">
+    <div class="card-carousel-header">
+      <div>
+        <%= @articles_read.count %> Completed
+      </div>
+      <div>
+        <i class="fas fa-check"></i>
+      </div>
+    </div>
+
+    <div id="carouselLeft" class="carousel">
+      <div class="carousel-inner">
+        <% @articles_read.each.with_index do |user_article, index| %>
+          <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
+            <p class="card-carousel-header-title"><strong><%= user_article.title %></strong></p>
+            <p class='card-carousel-header-count'><%= index + 1 %> / <%= @articles_read.count %></p>
+            <hr class="card-carousel-division py-1">
+            <p class="card-carousel-text"><%=h truncate(user_article.description, :length => 250) %></p>
+            <%= link_to "Read again", user_article, class: "btn carousel-btn-1 btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="card-carousel-bottom">
+
+      <div class="card-carousel-arrows">
+        <a class="carousel-control-prev" href="#carouselLeft" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselLeft" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div> <!-- end of card -->
+  <div class="card-carousel">
+    <div class="card-carousel-header">
+      <div>
+        <%= @articles_upcoming.count %> Upcoming
+      </div>
+      <div>
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </div>
+    <div id="carouselMiddle" class="carousel">
+      <div class="carousel-inner">
+        <% @articles_upcoming.each_with_index do |article, index| %>
+          <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
+            <p class="card-carousel-header-title"><strong><%= article.title %></strong></p>
+            <p class='card-carousel-header-count'><%= index + 1 %> / <%= @articles_upcoming.count %></p>
+            <hr class="card-carousel-division py-1">
+            <p class="card-carousel-text"><%=h truncate(article.description, :length => 250) %></p>
+            <%= link_to "Continue", article, class: "btn carousel-btn-2 btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="card-carousel-bottom">
+      <div class="card-carousel-arrows">
+        <a class="carousel-control-prev" href="#carouselMiddle" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselMiddle" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div> <!-- end of card -->
+  <div class="card-carousel">
+    <div class="card-carousel-header">
+      <div>
+        <%= @articles_bookmarked.count %> Bookmarked
+      </div>
+      <div>
+        <i class="far fa-bookmark"></i>
+      </div>
+    </div>
+    <div id="carouselRight" class="carousel">
+      <div class="carousel-inner">
+        <% @articles_bookmarked.each.with_index do |user_article, index| %>
+          <div class="carousel-item <%= index == 0 ? 'active' : '' %> ">
+            <p class="card-carousel-header-title"><strong><%= user_article.title %></strong></p>
+            <p class='card-carousel-header-count'><%= index + 1 %> / <%= @articles_bookmarked.count %></p>
+            <hr class="card-carousel-division py-1">
+            <p class="card-carousel-text"><%=h truncate(user_article.description, :length => 250) %></p>
+            <%= link_to "Read more", user_article, class: "btn carousel-btn-1 btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="card-carousel-bottom">
+      <div class="card-carousel-arrows">
+        <a class="carousel-control-prev" href="#carouselRight" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselRight" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
