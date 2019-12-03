@@ -19,7 +19,7 @@
             <%= render 'shared/sidebar' %>
           </div>
         <% end %>
-        <% if request.path =~ /#{articles_path}/ %>
+        <% if request.path =~ /#{articles_path}/ && request.path != articles_path %>
           <div class="tree <%= articles_class? %> close-tree" style="flex-grow: 1">
             <%= render 'shared/tree' %>
           </div>

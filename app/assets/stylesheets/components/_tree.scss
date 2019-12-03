@@ -152,7 +152,7 @@ ul {
 }
 .list > li:before {
   content: ' ';
-  background: $secondary;
+  background: $unfinished;
   display: inline-block;
   position: absolute;
   left: $line-left;
