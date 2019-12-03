@@ -16,7 +16,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'readingtime'
-
+gem 'greensock-rails'
+gem 'underscore-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

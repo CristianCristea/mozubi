@@ -31,10 +31,18 @@ class FlashcardsController < ApplicationController
   end
 
   def results
-    # @flashcards_played = UserFlashcard.where(article: UserFlashcard.last.flashcard.article)
-    @article = UserFlashcard.last.flashcard.article
+    @article = UserFlashcard.last.article
+    @flashcard = @article.flashcards.first
     @flashcards_played = UserFlashcard.where(article: @article)
     @correct_answers = UserFlashcard.where(article: @article, correct: true)
+    @upcoming_articles = current_user.upcoming_articles
+    @flashcards_percentage = ((@correct_answers.count.to_f / @flashcards_played.count) * 100).to_i
+
+    if @upcoming_articles.empty?
+      @next_article = @article.topic.articles.first
+    else
+      @next_article = @upcoming_articles.first
+    end
 
     render "flashcards/results"
   end
