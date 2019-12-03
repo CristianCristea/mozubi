@@ -6,7 +6,7 @@
       </div>
     </div> -->
     <div class="open">
-      <ul class="nav list">
+      <ul class="nav list accordion" id="accordionExample">
         <% @all_topics.each do |topic| %>
           <% if topic.articles.all? { |article| @art_read.include?(article.id) } %>
           <%# topic.articles.map { |article| @art_read.include?(article.id) } %>
@@ -15,11 +15,11 @@
               <li class="tree-item">
           <% end %>
             <%# raise %>
-            <div class="hidden" id="myGroup">
-              <a href="#submenu<%= topic.id %>" data-toggle="collapse" aria-expanded="false" class=" list-group-item-action #{topic_class?(topic)}">
+            <div class="hidden">
+              <a href="#submenu<%= topic.id %>" aria-controls='submenu<%= topic.id %>' data-toggle="collapse" aria-expanded="true" data-target="#submenu<%= topic.id %>" class=" list-group-item-action #{topic_class?(topic)}">
                 <%= topic.name.upcase %>
               </a>
-              <div id='submenu<%= topic.id %>' data-parent="#myGroup" class="collapse sidebar-submenu">
+              <div id='submenu<%= topic.id %>' class="collapse sidebar-submenu" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <ul class="sub">
                   <% topic.articles.each do |article| %>
                     <% if @art_read.include?(article.id) %>
@@ -42,18 +42,15 @@
     </div>
 </div>
 
-<script>
-  var $myGroup = $('#myGroup');
-  $myGroup.on('show.bs.collapse','.collapse', function() {
-      $myGroup.find('.collapse.in').collapse('hide');
-  });
+<!-- <script>
 
-  // const tree = document.querySelector(".tree")
-  // tree.addEventListener("click", (e) => {
-  //   tree.classList.toggle("show");
-  // })
-  // const search = document.querySelector(".searchbar")
-  // search.addEventListener("click", (e) => {
-  //   e.stopPropagation();
-  // })
-</script>
+
+  const tree = document.querySelector(".tree")
+  tree.addEventListener("click", (e) => {
+    tree.classList.toggle("show");
+  })
+  const search = document.querySelector(".searchbar")
+  search.addEventListener("click", (e) => {
+    e.stopPropagation();
+  })
+</script> -->
