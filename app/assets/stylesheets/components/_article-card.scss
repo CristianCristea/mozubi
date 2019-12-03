@@ -2,10 +2,6 @@
   text-decoration: none !important
 }
 
-.article-title {
-  margin-left: 37%;
-}
-
 
 .material-icons-sharp {
   padding-left: 1px;
@@ -30,9 +26,18 @@
   padding-top: 0px;
 }
 
-
 .read-time {
-  margin-bottom: 0px;
-  margin-right: -150px;
+  margin-bottom: 0rem;
+  padding-right: 10px;
 }
 
+.article-details {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.title-style {
+  display: flex;
+  justify-content: center;
+}
