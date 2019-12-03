@@ -13,6 +13,7 @@
   <div class=" my-5 d-flex justify-content-between align-items-center">
 
     <h3 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Read" if @article_read %></h3>
+    <p class="read-time"><%= @reading_minutes %> min</p>
 
   <% if @article.bookmarked_for?(current_user) %>
     <%= link_to unbookmark_article_path(@article), method: :patch do %>
@@ -59,7 +60,7 @@
             </a>
           </div>
     <!-- Card body -->
-        <div id="collapse<%= chapter.id %>" class="collapse show" role="tabpanel" aria-labelledby="heading<%= chapter.id %>" aria-expanded="true">
+        <div id="collapse<%= chapter.id %>" class="collapse" role="tabpanel" aria-labelledby="heading<%= chapter.id %>" aria-expanded="true">
           <div class="card-body">
             <p><%= chapter.content %></p>
           </div>
@@ -73,6 +74,9 @@
     </div>
   </div>
 </div>
+
+
+<!--  -->
 
 <!-- <script>
   document
