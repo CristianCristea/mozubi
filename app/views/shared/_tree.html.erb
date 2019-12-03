@@ -1,10 +1,10 @@
 <div>
-    <div class="search">
+    <!-- <div class="search">
       <i class="material-icons-sharp" id="search-icon">search</i>
       <div class="hidden searchbar">
-        <%= render 'shared/searchbar' %>
+        <%#= render 'shared/searchbar' %>
       </div>
-    </div>
+    </div> -->
     <div class="open">
       <ul class="nav list">
         <% @all_topics.each do |topic| %>
@@ -15,11 +15,11 @@
               <li class="tree-item">
           <% end %>
             <%# raise %>
-            <div class="hidden">
-              <div class="dropdown <%= articles_class? %>">
+            <div class="hidden" id="myGroup">
+              <a href="#submenu<%= topic.id %>" data-toggle="collapse" aria-expanded="false" class=" list-group-item-action #{topic_class?(topic)}">
                 <%= topic.name.upcase %>
-              </div>
-              <div class="gone">
+              </a>
+              <div id='submenu<%= topic.id %>' data-parent="#myGroup" class="collapse sidebar-submenu">
                 <ul class="sub">
                   <% topic.articles.each do |article| %>
                     <% if @art_read.include?(article.id) %>
@@ -43,12 +43,17 @@
 </div>
 
 <script>
-  const tree = document.querySelector(".tree")
-  tree.addEventListener("click", (e) => {
-    tree.classList.toggle("show");
-  })
-  const search = document.querySelector(".searchbar")
-  search.addEventListener("click", (e) => {
-    e.stopPropagation();
-  })
+  var $myGroup = $('#myGroup');
+  $myGroup.on('show.bs.collapse','.collapse', function() {
+      $myGroup.find('.collapse.in').collapse('hide');
+  });
+
+  // const tree = document.querySelector(".tree")
+  // tree.addEventListener("click", (e) => {
+  //   tree.classList.toggle("show");
+  // })
+  // const search = document.querySelector(".searchbar")
+  // search.addEventListener("click", (e) => {
+  //   e.stopPropagation();
+  // })
 </script>

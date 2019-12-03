@@ -11,4 +11,8 @@ module ApplicationHelper
     return 'active' if request.path =~ /#{article_path(article)}/
     ''
   end
+  def topic_class?(topic)
+    return 'active' if request.path =~ /#{topic_path(topic)}/
+    ''
+  end
 end

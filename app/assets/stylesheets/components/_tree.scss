@@ -120,7 +120,7 @@ $width-expand: calc(#{$sidebar-width} * 5);
   font-size: 24px;
 }
 .open {
-  height: calc(100vh - 50px);
+  height: calc(100vh - 0px);
   display: flex;
 }
 ul {
@@ -163,9 +163,12 @@ ul.sub {
   list-style-type: none;
   position: relative;
 }
-ul.sub .nav-sub {
+.tree {
   text-decoration: none;
   font-size: 0.8rem;
+  a {
+    background-color: white !important;
+  }
   /* unvisited link */
   a:link {
     color: $text-primary;
@@ -182,13 +185,13 @@ ul.sub .nav-sub {
   a:hover {
     color: $text-primary;
     text-decoration: none;
-    background-color: $hover-primary;
+    background-color: white;
     font-weight: 900;
   }
 
   a:active {
     color: $text-primary;
     text-decoration: none;
-    background: $hover-primary;
+    background-color: white;
   }
 }
