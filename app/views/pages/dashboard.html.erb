@@ -1,95 +1,62 @@
 <%= render "shared/top-bar" %>
+
 <div class="dashboard-cards">
-    <div class="card card-progress-bar">
-      <div class="card-header">
-        <h4 class="card-header-title">Library</h4>
+    <div class="card card-progress-bar-left">
+      <div class="card-dashboard-header">
+        <h4 class="card-header-title">Today's article</h4>
         <i class="fa fa-book card-title-icon" aria-hidden="true"></i>
       </div>
 
-      <div class="card-body text-center">
-        <div class="round-progress-bar">
-          <svg
-            class="progress-ring"
-            width="120"
-            height="120">
-            <circle
-              class="progress-ring__circle"
-              stroke="#6a5cf7"
-              stroke-width="6"
-              fill="transparent"
-              r="52"
-              cx="60"
-              cy="60"/>
-          </svg>
+      <div class="card-body card-dashboard-body text-center">
+        <div class="card-body-main">
+          <div class='card-body-title'>
+            <p class='card-current-title-label'>Your topic is:</p>
+            <h3 class='card-current-title-title'><%= @current_topic.name %></h3>
+          </div>
+          <div class="todays-completionrate">
+            <i><%= @article_index %></i>
+            <abbr>out<br>of <strong><%= @current_topic.articles.count %></strong></abbr>
+          </div>
         </div>
-        <hr class="py-1">
-        <p class="card-title">Next article:</p>
-        <p class="card-text"><%= @current_article.title %></p>
-        <div class="card-footer">
-          <div class="card-text">Reads: <%= @article_index %> / <%= @current_topic.articles.count %></div>
-          <%= link_to  "Continue", @current_article, class: "btn btn-secondary" %>
+        <div class="card-body-topics">
+          <% @current_topic.articles.each do |article| %>
+            <div class="card-body-topic-title">
+              <%= article.title %>
+            </div>
+            <div class="card-body-topic-status">
+              <%= render inline: @not_read_articles.include?(article) ? '<i class="far fa-clock"></i>' : '<i class="fas fa-check"></i>' %>
+            </div>
+          <% end %>
         </div>
-      </div>
-    </div> <!-- ./card -->
-    <div class="card card-progress-bar">
-      <div class="card-header">
-        <h4 class="card-header-title">Flashcards</h4>
-        <i class="fa fa-clone card-title-icon" aria-hidden="true"></i>
-      </div>
 
-      <div class="card-body text-center">
-        <div class="round-progress-bar">
-          <svg
-            class="progress-ring"
-            width="120"
-            height="120">
-            <circle
-              class="progress-ring__circle"
-              stroke="#6a5cf7"
-              stroke-width="6"
-              fill="transparent"
-              r="52"
-              cx="60"
-              cy="60"/>
-          </svg>
-        </div>
-        <hr class="py-1">
-        <p class="card-title">Flashcards:</p>
-        <p class="card-text"><%= @current_article.title %></p>
-        <div class="card-footer">
-          <div class="card-text">Cards: 0 / 10</div>
-          <%= link_to  "Continue", @current_article, class: "btn btn-secondary" %>
-        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-text card-dashboard-text small-text">Total reading time: 14 minutes</div>
+        <%= link_to  "Read next article", @current_article, class: "btn btn-secondary" %>
       </div>
     </div> <!-- ./card -->
-    <div class="card card-progress-bar">
-      <div class="card-header">
-        <h4 class="card-header-title">Prep Exams</h4>
-        <i class="fa fa-question card-title-icon" aria-hidden="true"></i>
-      </div>
+    <div class="dashboard-cards-right">
+      <div class="card card-progress-bar-right">
+        <div class="card-dashboard-header">
+          <h4 class="card-header-title">Flashcards</h4>
+          <i class="fa fa-clone card-title-icon" aria-hidden="true"></i>
+        </div>
 
-      <div class="card-body text-center">
-        <div class="round-progress-bar">
-          <svg
-            class="progress-ring"
-            width="120"
-            height="120">
-            <circle
-              class="progress-ring__circle"
-              stroke="#6a5cf7"
-              stroke-width="6"
-              fill="transparent"
-              r="52"
-              cx="60"
-              cy="60"/>
-          </svg>
+        <div class="card-body secondary-card">
+          <span>25% <i>completion <br>rate</i></span>
+          <progress max="100" value="25"></progress>
         </div>
-        <hr class="py-1">
-        <p class="card-title">Test yourself</p>
-        <div class="card-footer mt-5">
-          <div class="card-text">Exams: 0 / 10</div>
-          <a href="#" class="btn btn-secondary">Continue</a>
+      </div> <!-- ./card -->
+      <div class="card card-progress-bar-right">
+        <div class="card-dashboard-header">
+          <h4 class="card-header-title">Prep Exams</h4>
+          <i class="fa fa-question card-title-icon" aria-hidden="true"></i>
         </div>
-      </div>
-    </div> <!-- ./card -->
+
+        <div class="card-body secondary-card">
+          <span>17% <i>completion <br>rate</i></span>
+          <progress max="100" value="17"></progress>
+        </div>
+      </div> <!-- ./card -->
+    </div>
 </div> <!-- ./row -->
