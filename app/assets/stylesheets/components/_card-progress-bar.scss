@@ -1,7 +1,7 @@
 .card-progress-bar-left {
   width: 820px;
   height: 500px;
-  margin: 100px auto;
+  margin: 40px auto;
   display: grid;
   grid-template-rows: 1fr 6fr 1fr;
 
@@ -37,14 +37,16 @@
 }
 
 .dashboard-cards-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-right: auto;
-  margin-top: 50px;
+  margin: 40px 36px;
 }
 
 .card-progress-bar-right {
   width: 350px;
   height: 225px;
-  margin: 50px auto;
 }
 
 .card-dashboard-header {
@@ -72,10 +74,9 @@ hr {
   width: 70%;
 }
 
-.card-body {
+.card-dashboard-body {
   display: grid;
   grid-template-rows: 40% 1fr;
-  grid-row-gap: 35px;
 
 
   &-topics {
@@ -85,7 +86,7 @@ hr {
   }
 }
 
-.card-text {
+.card-dashboard-text {
   font-weight: 300;
   font-size: 1.3rem;
 }
@@ -96,10 +97,27 @@ hr {
   margin: 0;
 }
 
+.card-body-topics {
+  display: grid;
+  grid-template-columns: 66% 1fr;
+}
+
 .card-body-topic-title {
   display: flex;
   padding-left: 20px;
   padding-top: 10px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #6a5cf7;
+    top: 21px;
+    left: 6px;
+  }
 }
 
 .card-body-topic-status {
@@ -107,17 +125,14 @@ hr {
 }
 
 .card-footer {
-  // border-top: none;
-  // display: flex;
-  // justify-content: space-between;
-  // background: #fff;
-  // padding: 1.25rem;
     display: grid;
     grid-template-columns: 2fr 1fr;
     background-color: white;
 
   .btn-secondary {
-    color: #fff;
+    color: $text-secondary;
+    background-color: $conifer;
+    border: none;
 
     &:focus {
       color: #fff;
@@ -130,4 +145,58 @@ hr {
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+.todays-completionrate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: 52px;
+    font-style: normal;
+  }
+  abbr {
+    font-size: 13px;
+    opacity: 0.6;
+    line-height: 13px;
+    margin: 15px 0 0 6px;
+  }
+}
+
+.secondary-card {
+  display: flex;
+  flex-direction: column;
+  padding-top: 26px !important;
+
+
+  span {
+    font-size: 52px;
+    position: relative;
+
+    i {
+      position: absolute;
+      top: 25px;
+      right: 130px;
+      font-size: 13px;
+      opacity: 0.6;
+    }
+  }
+
+  progress {
+    border-radius: 2px;
+    width: 100%;
+    height: 4px;
+  }
+  progress::-webkit-progress-bar {
+    background-color: #f1f1f1;
+    border-radius: 2px;
+  }
+  progress::-webkit-progress-value {
+    border-radius: 2px;
+    background-color: $conifer;
+  }
+  progress::-moz-progress-bar {
+    /* style rules */
+  }
 }
