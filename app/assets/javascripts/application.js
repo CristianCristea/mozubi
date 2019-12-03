@@ -3,4 +3,3 @@
 //= require 'greensock/easing/EasePack'
 // = require jquery
 // = require rails-ujs
-// = require_tree .

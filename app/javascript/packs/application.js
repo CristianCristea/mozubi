@@ -14,6 +14,7 @@ const removePointerEvents = collection => {
     el.classList.add("remove-pointer");
   }
 };
+
 if (showResultBtn) {
   showResultBtn.addEventListener("click", e => {
     e.preventDefault();
