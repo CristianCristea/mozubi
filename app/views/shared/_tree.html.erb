@@ -1,5 +1,4 @@
-<!-- <nav class="d-none d-md-block bg-light"> -->
-  <div class="close-tree tree-sticky <%= articles_class? %>">
+<div>
     <div class="search">
       <i class="material-icons-sharp" id="search-icon">search</i>
       <div class="hidden searchbar">
@@ -17,7 +16,9 @@
           <% end %>
             <%# raise %>
             <div class="hidden">
-              <%= topic.name.upcase %>
+              <div class="dropdown <%= articles_class? %>">
+                <%= topic.name.upcase %>
+              </div>
               <div class="gone">
                 <ul class="sub">
                   <% topic.articles.each do |article| %>
@@ -39,18 +40,15 @@
         <% end %>
       </ul>
     </div>
-  </div>
-<!-- </nav> -->
+</div>
 
 <script>
-  const tree = document.querySelector(".tree-sticky")
+  const tree = document.querySelector(".tree")
   tree.addEventListener("click", (e) => {
     tree.classList.toggle("show");
   })
   const search = document.querySelector(".searchbar")
-search.addEventListener("click", (e) => {
+  search.addEventListener("click", (e) => {
     e.stopPropagation();
   })
-
-
 </script>

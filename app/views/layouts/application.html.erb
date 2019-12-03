@@ -20,8 +20,8 @@
           </div>
         <% end %>
         <% if request.path =~ /#{articles_path}/ %>
-          <div class="tree" style="flex-grow: 1">
-            <%= render 'shared/tree' %>
+          <div class="tree <%= articles_class? %> close-tree" style="flex-grow: 1">
+            <%= render 'shared/test-tree' %>
           </div>
         <% end %>
         <div class="content" style="flex-grow: 2">
@@ -34,3 +34,5 @@
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
+
+

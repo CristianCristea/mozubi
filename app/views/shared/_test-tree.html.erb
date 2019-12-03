@@ -1,0 +1,78 @@
+<!-- Bootstrap row -->
+<div class="" id="body-row">
+    <!-- Sidebar -->
+    <div id="sidebar-container" class="sidebar-expanded d-none d-md-block"><!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
+        <!-- Bootstrap List Group -->
+        <ul class="list-group nav">
+            <!-- Menu with submenu -->
+          <% @all_topics.each do |topic| %>
+            <a href="#submenu<% topic.id %>" data-toggle="collapse" aria-expanded="false" class=" list-group-item-action">
+                <div class="list">
+                    <% if topic.articles.all? { |article| @art_read.include?(article.id) } %>
+                    <%# topic.articles.map { |article| @art_read.include?(article.id) } %>
+                        <li class="tree-item menu-collapsed read">
+                    <% else %>
+                        <li class="tree-item">
+                    <% end %>
+                      <%# raise %>
+                      <div class="hidden">
+                          <span class="menu-collapsed"><%= topic.name %></span>
+                      </div>
+            </a>
+              <div id='submenu<% topic.id %>' class="collapse sidebar-submenu">
+                <ul class="sub">
+                  <% topic.articles.each do |article| %>
+                    <% if @art_read.include?(article.id) %>
+                      <li class="nav-sub read">
+                    <% else %>
+                      <li class="nav-sub">
+                    <% end %>
+                      <!-- <a href="#" class="list-group-item list-group-item-action bg-dark text-white"> -->
+                        <%= link_to article, class: "#{article_class?(article)}" do %>
+                          <span class="menu-collapsed"><%= article.title %></span>
+                        <% end %>
+                      <!-- </a> -->
+                      <%# raise %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+                    </li>
+                </div>
+            <% end %>
+        </ul><!-- List Group END-->
+    </div><!-- sidebar-container END -->
+
+</div><!-- body-row END -->
+
+<script>
+
+  // Hide submenus
+$('#body-row .collapse').collapse('hide');
+
+// Collapse/Expand icon
+$('#collapse-icon').addClass('fa-angle-double-left');
+
+// Collapse click
+$('[data-toggle=sidebar-colapse]').click(function() {
+    SidebarCollapse();
+});
+
+function SidebarCollapse () {
+    $('.menu-collapsed').toggleClass('d-none');
+    $('.sidebar-submenu').toggleClass('d-none');
+    $('.submenu-icon').toggleClass('d-none');
+    $('#sidebar-container').toggleClass('sidebar-expanded sidebar-collapsed');
+
+    // Treating d-flex/d-none on separators with title
+    var SeparatorTitle = $('.sidebar-separator-title');
+    if ( SeparatorTitle.hasClass('d-flex') ) {
+        SeparatorTitle.removeClass('d-flex');
+    } else {
+        SeparatorTitle.addClass('d-flex');
+    }
+
+    // Collapse/Expand icon
+    $('#collapse-icon').toggleClass('fa-angle-double-left fa-angle-double-right');
+}
+</script>

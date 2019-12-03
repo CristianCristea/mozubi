@@ -27,80 +27,216 @@ user = User.create!(
 
 puts "Creating topics..."
 topic1 = Topic.create!(
-  name: "Back End Development",
+  name: "Representation",
   profession: profession
 )
 
 topic2 = Topic.create!(
-  name: "Front End Development",
+  name: "Sales conversations",
   profession: profession
 )
 
 topic3 = Topic.create!(
-  name: "The Asset Pipeline",
+  name: "Service area cash desk",
   profession: profession
 )
 
 topic4 = Topic.create!(
-  name: "Working with JS in Rails",
+  name: "Goods presentation",
   profession: profession
 )
 
 topic5 = Topic.create!(
-  name: "Autoloading Constants",
+  name: "Advertising",
+  profession: profession
+)
+
+topic6 = Topic.create!(
+  name: "Goods procurement",
+  profession: profession
+)
+
+topic7 = Topic.create!(
+  name: "Goods handling",
+  profession: profession
+)
+
+topic8 = Topic.create!(
+  name: "Controlling",
+  profession: profession
+)
+topic9 = Topic.create!(
+  name: "Pricing policies",
+  profession: profession
+)
+
+topic10 = Topic.create!(
+  name: "Sales situations",
+  profession: profession
+)
+
+topic11 = Topic.create!(
+  name: "Business process management",
+  profession: profession
+)
+topic12 = Topic.create!(
+  name: "Marketing",
+  profession: profession
+)
+topic13 = Topic.create!(
+  name: "Staff planning",
+  profession: profession
+)
+topic14 = Topic.create!(
+  name: "Corporate management",
   profession: profession
 )
 
 puts "Creating articles..."
 topic1_article1 = Article.create!(
-  title: "Active Record Basics",
+  title: "Working and learning techniques",
   description: "This guide is an introduction to Active Record. After reading this guide, you will know: What Object Relational Mapping and Active Record are and how they are used in Rails. How Active Record fits into the Model-View-Controller paradigm. How to use Active Record models to manipulate data stored in a relational database. Active Record schema naming conventions. The concepts of database migrations, validations, and callbacks.",
   topic: topic1
 )
 
 topic1_article2 = Article.create!(
-  title: "Action Controller Overview",
+  title: "Tasks and structure of the retail trade",
   description: "In this guide you will learn how controllers work and how they fit into the request cycle in your application.",
   topic: topic1
 )
 
 topic2_article1 = Article.create!(
-  title: "Sass Basics",
+  title: "Merchandise submission",
   description: "If you're new to web design, you may have heard the term 'Sass' floating around. If you're not sure what Sass does and whether or not you should be using it, we're here to help with our guide to Sass.In short, Sass is a CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS. The aim is to make the coding process simpler and more efficient. Let's explore in more detail.",
   topic: topic2
 )
 
 topic3_article1 = Article.create!(
-  title: "The Asset Pipeline 1",
+  title: "Legal capacity and capacity to contract",
   description: "The asset pipeline provides a framework to concatenate and minify or compress JavaScript and CSS assets. It also adds the ability to write these assets in other languages and pre-processors such as CoffeeScript, Sass and ERB. It allows assets in your application to be automatically combined with assets from other gems.",
   topic: topic3
 )
 
 topic3_article2 = Article.create!(
-  title: "The Asset Pipeline 2",
+  title: "Invalidity and countervailability",
   description: "In the production environment Sprockets uses the fingerprinting scheme outlined above. By default Rails assumes assets have been precompiled and will be served as static assets by your web server. During the precompilation phase an SHA256 is generated from the contents of the compiled files, and inserted into the filenames as they are written to disk. These fingerprinted names are used by the Rails helpers in place of the manifest name.",
   topic: topic3
 )
 
 topic4_article1 = Article.create!(
-  title: "Ajax and Unobtrusive JS",
+  title: "Store design",
   description: "In order to understand Ajax, you must first understand what a web browser does normally. When you type http://localhost:3000 into your browser's address bar and hit 'Go', the browser (your 'client') makes a request to the server. It parses the response, then fetches all associated assets, like JavaScript files, stylesheets and images. It then assembles the page. If you click a link, it does the same process: fetch the page, fetch the assets, put it all together, show you the results. This is called the 'request response cycle'.",
   topic: topic4
 )
 
-
-
 topic4_article2 = Article.create!(
-  title: "Built-in Helpers",
+  title: "Visual merchandising",
   description: "Rails provides a bunch of view helper methods written in Ruby to assist you in generating HTML. Sometimes, you want to add a little Ajax to those elements, and Rails has got your back in those cases. Because of Unobtrusive JavaScript, the Rails Ajax helpers are actually in two parts: the JavaScript half and the Ruby half. Unless you have disabled the Asset Pipeline, rails-ujs provides the JavaScript half, and the regular Ruby view helpers add appropriate tags to your DOM. You can read below about the different events that are fired dealing with remote elements inside your application.",
   topic: topic4
 )
 
 topic5_article1 = Article.create!(
-  title: "Key aspects of constants",
+  title: "Advertising media",
   description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
   topic: topic5
 )
+
+topic6_article1 = Article.create!(
+  title: "Quantity, time and price planning",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic6
+)
+
+topic7_article1 = Article.create!(
+  title: "Material defect",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic7
+)
+
+topic8_article1 = Article.create!(
+  title: "Profit and loss account",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic8
+)
+
+topic9_article1 = Article.create!(
+  title: "Price Indication Ordinance",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic9
+)
+
+topic9_article2 = Article.create!(
+  title: "Forward calculation",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic9
+)
+
+topic9_article3 = Article.create!(
+  title: "Backward calculation",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic9
+)
+
+topic9_article4 = Article.create!(
+  title: "Calculation factor",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic9
+)
+
+topic9_article5 = Article.create!(
+  title: "Costing surcharge, costing deduction",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic9
+)
+
+topic9_article6 = Article.create!(
+  title: "Gross margin",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic9
+)
+
+topic10_article1 = Article.create!(
+  title: "Customer behavior",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic10
+)
+
+topic11_article1 = Article.create!(
+  title: "Sales tax",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic11
+)
+
+topic12_article1 = Article.create!(
+  title: "Marketing mix",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic12
+)
+
+topic12_article2 = Article.create!(
+  title: "Customer Relationship Management (CRM)",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic12
+)
+
+topic12_article3 = Article.create!(
+  title: "Multi-channel strategy",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic12
+)
+
+topic13_article1 = Article.create!(
+  title: "Conducting a conversation",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic13
+)
+
+topic14_article1 = Article.create!(
+  title: "Company, Commercial Register",
+  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  topic: topic14
+)
+
 
 puts "Creating article chapters..."
 
