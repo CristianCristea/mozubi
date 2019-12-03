@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
     @articles_upcoming = current_user.upcoming_articles
     @articles_upcoming = Article.all if @articles_upcoming.empty?
 
+
   end
 
   def show
@@ -27,7 +28,7 @@ class ArticlesController < ApplicationController
       @article_read = user_article.read
     end
 
-    @reading_minutes = calculate_reading_time(@article) / 60
+    @reading_minutes = (calculate_reading_time(@article) / 60.0).ceil
   end
 
   def bookmark

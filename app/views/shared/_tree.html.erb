@@ -1,12 +1,12 @@
 <div>
-    <div class="search">
+    <!-- <div class="search">
       <i class="material-icons-sharp" id="search-icon">search</i>
       <div class="hidden searchbar">
-        <%= render 'shared/searchbar' %>
+        <%#= render 'shared/searchbar' %>
       </div>
-    </div>
+    </div> -->
     <div class="open">
-      <ul class="nav list">
+      <ul class="nav list accordion" id="accordionExample">
         <% @all_topics.each do |topic| %>
           <% if topic.articles.all? { |article| @art_read.include?(article.id) } %>
           <%# topic.articles.map { |article| @art_read.include?(article.id) } %>
@@ -16,10 +16,10 @@
           <% end %>
             <%# raise %>
             <div class="hidden">
-              <div class="dropdown <%= articles_class? %>">
+              <a href="#submenu<%= topic.id %>" aria-controls='submenu<%= topic.id %>' data-toggle="collapse" aria-expanded="true" data-target="#submenu<%= topic.id %>" class=" list-group-item-action #{topic_class?(topic)}">
                 <%= topic.name.upcase %>
-              </div>
-              <div class="gone">
+              </a>
+              <div id='submenu<%= topic.id %>' class="collapse sidebar-submenu" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <ul class="sub">
                   <% topic.articles.each do |article| %>
                     <% if @art_read.include?(article.id) %>
@@ -42,7 +42,9 @@
     </div>
 </div>
 
-<script>
+<!-- <script>
+
+
   const tree = document.querySelector(".tree")
   tree.addEventListener("click", (e) => {
     tree.classList.toggle("show");
@@ -51,4 +53,4 @@
   search.addEventListener("click", (e) => {
     e.stopPropagation();
   })
-</script>
+</script> -->
