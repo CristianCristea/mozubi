@@ -1,30 +1,30 @@
-<div class="container col-lg-9 mt-4">
-  <div class="row mt-3">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item topic"><strong><%= @topic.name %></strong></li>
-        <% @topic.articles.each do |article| %>
-        <li class="breadcrumb-item"><%= link_to article.title, article_path(article) %></li>
+<div class="container col-lg-10 mt-4">
+
+  <div class="my-5">
+    <div class="title-style">
+    <h2 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Read" if @article_read %></h3>
+    </div>
+  </div>
+
+  <div class="my-5 d-flex align-items-center">
+    <%= link_to "Go to Quiz", @flashcard, class: "btn btn-primary mt-1" %>
+
+
+    <div class="article-details">
+      <p class="read-time"><%= @reading_minutes %> min</p>
+
+      <% if @article.bookmarked_for?(current_user) %>
+        <%= link_to unbookmark_article_path(@article), method: :patch do %>
+          <i class="material-icons-sharp" id="two">bookmark</i>
         <% end %>
-      </ol>
-    </nav>
+      <% else %>
+        <%= link_to bookmark_article_path(@article), method: :post do %>
+          <i class="material-icons-sharp" id="two">bookmark_border</i>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
-  <div class=" my-5 d-flex justify-content-between align-items-center">
-
-    <h3 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Read" if @article_read %></h3>
-    <p class="read-time"><%= @reading_minutes %> min</p>
-
-  <% if @article.bookmarked_for?(current_user) %>
-    <%= link_to unbookmark_article_path(@article), method: :patch do %>
-      <i class="material-icons-sharp" id="two">bookmark</i>
-    <% end %>
-  <% else %>
-    <%= link_to bookmark_article_path(@article), method: :post do %>
-      <i class="material-icons-sharp" id="two">bookmark_border</i>
-    <% end %>
-  <% end %>
-  </div>
   <div class="row">
     <div class="container pl-0">
 <!--Accordion wrapper-->
@@ -68,11 +68,8 @@
         <% end %>
     </div>
     </div>
-  </div>
-    <div class="text-right my-5">
-      <%= link_to "Go to Flashcards", @flashcard, class: "btn btn-primary mt-5" %>
-    </div>
-  </div>
+    <br>
+    <br>
 </div>
 
 
