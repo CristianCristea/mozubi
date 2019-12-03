@@ -26,6 +26,8 @@ class ArticlesController < ApplicationController
     else
       @article_read = user_article.read
     end
+
+    @reading_minutes = calculate_reading_time(@article) / 60
   end
 
   def bookmark
@@ -59,5 +61,14 @@ class ArticlesController < ApplicationController
 
   def link_topic
     @article = current_user.profession.topics.first.articles
+  end
+
+  def calculate_reading_time(article)
+    sum = 0
+    article.chapters.each do |chapter|
+      time = chapter.content.reading_time :format => :raw
+      sum += (3600 * time[0] + 60 * time[1] + time[2])
+    end
+    return sum
   end
 end
