@@ -61,6 +61,13 @@ $width-expand: calc(#{$sidebar-width} * 5);
 .close-tree {
   transition: .3s ease-out;
 }
+.tree .nav {
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  display: flex;
+  align-content: stretch;
+}
 .tree .nav-link {
   display: flex;
   align-items: center;

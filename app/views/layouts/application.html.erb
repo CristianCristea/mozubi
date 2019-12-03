@@ -21,7 +21,7 @@
         <% end %>
         <% if request.path =~ /#{articles_path}/ %>
           <div class="tree <%= articles_class? %> close-tree" style="flex-grow: 1">
-            <%= render 'shared/test-tree' %>
+            <%= render 'shared/tree' %>
           </div>
         <% end %>
         <div class="content" style="flex-grow: 2">

@@ -95,145 +95,141 @@ topic14 = Topic.create!(
 puts "Creating articles..."
 topic1_article1 = Article.create!(
   title: "Working and learning techniques",
-  description: "This guide is an introduction to Active Record. After reading this guide, you will know: What Object Relational Mapping and Active Record are and how they are used in Rails. How Active Record fits into the Model-View-Controller paradigm. How to use Active Record models to manipulate data stored in a relational database. Active Record schema naming conventions. The concepts of database migrations, validations, and callbacks.",
-  topic: topic1
-)
-
-topic1_article2 = Article.create!(
-  title: "Tasks and structure of the retail trade",
-  description: "In this guide you will learn how controllers work and how they fit into the request cycle in your application.",
+  description: "Study skills, academic skill, or study strategies are approaches applied to learning. They are generally critical to success in school, considered essential for acquiring good grades, and useful for learning throughout one's life.
+                Study skills are an array of skills which tackle the process of organizing and taking in new information, retaining information, or dealing with assessments. They include mnemonics, which aid the retention of lists of information; effective reading; concentration techniques;[2] and efficient note taking.
+                While often left up to the student and their support network, study skills are increasingly taught in high school and at the university level.
+                More broadly, any skill which boosts a person's ability to study, retain and recall information which assists in and passing exams can be termed a study skill, and this could include time management and motivational techniques.
+                Study skills are discrete techniques that can be learned, usually in a short time, and applied to all or most fields of study. They must therefore be distinguished from strategies that are specific to a particular field of study (e.g. music or technology), and from abilities inherent in the student, such as aspects of intelligence or learning styles.",
   topic: topic1
 )
 
 topic2_article1 = Article.create!(
   title: "Merchandise submission",
-  description: "If you're new to web design, you may have heard the term 'Sass' floating around. If you're not sure what Sass does and whether or not you should be using it, we're here to help with our guide to Sass.In short, Sass is a CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS. The aim is to make the coding process simpler and more efficient. Let's explore in more detail.",
+  description: "The product presentation is also decisive for a successful sales talk, because the product is more convincing than any conversation. ",
   topic: topic2
 )
 
 topic3_article1 = Article.create!(
-  title: "Legal capacity and capacity to contract",
-  description: "The asset pipeline provides a framework to concatenate and minify or compress JavaScript and CSS assets. It also adds the ability to write these assets in other languages and pre-processors such as CoffeeScript, Sass and ERB. It allows assets in your application to be automatically combined with assets from other gems.",
-  topic: topic3
-)
-
-topic3_article2 = Article.create!(
-  title: "Invalidity and countervailability",
-  description: "In the production environment Sprockets uses the fingerprinting scheme outlined above. By default Rails assumes assets have been precompiled and will be served as static assets by your web server. During the precompilation phase an SHA256 is generated from the contents of the compiled files, and inserted into the filenames as they are written to disk. These fingerprinted names are used by the Rails helpers in place of the manifest name.",
+  title: "Legal and contract capacity",
+  description: "The person with legal capacity can acquire legally effective rights and obligations. Invalid, messenger business possible. According to § 105 a BGB (German Civil Code) an adult incapable of business can do a business of daily life, which can be effected with low-value means.",
   topic: topic3
 )
 
 topic4_article1 = Article.create!(
-  title: "Store design",
-  description: "In order to understand Ajax, you must first understand what a web browser does normally. When you type http://localhost:3000 into your browser's address bar and hit 'Go', the browser (your 'client') makes a request to the server. It parses the response, then fetches all associated assets, like JavaScript files, stylesheets and images. It then assembles the page. If you click a link, it does the same process: fetch the page, fetch the assets, put it all together, show you the results. This is called the 'request response cycle'.",
-  topic: topic4
-)
-
-topic4_article2 = Article.create!(
-  title: "Visual merchandising",
-  description: "Rails provides a bunch of view helper methods written in Ruby to assist you in generating HTML. Sometimes, you want to add a little Ajax to those elements, and Rails has got your back in those cases. Because of Unobtrusive JavaScript, the Rails Ajax helpers are actually in two parts: the JavaScript half and the Ruby half. Unless you have disabled the Asset Pipeline, rails-ujs provides the JavaScript half, and the regular Ruby view helpers add appropriate tags to your DOM. You can read below about the different events that are fired dealing with remote elements inside your application.",
+  title: "Visual Merchandising",
+  description: "Visual merchandising is the practice in the retail industry of developing floor plans and three-dimensional displays in order to maximize sales. Both goods and services can be displayed to highlight their features and benefits.",
   topic: topic4
 )
 
 topic5_article1 = Article.create!(
   title: "Advertising media",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "An advertising medium is a medium for the transmission of advertising messages, with the help of which advertising media can be introduced to the advertising recipients.",
   topic: topic5
 )
 
 topic6_article1 = Article.create!(
   title: "Quantity, time and price planning",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "The procurement process is intended to ensure a demand-oriented and economic supply of goods. In retail, for example, it includes the functions of purchasing, materials planning, goods receipt, invoice verification and accounts payable. According to narrower definitions, the focus is on production: Making everything available that is needed in production (real production goods flow). The right goods (objects) must be available in the right quantity at the right time at the right place, in the right quality and at the right cost.",
   topic: topic6
 )
 
 topic7_article1 = Article.create!(
   title: "Material defect",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "According to § 434 I 1, a material defect shall be deemed to exist if the item does not have the agreed quality. A negative deviation of the agreed target quality from the actual quality must therefore exist. It should be noted, however, that the term quality itself is not defined in the BGB. According to prevailing opinion, however, all value-forming factors are to be understood by it.",
   topic: topic7
 )
 
 topic8_article1 = Article.create!(
   title: "Profit and loss account",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "The income statement is a comparison of expenses and income for a period to determine the company result and the presentation of its sources. It is a mandatory component of the annual financial statements of merchants (§ 242 III HGB).",
   topic: topic8
 )
 
 topic9_article1 = Article.create!(
   title: "Price Indication Ordinance",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "The Price Indication Ordinance (PAngV) is a German consumer protection ordinance that has been in force since 1985, with interim changes. It determines, among other things, how the price for the offer of goods or services is to be indicated in relation to the end consumer, provided that the offer takes place commercially or commercially or regularly in other ways.",
   topic: topic9
 )
 
 topic9_article2 = Article.create!(
   title: "Forward calculation",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "Forward Pricing is a variant of Pricing to calculate the sales price:
+              Starting from the purchase price (called the list purchase price: the purchase price according to the price list), the system transfers the sales price (list sales price).
+              Forward costing comprises intermediate steps or subtotals (see the forward costing schema below):
+              Reference price calculation / purchase price calculation: Determination of the cost price of the trading goods;
+              Cost price calculation: Cost price plus overhead costs;
+              Sales price calculation: Determination of the list sales price.",
   topic: topic9
 )
 
 topic9_article3 = Article.create!(
   title: "Backward calculation",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "Backward costing belongs to the group of retail industrial costings and is used if the list sales price of a product is predefined and the maximum list purchase price is to be determined. In addition, the percentage profit is usually fixed here.
+              The difference to forward costing is that backward costing does not start with the list purchase price, but with the list sales price.",
   topic: topic9
 )
 
 topic9_article4 = Article.create!(
   title: "Calculation factor",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "The calculation factor is another way of expressing the calculation markup for retail companies - the markup that is applied to the cost price to arrive at the list retail price.
+              The costing factor is the multiplier by which the cost value multiplies to produce the list sales price.",
   topic: topic9
 )
 
 topic9_article5 = Article.create!(
   title: "Costing surcharge, costing deduction",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "In retail companies, the markup or markup refers to the markup that is applied to the cost price to arrive at the list retail price.
+              The markup can be specified in euros, but it is usually specified as a percentage.",
   topic: topic9
 )
 
 topic9_article6 = Article.create!(
   title: "Gross margin",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "Gross margin equates to net sales minus the cost of goods sold. The gross profit margin shows the amount of profit made before deducting selling, general, and administrative costs. Gross margin can also be shown as gross profit as a percent of net sales.",
   topic: topic9
 )
 
 topic10_article1 = Article.create!(
   title: "Customer behavior",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "Buying behaviour or buyer or customer behaviour is the behaviour of the buyer during or in relation to the purchase of goods. The behaviour in the purchase of goods, from the purchase planning to the purchase negotiation(s), the conclusion of the purchase, which always has the character of a contract, up to the post-purchase behaviour is very different. The buying behaviour among merchants, which may be associated with obtaining offers and/or lengthy negotiations, possibly also in purchasing committees, sometimes differs considerably from the buying behaviour of non-merchants, be it government institutions, which often decide on the basis of tenders, or consumers with very different patterns of behaviour.",
   topic: topic10
 )
 
 topic11_article1 = Article.create!(
   title: "Sales tax",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "They charge the sales tax from the customers, but have to pay it to the tax office. At the same time, however, as an entrepreneur you may claim VAT from the tax office, which you pay, for example, on purchased goods or services (input tax).",
   topic: topic11
 )
 
 topic12_article1 = Article.create!(
   title: "Marketing mix",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "Explanation: The marketing mix is one of the most famous marketing terms. The marketing mix is the tactical or operational part of a marketing plan. The marketing mix is also called the 4Ps and the 7Ps. The 4Ps are price, place, product and promotion. The services marketing mix is also called the 7Ps and includes the addition of process, people and physical evidence.
+              Think about another common mix – a cake mix. All cakes contain eggs, milk, flour, and sugar. However, you can alter the final cake by altering the amounts of mix elements contained in it. So for a sweet cake add more sugar!
+              It is the same with the marketing mix. The offer you make to your customer can be altered by varying the mix elements. So for a high profile brand, increase the focus on promotion and desensitize the weight given to price. However, in order to understand and apply the 4 or 7 P strategy, one needs to have conducted a STP analysis.",
   topic: topic12
 )
 
 topic12_article2 = Article.create!(
   title: "Customer Relationship Management (CRM)",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "Customer relationship management (CRM) is an approach to manage a company's interaction with current and potential customers. It uses data analysis about customers' history with a company to improve business relationships with customers, specifically focusing on customer retention and ultimately driving sales growth.",
   topic: topic12
 )
 
 topic12_article3 = Article.create!(
   title: "Multi-channel strategy",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "Multichannel marketing refers to the practice of interacting with customers using a combination of indirect and direct communication channels – websites, retail stores, mail order catalogs, direct mail, email, mobile, etc. – and enabling customers to take action in response – preferably to buy your product or service – using the channel of their choice. In the most simplistic terms, multichannel marketing is all about choice.",
   topic: topic12
 )
 
 topic13_article1 = Article.create!(
   title: "Conducting a conversation",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "Conducting conversations at work is an important component of being able to act successfully. It is necessary to meet the other person at eye level and to respond to the other person. If it is a question of an appraisal interview, the responsibility lies primarily with the supervisor, but the employee also has a share of the responsibility for a successful interview. During such a conversation, both parties enter into a personal dialogue, in which it is important that one is open, honest and willing to deal with the other person's point of view.",
   topic: topic13
 )
 
 topic14_article1 = Article.create!(
   title: "Company, Commercial Register",
-  description: "Ruby on Rails allows applications to be written as if their code was preloaded. In a normal Ruby program classes need to load their dependencies. Our Rubyist instinct quickly sees some redundancy in there: If classes were defined in files matching their name, couldn't their loading be automated somehow? We could save scanning the file for dependencies, which is brittle.",
+  description: "The commercial register in Germany is a public register which keeps entries about the registered merchants in the district of the competent register court and which provides information about the documents deposited there. The Commercial Register provides information on the essential legal and economic circumstances (facts) of merchants and companies and can be inspected by anyone. Entries in the commercial register enjoy comprehensive traffic and confidence protection in accordance with § 15 of the German Commercial Code (HGB). Register law belongs to the field of voluntary jurisdiction.",
   topic: topic14
 )
 
@@ -276,14 +272,14 @@ Chapter.create!(
 Chapter.create!(
   title: "What is a CSS preprocessor?",
   content: "A CSS preprocessor is a scripting language that extends CSS by allowing developers to write code in one language and then compile it into CSS. Sass is perhaps the most popular preprocessor around, but other common examples include Less and Stylus. Before we go any further, I feel like a quick public service announcement is in order: if you're new to CSS, I do not recommend using any preprocessors (like Sass). The same goes for any other extensions or frameworks. While it's true they offer many advantages in speed and efficiency, it's more important that you first understand the basics of CSS. Make sure you learn the core concepts before you start exploring shortcuts.",
-  article: topic2_article1
+  article: topic8_article1
 )
 
 # topic 2, article 1
 Chapter.create!(
   title: "Syntax",
   content: "Sass includes two syntax options: SCSS (Sassy CSS): Uses the .scss file extension and is fully compliant with CSS syntax. Indented (simply called 'Sass'): Uses .sass file extension and indentation rather than brackets; it is not fully compliant with CSS syntax, but it's quicker to write. Note that files can be converted from one syntax to the other using the sass-convert command.",
-  article: topic1_article2
+  article: topic8_article1
 )
 
 # topic 2, article 1
@@ -320,7 +316,7 @@ Chapter.create!(
   content: "Rails comes bundled with a task to compile the asset manifests and other files in the pipeline. Compiled assets are written to the location specified in config.assets.prefix. By default, this is the /assets directory. You can call this task on the server during deployment to create compiled versions of your assets directly on the server. See the next section for information on compiling locally. This links the folder specified in config.assets.prefix to shared/assets. If you already use this shared folder you'll need to write your own deployment task.
 It is important that this folder is shared between deployments so that remotely cached pages referencing the old compiled assets still work for the life of the cached page.
 The default matcher for compiling files includes application.js, application.css and all non-JS/CSS files (this will include all image assets automatically) from app/assets folders including your gems.",
-  article: topic3_article2
+  article: topic9_article1
 )
 
 # topic 3, article 2
@@ -328,21 +324,21 @@ Chapter.create!(
   title: "Local Precompilation",
   content: "There are several reasons why you might want to precompile your assets locally. Among them are: 1. You may not have write access to your production file system. 2. You may be deploying to more than one server, and want to avoid duplication of work. 3. You may be doing frequent deploys that do not include asset changes. Local compilation allows you to commit the compiled files into source control, and deploy as normal.
 There are three caveats: 1. You must not run the Capistrano deployment task that precompiles assets. 2. You must ensure any necessary compressors or minifiers are available on your development system. 3. You must change the following application configuration setting.",
-  article: topic3_article2
+  article: topic9_article1
 )
 
 # topic 3, article 2
 Chapter.create!(
   title: "Live Precompilation",
   content: "In some circumstances you may wish to use live compilation. In this mode all requests for assets in the pipeline are handled by Sprockets directly. To enable this option set: config.assets.compile = true. On the first request the assets are compiled and cached as outlined in development above, and the manifest names used in the helpers are altered to include the SHA256 hash. Sprockets also sets the Cache-Control HTTP header to max-age=31536000. This signals all caches between your server and the client browser that this content (the file served) can be cached for 1 year. The effect of this is to reduce the number of requests for this asset from your server; the asset has a good chance of being in the local browser cache or some intermediate cache. This mode uses more memory, performs more poorly than the default and is not recommended.",
-  article: topic3_article2
+  article: topic9_article1
 )
 
 # topic 3, article 2
 Chapter.create!(
   title: "Adding Assets to your gems",
   content: "Assets can also come from external sources in the form of gems. A good example of this is the jquery-rails gem. This gem contains an engine class which inherits from Rails::Engine. By doing this, Rails is informed that the directory for this gem may contain assets and the app/assets, lib/assets and vendor/assets directories of this engine are added to the search path of Sprockets.",
-  article: topic3_article2
+  article: topic9_article1
 )
 
 # topic 4, article 1
@@ -370,28 +366,28 @@ Chapter.create!(
 Chapter.create!(
   title: "Customize remote elements",
   content: "It is possible to customize the behavior of elements with a data-remote attribute without writing a line of JavaScript. You can specify extra data- attributes to accomplish this. Activating hyperlinks always results in an HTTP GET request. However, if your application is RESTful, some links are in fact actions that change data on the server, and must be performed with non-GET requests. This attribute allows marking up such links with an explicit method such as post, put or delete. The way it works is that, when the link is activated, it constructs a hidden form in the document with the action attribute corresponding to href value of the link, and the method corresponding to data-method value, and submits that form.",
-  article: topic4_article2
+  article: topic10_article1
 )
 
 # topic 4, article 2
 Chapter.create!(
   title: "Confirmations",
   content: "You can ask for an extra confirmation of the user by adding a data-confirm attribute on links and forms. The user will be presented a JavaScript confirm() dialog containing the attribute's text. If the user chooses to cancel, the action doesn't take place. Adding this attribute on links will trigger the dialog on click, and adding it on forms will trigger it on submit.",
-  article: topic4_article2
+  article: topic10_article1
 )
 
 # topic 4, article 2
 Chapter.create!(
   title: "Automatic disabling",
   content: "It is also possible to automatically disable an input while the form is submitting by using the data-disable-with attribute. This is to prevent accidental double-clicks from the user, which could result in duplicate HTTP requests that the backend may not detect as such. The value of the attribute is the text that will become the new value of the button in its disabled state.",
-  article: topic4_article2
+  article: topic10_article1
 )
 
 # topic 4, article 2
 Chapter.create!(
   title: "Stoppable events",
   content: "You can stop execution of the Ajax request by running event.preventDefault() from the handlers methods ajax:before or ajax:beforeSend. The ajax:before event can manipulate form data before serialization and the ajax:beforeSend event is useful for adding custom request headers. If you stop the ajax:aborted:file event, the default behavior of allowing the browser to submit the form via normal means (i.e. non-Ajax submission) will be canceled and the form will not be submitted at all. This is useful for implementing your own Ajax file upload workaround.",
-  article: topic4_article2
+  article: topic10_article1
 )
 
 # topic 5, article 1
@@ -433,34 +429,34 @@ puts "Creating flashcards..."
 flashcard1 = Flashcard.create!(article: topic1_article1, content: "Which of these is not a various components of rail?")
 flashcard2 = Flashcard.create!(article: topic1_article1, content: "What is something that you should not do in rails… ")
 flashcard3 = Flashcard.create!(article: topic1_article1, content: "What is NOT a correct naming convention?")
-flashcard4 = Flashcard.create!(article: topic1_article2, content: "Representation of a resource is called... ")
-flashcard5 = Flashcard.create!(article: topic1_article2, content: "Rails application framework is called… ")
-flashcard6 = Flashcard.create!(article: topic1_article2, content: "What is something you should never do:")
+flashcard4 = Flashcard.create!(article: topic8_article1, content: "Representation of a resource is called... ")
+flashcard5 = Flashcard.create!(article: topic8_article1, content: "Rails application framework is called… ")
+flashcard6 = Flashcard.create!(article: topic8_article1, content: "What is something you should never do:")
 flashcard7 = Flashcard.create!(article: topic2_article1, content: "Which of these is not a various components of rail?")
 flashcard8 = Flashcard.create!(article: topic2_article1, content: "What is something that you should not do in rails… ")
 flashcard9 = Flashcard.create!(article: topic2_article1, content: "What is NOT a correct naming convention?")
 flashcard10 = Flashcard.create!(article: topic3_article1, content: "Representation of a resource is called... ")
 flashcard11 = Flashcard.create!(article: topic3_article1, content: "Rails application framework is called… ")
 flashcard12 = Flashcard.create!(article: topic3_article1, content: "What is something you should never do:")
-flashcard13 = Flashcard.create!(article: topic3_article2, content: "Which of these is not a various components of rail?")
-flashcard14 = Flashcard.create!(article: topic3_article2, content: "What is something that you should not do in rails… ")
-flashcard15 = Flashcard.create!(article: topic3_article2, content: "What is NOT a correct naming convention?")
+flashcard13 = Flashcard.create!(article: topic9_article1, content: "Which of these is not a various components of rail?")
+flashcard14 = Flashcard.create!(article: topic9_article1, content: "What is something that you should not do in rails… ")
+flashcard15 = Flashcard.create!(article: topic9_article1, content: "What is NOT a correct naming convention?")
 flashcard16 = Flashcard.create!(article: topic4_article1, content: "Representation of a resource is called... ")
 flashcard17 = Flashcard.create!(article: topic4_article1, content: "Rails application framework is called… ")
 flashcard18 = Flashcard.create!(article: topic4_article1, content: "What is something you should never do:")
-flashcard19 = Flashcard.create!(article: topic4_article2, content: "Which of these is not a various components of rail?")
-flashcard20 = Flashcard.create!(article: topic4_article2, content: "What is something that you should not do in rails… ")
-flashcard21 = Flashcard.create!(article: topic4_article2, content: "What is NOT a correct naming convention?")
+flashcard19 = Flashcard.create!(article: topic10_article1, content: "Which of these is not a various components of rail?")
+flashcard20 = Flashcard.create!(article: topic10_article1, content: "What is something that you should not do in rails… ")
+flashcard21 = Flashcard.create!(article: topic10_article1, content: "What is NOT a correct naming convention?")
 flashcard22 = Flashcard.create!(article: topic5_article1, content: "Representation of a resource is called... ")
 flashcard23 = Flashcard.create!(article: topic5_article1, content: "Rails application framework is called… ")
 flashcard24 = Flashcard.create!(article: topic5_article1, content: "What is something you should never do:")
 flashcard25 = Flashcard.create!(article: topic1_article1, content: "Mark had to choose between a career as a coder and as a")
-flashcard26 = Flashcard.create!(article: topic1_article2, content: "Mark had to choose between a career as a coder and as a")
+flashcard26 = Flashcard.create!(article: topic8_article1, content: "Mark had to choose between a career as a coder and as a")
 flashcard27 = Flashcard.create!(article: topic2_article1, content: "Mark had to choose between a career as a coder and as a")
 flashcard28 = Flashcard.create!(article: topic3_article1, content: "Mark had to choose between a career as a coder and as a")
-flashcard29 = Flashcard.create!(article: topic3_article2, content: "Mark had to choose between a career as a coder and as a")
+flashcard29 = Flashcard.create!(article: topic9_article1, content: "Mark had to choose between a career as a coder and as a")
 flashcard30 = Flashcard.create!(article: topic4_article1, content: "Mark had to choose between a career as a coder and as a")
-flashcard31 = Flashcard.create!(article: topic4_article2, content: "Mark had to choose between a career as a coder and as a")
+flashcard31 = Flashcard.create!(article: topic10_article1, content: "Mark had to choose between a career as a coder and as a")
 flashcard32 = Flashcard.create!(article: topic5_article1, content: "Mark had to choose between a career as a coder and as a")
 
 Answer.create!(flashcard: flashcard1, content: "Action pack")
