@@ -4,11 +4,8 @@ $width-third: calc(#{$width-tree} / 3);
 $width-fourth: calc(#{$width-tree} / 4);
 $width-eights: calc(#{$width-tree} / 8);
 
-$width-expand: calc(#{$sidebar-width} * 3);
-
-$line-width: 2px;
+$line-width: 4px;
 $line-left: calc(#{$width-half} - (#{$line-width} / 2));
-$line-width-double: calc(#{$line-width} * 2);
 
 $dot-width: $width-fourth;
 $dot-left: calc(#{$width-half} - (#{$dot-width} / 2));
@@ -18,28 +15,29 @@ $search-left: calc(#{$width-half} - 12px);
 $height: 50px;
 $height-half: calc(#{$height} / 2);
 
+$width-closed: calc(#{$width-tree} + #{$line-width});
+$width-expand: calc(#{$sidebar-width} * 5);
+
 .tree {
   top: 0;
   bottom: 0;
   z-index: 150;
-  // padding: 0;
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
-  min-width: $width-tree;
+  // box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  width: $width-expand;
+  height: 100vh;
   margin-left: 0px;
-}
-.tree-sticky {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: auto;
   background-color: $text-secondary;
   position: absolute;
-  height: 100vh;
   top: 0;
-  height: calc(100vh - 0px);
-  overflow-x: hidden;
-  overflow-y: auto;
-  width: $width-tree;
+}
+.tree-sticky {
 }
 @keyframes expand{
   0% {
-    width: $width-tree;
+    width: $width-closed;
   }
   100% {
     width: $width-expand;
@@ -51,34 +49,36 @@ $height-half: calc(#{$height} / 2);
     bottom: 0;
 }
 @supports ((position: -webkit-sticky) or (position: sticky)) {
-  .tree-sticky {
+  .tree {
     position: -webkit-sticky;
     position: sticky;
   }
 }
-.tree-sticky.show {
-  width: $width-expand;
-  animation: expand .3s ease-in;
-}
+// .tree {
+//   width: $width-expand;
+//   animation: expand .3s ease-in;
+// }
 .close-tree {
   transition: .3s ease-out;
 }
 .tree .nav-link {
-  height: $height;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  line-height: 2rem;
+  // line-height: 2rem;
+  display: flex;
 }
-.tree-sticky.show .tree-item {
+.tree .tree-item {
   padding-left: $width-tree;
   width: 100%;
   color: $text-primary;
+  // height: 100%;
 }
 .tree-item {
   font-size: 14px;
-  letter-spacing: -.5px;
+  letter-spacing: 0px;
+  position: relative;
 }
 // .tree .tree-item:hover {
 //   background-color: $hover-primary;
@@ -94,7 +94,7 @@ $height-half: calc(#{$height} / 2);
   visibility: hidden;
   // display: none;
 }
-.tree-sticky.show .hidden {
+.tree .hidden {
   visibility: visible;
   transition-delay: .4s;
 }
@@ -102,75 +102,55 @@ $height-half: calc(#{$height} / 2);
   display: none;
   transition-delay: .0s;
 }
-.tree-sticky.show .gone {
+.tree .gone {
   display: block;
 }
-.tree .btn{
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
+// .tree .btn{
+//   margin: 0;
+//   padding: 0;
+// }
 .material-icons-sharp {
   font-size: 24px;
 }
-.breadcrumb {
-  z-index: 10;
+.open {
+  height: calc(100vh - 50px);
+  display: flex;
 }
 ul {
   padding-inline-start: $line-left;
 }
-ul.list {
-    // background-color: $secondary;
+.list {
     list-style-type: none;
     position: relative;
-    min-height: 100vh;
     font-weight: 200;
 }
-ul.list .active {
+.list .active {
   font-weight: 900;
 }
-// ul.list > li:before {
-//     content: ' ';
-//     background: $secondary;
-//     display: inline-block;
-//     position: absolute;
-//     left: $line-left;
-//     width: $line-width;
-//     height: 150px;
-// }
-ul.list > li {
+.list > li {
     text-decoration: none;
     display: flex;
     align-items: center;
+    width: 100%;
 }
-// .nav-sub.read:after {
-//   content: ' ';
-//   background: $success;
-//   display: inline-block;
-//   position: absolute;
-//   right: 0;
-//   width: $line-width-double;
-//   height: 1rem;
-//   z-index: 80;
-// }
-ul.list > li.read:before {
+.list > li.read:before {
   content: ' ';
   background: $success;
   display: inline-block;
   position: absolute;
   left: $line-left;
-  width: $line-width-double;
+  width: $line-width;
   height: 100%;
-  top: 0px;
+  // top: 0px;
 }
-ul.list > li:before {
+.list > li:before {
   content: ' ';
   background: $secondary;
   display: inline-block;
   position: absolute;
   left: $line-left;
-  width: $line-width-double;
-  height: 157px;
+  width: $line-width;
+  height: 100%;
 }
 ul.sub {
   list-style-type: none;
@@ -195,6 +175,7 @@ ul.sub .nav-sub {
   a:hover {
     color: $text-primary;
     text-decoration: none;
+    background-color: $hover-primary;
     font-weight: 900;
   }
 
