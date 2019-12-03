@@ -23,8 +23,9 @@ class Article < ApplicationRecord
   end
 
   def flashcards_started?
-   self.user_flashcards.any?
+    self.user_flashcards.any?
   end
+
 
   # def article_read?(user)
   #   UserArticle.find_by(user: user, article: self, read: true).read
