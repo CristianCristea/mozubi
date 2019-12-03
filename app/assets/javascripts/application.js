@@ -1,4 +1,6 @@
-// = require Chart.min
+//= require underscore
+//= require 'greensock/TweenMax'
+//= require 'greensock/easing/EasePack'
 // = require jquery
 // = require rails-ujs
 // = require_tree .

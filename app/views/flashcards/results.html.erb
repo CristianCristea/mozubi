@@ -1,4 +1,21 @@
-<h1>Flashcard results</h1>
-<h3>You did <%= @flashcards_played.count %> Cards and <strong><%= @correct_answers.count %> correct</strong>.</h3>
+<!-- a/b -->
+<div class="row justify-content-center align-items-center flex-column">
+  <div class="congrats-container">
+    <div id="congrats">
+      <h1 id="title"><%= @flashcards_percentage >= 50 ? "Great Job!" : "Try again!" %></h1>
+    </div>
+    <div class="flashcard-results">
+      <h2>
+        <span class="percentage-widget"><%= @flashcards_percentage %>% <i>completion <br>rate</i></span>
+      </h2>
 
-<%= link_to  "Dashboard", dashboard_path %>
+
+    </div>
+  </div>
+
+  <div class="flashcard-results-buttons mt-5">
+    <%= link_to "Dashboard", dashboard_path, class: "btn btn-outline-primary btn-lg ml-5" %>
+    <%= link_to "Reapeat quiz", @flashcard, class: "btn btn-outline-success btn-lg ml-5" %>
+    <%= link_to "Next article", @next_article, class: "btn btn-outline-primary btn-lg ml-5" %>
+  </div>
+</div>
