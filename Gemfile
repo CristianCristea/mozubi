@@ -17,7 +17,6 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'readingtime'
 
-gem 'chartjs-ror'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

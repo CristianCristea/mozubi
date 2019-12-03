@@ -14,16 +14,18 @@ const removePointerEvents = collection => {
   }
 };
 
-showResultBtn.addEventListener("click", e => {
-  e.preventDefault();
-  if (!radioInputEl) {
-    e.currentTarget.classList.add("d-none");
-    removePointerEvents(flashcardAnswerEl);
-    form
-      .querySelector("input[value='true']")
-      .nextElementSibling.classList.add("correct-answer");
-    submitBtn.classList.remove("d-none");
-  } else {
-    alert("You have to pick an answer!");
-  }
-});
+if (showResultBtn) {
+  showResultBtn.addEventListener("click", e => {
+    e.preventDefault();
+    if (!radioInputEl) {
+      e.currentTarget.classList.add("d-none");
+      removePointerEvents(flashcardAnswerEl);
+      form
+        .querySelector("input[value='true']")
+        .nextElementSibling.classList.add("correct-answer");
+      submitBtn.classList.remove("d-none");
+    } else {
+      alert("You have to pick an answer!");
+    }
+  });
+}
