@@ -1,7 +1,7 @@
 .card-progress-bar-left {
-  width: 820px;
+  width: 924px;
   height: 500px;
-  margin: 40px auto;
+  // margin: 40px auto;
   display: grid;
   grid-template-rows: 1fr 6fr 1fr;
 
@@ -14,6 +14,10 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
 
+}
+
+.nav-pills .nav-link {
+  border-radius: 2px 2px 0px 0px;
 }
 
 .card-body-title {
@@ -41,7 +45,7 @@
   flex-direction: column;
   justify-content: space-between;
   margin-right: auto;
-  margin: 40px 36px;
+  margin-left: 120px;
 }
 
 .card-progress-bar-right {
