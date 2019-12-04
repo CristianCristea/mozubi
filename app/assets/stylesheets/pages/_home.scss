@@ -1,48 +1,106 @@
 // Specific CSS for your home-page
-$margin-top: 20%;
-$button-margin-top: calc(#{$banner-height} / 3);
 
-.half {
-  background-color: rgba(0,0,0,.3);
-  height: $banner-height;
-  width: 50%;
-  left: 0;
-  top: 0;
+.landing-wrapper {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  height: 100vh;
+  display: block;
+}
+
+.landing-primary {
+  background: linear-gradient(
+      to bottom,
+      rgba(171, 179, 187, 0.1),
+      rgba(171, 179, 187, 0.3)
+    ),
+    url("https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")
+      no-repeat;
+  background-size: cover;
+  background-position: bottom, -15rem;
   transform: scaleX(-1);
+  width: 100%;
+  height: 100vh;
 }
-.second-half {
-  background-color: rgba(0,0,0,.7);
-  height: $banner-height;
-  width: 50%;
-  left: 0;
+.landing-secondary {
+  position: absolute;
   top: 0;
-  transform: scaleX(-1);
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  clip-path: polygon(0 0, 47% 0, 30% 100%, 0 100%);
+
+  background: linear-gradient(
+      to bottom,
+      rgba(120, 120, 120, 0.52),
+      rgba(120, 120, 120, 0.52)
+    ),
+    url("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
 }
-.text-one {
-  color: black;
-  margin-top: $margin-top;
-  text-align: left;
-  text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
-  font-size: 48px;
-  width: 80%;
-}
-.text-two {
-  color: rgba(255, 255, 255, .8);
-  margin-top: $margin-top;
+
+.landing-call-to-action {
+  position: absolute;
   text-align: right;
-  font-size: 48px;
+  top: 26rem;
+  right: 2rem;
 }
-.landing-btn {
-  margin-left: 50%;
-  margin-top: $button-margin-top;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-  padding: 1rem;
-  border-radius: 2px;
-  background-color: $primary;
-  box-shadow: 0px 0px 15px rgba(255, 255, 255, .4);
+
+h1,
+h2 {
+  color: white;
+  font-size: 52px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
 }
- .nav-tabs {
-  margin-top: 2%;
-  padding-left: 50px;
- }
+
+h1 {
+  font-size: 72px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.flat-button {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  margin-top: 5rem;
+  position: relative;
+  width: 250px;
+  height: 60px;
+  background: #e74c3c;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  transition: color 0.3s;
+  /* Typo */
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  border: 0;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.flat-button:after {
+  position: absolute;
+  top: 90%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #c0392b;
+  content: "";
+  z-index: -2;
+  transition: transform 0.3s;
+}
+
+.flat-button:hover::after {
+  transform: translateY(-80%);
+  transition: transform 0.3s;
+}
