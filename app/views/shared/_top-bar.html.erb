@@ -1,7 +1,11 @@
-<div class="top-bar">
-  <h2 class="display-4">Welcome back, <%= current_user.first_name %> 👌</h2>
-  <p>You've done great so far. For now you still have <strong><%= (current_user.exam_date.to_date - Date.current).to_i %></strong> days until your final exam.</p>
-  <progress max="<%= (current_user.exam_date.to_date - Date.new(2019, 11, 1)).to_i %>" value="<%= ((current_user.exam_date.to_date - Date.new(2019, 11, 1)).to_i) - ((current_user.exam_date.to_date - Date.current).to_i) %>"></progress>
+<div class="top-bar card">
+  <div class="card-dashboard-header top-bar">
+    <h2 class="display-4">Welcome back, <%= current_user.first_name %> 👌</h2>
+  </div>
+  <div class="top-body card-body">
+    <p>You've done great so far! For now you still have <strong><%= (current_user.exam_date.to_date - Date.current).to_i %></strong> days until your final exam.</p>
+    <progress max="<%= (current_user.exam_date.to_date - Date.new(2019, 11, 1)).to_i %>" value="<%= ((current_user.exam_date.to_date - Date.new(2019, 11, 1)).to_i) - ((current_user.exam_date.to_date - Date.current).to_i) %>"></progress>
+  </div>
 </div>
 
 <!-- current_user.created_at.to_date
