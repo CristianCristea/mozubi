@@ -495,7 +495,7 @@ Chapter.create!(
 # topic 6, article 3
 Chapter.create!(
   title: "Components",
-  content: "The conclusion of a sales contract obliges the seller and buyer to fulfil the contract. What does this mean in our case for the supplier ABC and the office furniture manufacturer? The supplier ABC (seller) is obliged: to deliver the bogies ordered for the office chairs on time and in perfect condition (without defects), to accept the agreed purchase price to provide the office furniture manufacturer (buyer) with ownership of the goods. The office furniture manufacturer (buyer) is obliged: to pay the agreed purchase price in due time and to accept the ordered bogies with punctual delivery. These obligations of seller and buyer initially sound very abstract. How must one imagine the concrete implementation (fulfilment)? The supplier ABC must deliver the bogies within the agreed period or exactly on the agreed date. They must meet the technical requirements and must not show any external scratches. If the office furniture manufacturer pays, the supplier must accept the purchase price from ABC. If nothing has been agreed about the method of payment (bank transfer, cheque, cash payment), the buyer can freely choose the method of payment. In the case of cash payments, there is a restriction in business life that the seller does not have to accept more than 50 coins. Some sellers, e.g. petrol stations, exclude payment with a 500 EURO bill for security reasons. When paying with ec-cards, sellers set minimum amounts for cost reasons. For legal reasons, the supplier reserves the right of ownership of the delivered goods (bogies) to ABC until the office furniture manufacturer has paid for the goods in full. The buyer is then initially only the owner of the goods, the seller remains the owner. This means that the office furniture manufacturer as the owner can process the bogies (e.g. mount them on the desk chairs) and sell them. In the event of non-payment, however, the supplier ABC could retrieve the goods (ownership = power over an object) if this is still practically possible (the different forms of retention of title are not discussed here).",
+  content: "The conclusion of a sales contract obliges the seller and buyer to fulfil the contract. What does this mean in our case for the supplier ABC and the office furniture manufacturer? The supplier ABC (seller) is obliged: to deliver the bogies ordered for the office chairs on time and in perfect condition (without defects), to accept the agreed purchase price to provide the office furniture manufacturer (buyer) with ownership of the goods. The office furniture manufacturer (buyer) is obliged: to pay the agreed purchase price in due time and to accept the ordered bogies with punctual delivery. These obligations of seller and buyer initially sound very abstract. How must one imagine the concrete implementation (fulfilment)? The supplier ABC must deliver the bogies within the agreed period or exactly on the agreed date. They must meet the technical requirements and must not show any external scratches. If the office furniture manufacturer pays, the supplier must accept the purchase price from ABC. If nothing has been agreed about the method of payment (bank transfer, cheque, cash payment), the buyer can freely choose the method of payment. In the case of cash payments, there is a restriction in business life that the seller does not have to accept more than 50 coins. Some sellers, e.g. petrol stations, exclude payment with a 500 EURO bill for security reasons. When paying with ec-cards, sellers set minimum amounts foflashcard24ship of the delivered goods (bogies) to ABC until the office furniture manufacturer has paid for the goods in full. The buyer is then initially only the owner of the goods, the seller remains the owner. This means that the office furniture manufacturer as the owner can process the bogies (e.g. mount them on the desk chairs) and sell them. In the event of non-payment, however, the supplier ABC could retrieve the goods (ownership = power over an object) if this is still practically possible (the different forms of retention of title are not discussed here).",
   article: topic6_article3
 )
 
@@ -529,14 +529,14 @@ Chapter.create!(
 
 
 puts "Creating flashcards..."
-flashcard1 = Flashcard.create!(article: topic1_article1, content: "Which of these is not a various components of rail?")
-flashcard2 = Flashcard.create!(article: topic1_article1, content: "What is something that you should not do in rails… ")
-flashcard3 = Flashcard.create!(article: topic1_article1, content: "What is NOT a correct naming convention?")
-flashcard4 = Flashcard.create!(article: topic8_article1, content: "Representation of a resource is called... ")
-flashcard5 = Flashcard.create!(article: topic8_article1, content: "Rails application framework is called… ")
-flashcard6 = Flashcard.create!(article: topic8_article1, content: "What is something you should never do:")
-flashcard7 = Flashcard.create!(article: topic2_article1, content: "Which of these is not a various components of rail?")
-flashcard8 = Flashcard.create!(article: topic2_article1, content: "What is something that you should not do in rails… ")
+flashcard1 = Flashcard.create!(article: topic6_article1, content: "Which of these is not a various components of rail?")
+flashcard2 = Flashcard.create!(article: topic6_article1, content: "What is something that you should not do in rails… ")
+flashcard3 = Flashcard.create!(article: topic6_article2, content: "What is NOT a correct naming convention?")
+flashcard4 = Flashcard.create!(article: topic6_article2, content: "Representation of a resource is called... ")
+flashcard5 = Flashcard.create!(article: topic6_article3, content: "Rails application framework is called… ")
+flashcard6 = Flashcard.create!(article: topic6_article3, content: "What is something you should never do:")
+flashcard7 = Flashcard.create!(article: topic6_article4, content: "Which of these is not a various components of rail?")
+flashcard8 = Flashcard.create!(article: topic6_article4, content: "What is something that you should not do in rails… ")
 flashcard9 = Flashcard.create!(article: topic2_article1, content: "What is NOT a correct naming convention?")
 flashcard10 = Flashcard.create!(article: topic3_article1, content: "Representation of a resource is called... ")
 flashcard11 = Flashcard.create!(article: topic3_article1, content: "Rails application framework is called… ")
@@ -637,8 +637,6 @@ Answer.create!(flashcard: flashcard15, content: "kebab-case-yay")
 Answer.create!(flashcard: flashcard15, content: "SCREAMINGSNAKECASE",  right_answer: true)
 Answer.create!(flashcard: flashcard15, content: "lowerCamelCase")
 
-Answer.create!(flashcard: flashcard16, content: "Ruby make")
-Answer.create!(flashcard: flashcard16, content: "Camel case")
 Answer.create!(flashcard: flashcard16, content: "Web page")
 Answer.create!(flashcard: flashcard16, content: "Action pack", right_answer: true)
 
@@ -656,9 +654,6 @@ Answer.create!(flashcard: flashcard19, content: "Action pack")
 Answer.create!(flashcard: flashcard19, content: "Action model")
 Answer.create!(flashcard: flashcard19, content: "Action mailer")
 Answer.create!(flashcard: flashcard19, content: "Action development", right_answer: true)
-
-Answer.create!(flashcard: flashcard20, content: "Generate a controller")
-Answer.create!(flashcard: flashcard20, content: "Schaffolding",  right_answer: true)
 Answer.create!(flashcard: flashcard20, content: "Use the right naming convention")
 Answer.create!(flashcard: flashcard20, content: "Be DRY")
 
