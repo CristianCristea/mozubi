@@ -12,7 +12,7 @@ module ApplicationHelper
     ''
   end
   def topic_class?(topic)
-    return 'active' if request.path =~ /#{topic_path(topic)}/
+    return 'current' if request.path.topic_id =~ /#{topic_path(topic)}/
     ''
   end
 end
