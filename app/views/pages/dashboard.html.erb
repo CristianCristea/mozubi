@@ -1,62 +1,63 @@
-<%= render "shared/top-bar" %>
-
-<div class="dashboard-cards">
-    <div class="card card-progress-bar-left">
-      <div class="card-dashboard-header">
-        <h4 class="card-header-title">Today's article</h4>
-        <i class="fa fa-book card-title-icon" aria-hidden="true"></i>
-      </div>
-
-      <div class="card-body card-dashboard-body text-center">
-        <div class="card-body-main">
-          <div class='card-body-title'>
-            <p class='card-current-title-label'>Your topic is:</p>
-            <h3 class='card-current-title-title'><%= @current_topic.name %></h3>
+<div class="container-dashboard">
+  <%= render "shared/top-bar" %>
+    <div class="dashboard-cards">
+        <div class="card card-progress-bar-left">
+          <div class="card-dashboard-header">
+            <h4 class="card-header-title">Today's article</h4>
+            <i class="material-icons-sharp">local_library</i>
           </div>
-          <div class="todays-completionrate">
-            <i><%= @article_index %></i>
-            <abbr>out<br>of <strong><%= @current_topic.articles.count %></strong></abbr>
+
+          <div class="card-body card-dashboard-body text-center">
+            <div class="card-body-main">
+              <div class='card-body-title'>
+                <p class='card-current-title-label'>Your topic is:</p>
+                <h3 class='card-current-title-title'><%= @current_topic.name %></h3>
+              </div>
+              <div class="todays-completionrate">
+                <i><%= @article_index %></i>
+                <abbr>out<br>of <strong><%= @current_topic.articles.count %></strong></abbr>
+              </div>
+            </div>
+            <div class="card-body-topics">
+              <% @current_topic.articles.each do |article| %>
+                <div class="card-body-topic-title">
+                  <%= article.title %>
+                </div>
+                <div class="card-body-topic-status">
+                  <%= render inline: @not_read_articles.include?(article) ? '<i class="far fa-clock"></i>' : '<i class="fas fa-check"></i>' %>
+                </div>
+              <% end %>
+            </div>
+
           </div>
-        </div>
-        <div class="card-body-topics">
-          <% @current_topic.articles.each do |article| %>
-            <div class="card-body-topic-title">
-              <%= article.title %>
+          <div class="card-footer">
+            <div class="card-text card-dashboard-text small-text">Total reading time: 13 minutes</div>
+            <%= link_to  "Read next article", @current_article, class: "btn btn-secondary" %>
+          </div>
+        </div> <!-- ./card -->
+        <div class="dashboard-cards-right">
+          <div class="card card-progress-bar-right">
+            <div class="card-dashboard-header">
+              <h4 class="card-header-title">Flashcards</h4>
+              <i class="material-icons-sharp fa-rotate-180">dynamic_feed</i>
             </div>
-            <div class="card-body-topic-status">
-              <%= render inline: @not_read_articles.include?(article) ? '<i class="far fa-clock"></i>' : '<i class="fas fa-check"></i>' %>
+
+            <div class="card-body secondary-card">
+              <span>25% <i>completion <br>rate</i></span>
+              <progress max="100" value="25"></progress>
             </div>
-          <% end %>
-        </div>
+          </div> <!-- ./card -->
+          <div class="card card-progress-bar-right">
+            <div class="card-dashboard-header">
+              <h4 class="card-header-title">Prep Exams</h4>
+              <i class="material-icons-sharp">description</i>
+            </div>
 
-      </div>
-      <div class="card-footer">
-        <div class="card-text card-dashboard-text small-text">Total reading time: 14 minutes</div>
-        <%= link_to  "Read next article", @current_article, class: "btn btn-secondary" %>
-      </div>
-    </div> <!-- ./card -->
-    <div class="dashboard-cards-right">
-      <div class="card card-progress-bar-right">
-        <div class="card-dashboard-header">
-          <h4 class="card-header-title">Flashcards</h4>
-          <i class="fa fa-clone card-title-icon" aria-hidden="true"></i>
+            <div class="card-body secondary-card">
+              <span>17% <i>completion <br>rate</i></span>
+              <progress max="100" value="17"></progress>
+            </div>
+          </div> <!-- ./card -->
         </div>
-
-        <div class="card-body secondary-card">
-          <span>25% <i>completion <br>rate</i></span>
-          <progress max="100" value="25"></progress>
-        </div>
-      </div> <!-- ./card -->
-      <div class="card card-progress-bar-right">
-        <div class="card-dashboard-header">
-          <h4 class="card-header-title">Prep Exams</h4>
-          <i class="fa fa-question card-title-icon" aria-hidden="true"></i>
-        </div>
-
-        <div class="card-body secondary-card">
-          <span>17% <i>completion <br>rate</i></span>
-          <progress max="100" value="17"></progress>
-        </div>
-      </div> <!-- ./card -->
-    </div>
-</div> <!-- ./row -->
+    </div> <!-- ./row -->
+</div>
