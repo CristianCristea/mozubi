@@ -529,11 +529,10 @@ Chapter.create!(
 
 
 puts "Creating flashcards..."
-
-flashcard1 = Flashcard.create!(article: topic6_article1, content: "When you finally receive goods, what document will you receive to show that the goods were received?")
-flashcard2 = Flashcard.create!(article: topic6_article1, content: "After all of the documents have been filled out and received, what document do we need to complete to pay our vendor/supplier?")
-flashcard3 = Flashcard.create!(article: topic6_article1, content: "Business buyers seek benefits in economic, social and technical terms and in total classified as:")
-flashcard4 = Flashcard.create!(article: topic6_article1, content: "Difference between perceived costs and perceived benefits is classified as")
+flashcard1 = Flashcard.create!(article: topic6_article2, content: "When you finally receive goods, what document will you receive to show that the goods were received?")
+flashcard2 = Flashcard.create!(article: topic6_article2, content: "After all of the documents have been filled out and received, what document do we need to complete to pay our vendor/supplier?")
+flashcard3 = Flashcard.create!(article: topic6_article2, content: "Business buyers seek benefits in economic, social and technical terms and in total classified as:")
+flashcard4 = Flashcard.create!(article: topic6_article2, content: "Difference between perceived costs and perceived benefits is classified as")
 flashcard5 = Flashcard.create!(article: topic6_article3, content: "Rails application framework is called… ")
 flashcard6 = Flashcard.create!(article: topic6_article3, content: "What is something you should never do:")
 flashcard7 = Flashcard.create!(article: topic6_article4, content: "Which of these is not a various components of rail?")
