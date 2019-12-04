@@ -16,9 +16,10 @@
           <% end %>
             <%# raise %>
             <div class="hidden">
-              <a href="#submenu<%= topic.id %>" aria-controls='submenu<%= topic.id %>' data-toggle="collapse" aria-expanded="true" data-target="#submenu<%= topic.id %>" class=" list-group-item-action #{topic_class?(topic)}">
+              <a href="#submenu<%= topic.id %>" aria-controls='submenu<%= topic.id %>' data-toggle="collapse" aria-expanded="true" data-target="#submenu<%= topic.id %>" class=" list-group-item-action #{topic_class?(@article.topic_id)}">
                 <%= topic.name.upcase %>
               </a>
+            <%# raise %>
               <div id='submenu<%= topic.id %>' class="collapse sidebar-submenu" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <ul class="sub">
                   <% topic.articles.each do |article| %>
@@ -29,7 +30,6 @@
                     <% end %>
                       <%= link_to article, class: "#{article_class?(article)}" do %>
                         <%= article.title %>
-                      <%# raise %>
                       <% end %>
                     </li>
                   <% end %>
@@ -38,9 +38,18 @@
             </div>
           </li>
         <% end %>
+        <%# raise %>
       </ul>
     </div>
 </div>
+
+<script>
+  // const button = document.querySelector("aria-expanded")
+  var menu = document.querySelector('a[href="#submenu<%= @article.topic_id %>"]');
+  menu.setAttribute("class", "list-group-item-action #{topic_class?(topic)} collapsed");
+  var submenu = document.querySelector('#submenu<%= @article.topic_id %>');
+  submenu.setAttribute("class", "collapse sidebar-submenu show");
+</script>
 
 <!-- <script>
 

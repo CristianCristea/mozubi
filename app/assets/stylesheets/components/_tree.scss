@@ -35,7 +35,7 @@ $width-expand: calc(#{$sidebar-width} * 5);
 }
 .tree-sticky {
 }
-@keyframes expand{
+@keyframes expand {
   0% {
     width: $width-closed;
   }
@@ -44,9 +44,9 @@ $width-expand: calc(#{$sidebar-width} * 5);
   }
 }
 .sticky-div {
-    position: absolute;
-    top: 0;
-    bottom: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
 }
 @supports ((position: -webkit-sticky) or (position: sticky)) {
   .tree {
@@ -59,7 +59,7 @@ $width-expand: calc(#{$sidebar-width} * 5);
 //   animation: expand .3s ease-in;
 // }
 .close-tree {
-  transition: .3s ease-out;
+  transition: 0.3s ease-out;
 }
 .tree .nav {
   top: 0;
@@ -92,10 +92,11 @@ $width-expand: calc(#{$sidebar-width} * 5);
 //   width: 100%;
 // }
 .tree .tree-item.active ul.list:before {
-    background: $primary;
+  background: $primary;
 }
 .tree .nav-sub {
   list-style: none;
+  padding-right: 7px;
 }
 .hidden {
   visibility: hidden;
@@ -103,11 +104,11 @@ $width-expand: calc(#{$sidebar-width} * 5);
 }
 .tree .hidden {
   visibility: visible;
-  transition-delay: .4s;
+  transition-delay: 0.4s;
 }
 .gone {
   display: none;
-  transition-delay: .0s;
+  transition-delay: 0s;
 }
 .tree .gone {
   display: block;
@@ -127,21 +128,21 @@ ul {
   padding-inline-start: $line-left;
 }
 .list {
-    list-style-type: none;
-    position: relative;
-    font-weight: 200;
+  list-style-type: none;
+  position: relative;
+  font-weight: 200;
 }
 .list .active {
   font-weight: 900;
 }
 .list > li {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    width: 100%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 .list > li.read:before {
-  content: ' ';
+  content: " ";
   background: $secondary;
   display: inline-block;
   position: absolute;
@@ -151,7 +152,7 @@ ul {
   // top: 0px;
 }
 .list > li:before {
-  content: ' ';
+  content: " ";
   background: $unfinished;
   display: inline-block;
   position: absolute;
@@ -159,9 +160,22 @@ ul {
   width: $line-width;
   height: 100%;
 }
+.list > li.current:before {
+  content: " ";
+  background: $primary;
+  display: inline-block;
+  position: absolute;
+  left: $line-left;
+  width: $line-width;
+  height: 100%;
+  .list-group-item-action {
+    font-weight: 900;
+  }
+}
 ul.sub {
   list-style-type: none;
   position: relative;
+  padding-right: 7px;
 }
 .tree {
   text-decoration: none;
