@@ -142,7 +142,7 @@ ul {
 }
 .list > li.read:before {
   content: ' ';
-  background: $success;
+  background: $secondary;
   display: inline-block;
   position: absolute;
   left: $line-left;
