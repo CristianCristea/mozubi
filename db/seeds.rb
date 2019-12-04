@@ -529,6 +529,7 @@ Chapter.create!(
 
 
 puts "Creating flashcards..."
+
 flashcard1 = Flashcard.create!(article: topic6_article1, content: "When you finally receive goods, what document will you receive to show that the goods were received?")
 flashcard2 = Flashcard.create!(article: topic6_article1, content: "After all of the documents have been filled out and received, what document do we need to complete to pay our vendor/supplier?")
 flashcard3 = Flashcard.create!(article: topic6_article1, content: "Business buyers seek benefits in economic, social and technical terms and in total classified as:")
@@ -553,14 +554,16 @@ flashcard21 = Flashcard.create!(article: topic10_article1, content: "What is NOT
 flashcard22 = Flashcard.create!(article: topic5_article1, content: "Representation of a resource is called... ")
 flashcard23 = Flashcard.create!(article: topic5_article1, content: "Rails application framework is called… ")
 flashcard24 = Flashcard.create!(article: topic5_article1, content: "What is something you should never do:")
-flashcard25 = Flashcard.create!(article: topic1_article1, content: "Mark had to choose between a career as a coder and as a")
-flashcard26 = Flashcard.create!(article: topic8_article1, content: "Mark had to choose between a career as a coder and as a")
-flashcard27 = Flashcard.create!(article: topic2_article1, content: "Mark had to choose between a career as a coder and as a")
-flashcard28 = Flashcard.create!(article: topic3_article1, content: "Mark had to choose between a career as a coder and as a")
-flashcard29 = Flashcard.create!(article: topic9_article1, content: "Mark had to choose between a career as a coder and as a")
-flashcard30 = Flashcard.create!(article: topic4_article1, content: "Mark had to choose between a career as a coder and as a")
-flashcard31 = Flashcard.create!(article: topic10_article1, content: "Mark had to choose between a career as a coder and as a")
-flashcard32 = Flashcard.create!(article: topic5_article1, content: "Mark had to choose between a career as a coder and as a")
+flashcard25 = Flashcard.create!(article: topic4_article1, content: "After all of the documents have been filled out and received, what document do we need to complete to pay our vendor/supplier?")
+flashcard26 = Flashcard.create!(article: topic1_article1, content: "When you finally receive goods, what document will you receive to show that the goods were received?")
+flashcard27 = Flashcard.create!(article: topic1_article1, content: "After all of the documents have been filled out and received, what document do we need to complete to pay our vendor/supplier?")
+flashcard28 = Flashcard.create!(article: topic2_article1, content: "When you finally receive goods, what document will you receive to show that the goods were received?")
+flashcard29 = Flashcard.create!(article: topic2_article1, content: "After all of the documents have been filled out and received, what document do we need to complete to pay our vendor/supplier?")
+flashcard30 = Flashcard.create!(article: topic3_article1, content: "When you finally receive goods, what document will you receive to show that the goods were received?")
+flashcard31 = Flashcard.create!(article: topic3_article1, content: "After all of the documents have been filled out and received, what document do we need to complete to pay our vendor/supplier?")
+flashcard32 = Flashcard.create!(article: topic4_article1, content: "When you finally receive goods, what document will you receive to show that the goods were received?")
+flashcard33 = Flashcard.create!(article: topic5_article1, content: "When you finally receive goods, what document will you receive to show that the goods were received?")
+flashcard34 = Flashcard.create!(article: topic5_article1, content: "After all of the documents have been filled out and received, what document do we need to complete to pay our vendor/supplier?")
 
 Answer.create!(flashcard: flashcard1, content: "Goods receipt document", right_answer: true)
 Answer.create!(flashcard: flashcard1, content: "Packing list")
@@ -716,3 +719,13 @@ Answer.create!(flashcard: flashcard32, content: "French pastery chef")
 Answer.create!(flashcard: flashcard32, content: "Football talent scout")
 Answer.create!(flashcard: flashcard32, content: "Opera singer", right_answer: true)
 Answer.create!(flashcard: flashcard32, content: "Dog trainer")
+
+Answer.create!(flashcard: flashcard33, content: "French pastery chef")
+Answer.create!(flashcard: flashcard33, content: "Football talent scout")
+Answer.create!(flashcard: flashcard33, content: "Opera singer", right_answer: true)
+Answer.create!(flashcard: flashcard33, content: "Dog trainer")
+
+Answer.create!(flashcard: flashcard34, content: "French pastery chef")
+Answer.create!(flashcard: flashcard34, content: "Football talent scout")
+Answer.create!(flashcard: flashcard34, content: "Opera singer", right_answer: true)
+Answer.create!(flashcard: flashcard34, content: "Dog trainer")
