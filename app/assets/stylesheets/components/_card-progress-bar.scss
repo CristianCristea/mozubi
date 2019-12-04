@@ -1,4 +1,4 @@
-$card-width: 70%;
+$card-width: 60%;
 $small-card-width: calc(#{$card-width} / 2);
 $margin-left: calc(#{$card-width} / 6);
 
@@ -7,7 +7,7 @@ $margin-left: calc(#{$card-width} / 6);
   height: 20%;
   // margin: 40px auto;
   display: grid;
-  grid-template-rows: .5fr 5fr 1fr;
+  grid-template-rows: 0.5fr 5fr 1fr;
 
   & > div {
     // border: 1px solid black;
@@ -17,7 +17,6 @@ $margin-left: calc(#{$card-width} / 6);
 .card-body-main {
   display: grid;
   grid-template-columns: 2fr 1fr;
-
 }
 
 .nav-pills .nav-link {
@@ -30,7 +29,7 @@ $margin-left: calc(#{$card-width} / 6);
   align-items: flex-start;
 }
 
-.card-current-title-label{
+.card-current-title-label {
   margin-bottom: 0;
   color: grey;
   font-weight: lighter;
@@ -44,7 +43,7 @@ $margin-left: calc(#{$card-width} / 6);
   padding-top: 10px;
 }
 
-.dashboard-cards-right{
+.dashboard-cards-right {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -94,7 +93,6 @@ hr {
   display: grid;
   grid-template-rows: 40% 1fr;
 
-
   &-topics {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -125,7 +123,7 @@ hr {
   position: relative;
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 5px;
     height: 5px;
@@ -141,9 +139,9 @@ hr {
 }
 
 .card-footer {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    background-color: white;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-color: white;
 
   .btn-secondary {
     color: $text-secondary;
@@ -185,7 +183,6 @@ hr {
   flex-direction: column;
   padding-top: 10px !important;
   padding-bottom: 30px !important;
-
 
   span {
     font-size: 52px;
