@@ -2,12 +2,12 @@
 
   <div class="my-5">
     <div class="title-style">
-    <h2 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Read" if @article_read %></h3>
     </div>
   </div>
 
   <div class="my-5 d-flex align-items-center">
-    <%= link_to "Go to Quiz", @flashcard, class: "btn btn-primary mt-1" %>
+    <h2 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Read" if @article_read %></h3>
+
 
 
     <div class="article-details">
@@ -15,18 +15,20 @@
 
       <% if @article.bookmarked_for?(current_user) %>
         <%= link_to unbookmark_article_path(@article), method: :patch do %>
-          <i class="material-icons-sharp" id="two">bookmark</i>
+          <i class="material-icons-sharp bookmark-icon" id="two">bookmark</i>
         <% end %>
       <% else %>
         <%= link_to bookmark_article_path(@article), method: :post do %>
-          <i class="material-icons-sharp" id="two">bookmark_border</i>
+          <i class="material-icons-sharp bookmark-icon" id="two">bookmark_border</i>
         <% end %>
       <% end %>
+      <%= link_to "Go to Quiz", @flashcard, class: "btn btn-primary mt-1 quiz-button" %>
     </div>
+
   </div>
 
   <div class="row">
-    <div class="container pl-0">
+    <div class="container-accordion pl-0">
 <!--Accordion wrapper-->
     <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
   <!-- Accordion card -->
