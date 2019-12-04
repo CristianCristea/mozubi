@@ -1,9 +1,13 @@
+$card-width: 70%;
+$small-card-width: calc(#{$card-width} / 2);
+$margin-left: calc(#{$card-width} / 6);
+
 .card-progress-bar-left {
-  width: 924px;
-  height: 500px;
+  width: $card-width;
+  height: 20%;
   // margin: 40px auto;
   display: grid;
-  grid-template-rows: 1fr 6fr 1fr;
+  grid-template-rows: .5fr 5fr 1fr;
 
   & > div {
     // border: 1px solid black;
@@ -44,22 +48,30 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-right: auto;
-  margin-left: 120px;
+  // margin-right: 5%;
+  margin-left: $margin-left;
+  left: 0;
+  right: 0;
+  width: $small-card-width;
 }
 
 .card-progress-bar-right {
-  width: 350px;
-  height: 225px;
+  // width: 100%;
+  // right:0;
 }
 
 .card-dashboard-header {
   background-color: $primary;
   color: $text-secondary;
-  padding: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  .material-icons-sharp {
+    margin: 0;
+  }
 }
 
 .card-header-title {
@@ -67,7 +79,7 @@
   font-weight: lighter;
   font-size: 1.2rem;
   letter-spacing: 3px;
-  margin: 0;
+  // margin: 0;
 }
 
 .card-title-icon {
@@ -98,7 +110,7 @@ hr {
 .card-title {
   font-size: 1.4rem;
   font-weight: 600;
-  margin: 0;
+  // margin: 0;
 }
 
 .card-body-topics {
@@ -171,7 +183,8 @@ hr {
 .secondary-card {
   display: flex;
   flex-direction: column;
-  padding-top: 26px !important;
+  padding-top: 10px !important;
+  padding-bottom: 30px !important;
 
 
   span {
@@ -181,7 +194,7 @@ hr {
     i {
       position: absolute;
       top: 25px;
-      right: 130px;
+      // right: 130px;
       font-size: 13px;
       opacity: 0.6;
     }
@@ -190,7 +203,7 @@ hr {
   progress {
     border-radius: 2px;
     width: 100%;
-    height: 4px;
+    height: 5px;
   }
   progress::-webkit-progress-bar {
     background-color: #f1f1f1;
