@@ -159,9 +159,23 @@ ul {
   width: $line-width;
   height: 100%;
 }
+.list > li.current:before {
+  content: ' ';
+  background: $primary;
+  display: inline-block;
+  position: absolute;
+  left: $line-left;
+  width: $line-width;
+  height: 100%;
+  .list-group-item-action {
+    font-weight: 900;
+  }
+
+}
 ul.sub {
   list-style-type: none;
   position: relative;
+  padding-right: 7px;
 }
 .tree {
   text-decoration: none;
