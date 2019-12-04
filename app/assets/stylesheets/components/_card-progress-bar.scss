@@ -145,7 +145,7 @@ hr {
 
   .btn-secondary {
     color: $text-secondary;
-    background-color: $conifer;
+    background-color: $secondary;
     border: none;
 
     &:focus {
@@ -208,7 +208,7 @@ hr {
   }
   progress::-webkit-progress-value {
     border-radius: 2px;
-    background-color: $conifer;
+    background-color: $secondary;
   }
   progress::-moz-progress-bar {
     /* style rules */
