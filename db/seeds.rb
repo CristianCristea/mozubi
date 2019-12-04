@@ -133,6 +133,24 @@ topic6_article1 = Article.create!(
   topic: topic6
 )
 
+topic6_article2 = Article.create!(
+  title: "Forms of cooperation in purchasing",
+  description: "A purchasing cooperative is a type of cooperative arrangement, often among businesses, to agree to aggregate demand to get lower prices from selected suppliers. Retailers' cooperatives are a form of purchasing cooperative. It is often used by government agencies to reduce costs of procurement. Purchasing Cooperatives are used frequently by governmental entities, since they are required to follow laws requiring competitive bidding above certain thresholds. Counties, municipalities, schools, colleges and universities in the majority of states can sign an interlocal agreement or contract that allows them to legally use a contract that was procured by another governmental entity.",
+  topic: topic6
+)
+
+topic6_article3 = Article.create!(
+  title: "Inquiry, offer, order",
+  description: "It is part of everyday business to send inquiries to known business partners or potential suppliers. Quotations or cost estimates often have to be obtained for the private sector as well. You may also want to know if a holiday home is available or what the catering service would cost for a party. Basically, a distinction is made between general and specific enquiries. It also makes a difference whether you already have a business relationship with the addressee or whether you are contacting him for the first time. On this page you will find information on how to write an enquiry, helpful tips and sample texts for your enquiry.",
+  topic: topic6
+)
+
+topic6_article4 = Article.create!(
+  title: "Base calculation",
+  description: "The aim of reference costing is to determine the reference price (cost price), which is an important basis for comparing quotations. The basis for reference costing is the list purchase price on which discounts (for example, rebates, cash discounts) are deducted and delivery costs (for example, freight, packaging costs) are added. The purchase price (cost price) corresponds to the final acquisition costs.",
+  topic: topic6
+)
+
 topic7_article1 = Article.create!(
   title: "Material defect",
   description: "According to § 434 I 1, a material defect shall be deemed to exist if the item does not have the agreed quality. A negative deviation of the agreed target quality from the actual quality must therefore exist. It should be noted, however, that the term quality itself is not defined in the BGB. According to prevailing opinion, however, all value-forming factors are to be understood by it.",
@@ -424,6 +442,91 @@ Chapter.create!(
   content: "Constant autoloading is triggered on demand and therefore code that uses a certain constant may have it already defined or may trigger an autoload. That depends on the execution path and it may vary between runs. There are times, however, in which you want to make sure a certain constant is known when the execution reaches some code. require_dependency provides a way to load a file using the current loading mechanism, and keeping track of constants defined in that file as if they were autoloaded to have them reloaded as needed.",
   article: topic5_article1
 )
+
+# topic 6, article 1
+Chapter.create!(
+  title: "Explanation",
+  content: "It's the series of processes that are essential to get products or services from requisition to purchase order and invoice approval. Although we use procurement' and purchasing' interchangeably, they slightly differ from each other.While purchasing is the overarching process of obtaining necessary goods and services on behalf of an organization, procurement describes the activities involved in obtaining them. The procurement process in an organization is unique to its context and operations. Regardless of the uniqueness, every procurement management process consists of 3 Ps', namely Process, People, and Paperwork.",
+  article: topic6_article1
+)
+
+# topic 6, article 1
+Chapter.create!(
+  title: "Components",
+  content: "Process is the list of rules that need to be followed while reviewing, ordering, obtaining, and paying for goods/services. Checkpoints/steps increase with the complexity of the purchase. People are the stakeholders and their specific responsibility in the procurement cycle. They take care of initiating or authorizing every stage of the process. The number of stakeholders involved is directly proportional to the risk and value of the purchase. Paper refers to to the paperwork and documentation involved in every stage of the procurement process flow, all of which are collected and stored for reference and auditing reasons.",
+  article: topic6_article1
+)
+
+# topic 6, article 1
+Chapter.create!(
+  title: "Example",
+  content: "Procurement may be a simple purchasing arrangement with a supplier. It may also involve a more complex arrangement with the seller or a group of suppliers that ties required quantity, quality, and delivery into a production process. The stages of procurement include information gathering (i.e. who are potential suppliers), supplier contacts (i.e. gathering information about the potential suppliers, background reviews (i.e. vetting, screening, checking references of potential suppliers), negotiations (i.e. setting the price and terms), fulfillment (i.e. delivery and installation), consumption, maintenance, and disposal (i.e. monitoring the actual delivery and use of the supplies or equipment), and renewal (i.e. reorders and continuing relationship with the supplier). For example, direct procurement systems involve the integration of purchasing into a company's supply-chain management system, delivering the right supplies at the right time.  This procurement method is classified in manufacturing systems as just-in-time, which minimizes inventory holding costs and ensures the smooth delivery of supplies needed in the manufacturing process.",
+  article: topic6_article1
+)
+
+# topic 6, article 2
+Chapter.create!(
+  title: "Explanation",
+  content: "Purchasing cooperation means the cooperation of autonomous companies in the functional area of purchasing. In this context, the term cooperation means that the cooperation takes place in a different way than in other forms of operational organization. Cooperation can be distinguished both from the form of the market and from the form of a hierarchy; it occupies an intermediate position between these two forms of organization: Enterprise co-operation is the voluntary co-operation of legally and economically largely independent enterprises in individual or several operational sub-areas in order to achieve individual goals better than in alternative forms of organisation. Purchasing cooperation has a specific organisational form: in contrast to the organisational form of the market and the hierarchy, it has both market economy characteristics (e.g. realisation of competitive advantages, economic activities, decentralised action and decision-making centres) and hierarchical elements (e.g. mutual, stable relationships, determination of instruments by the companies, strategic management by the companies).",
+  article: topic6_article2
+)
+
+# topic 6, article 2
+Chapter.create!(
+  title: "Components",
+  content: "The term of the purchase co-operation states already, what a purchase co-operation is: a union of several enterprises with the purpose the procurement activities together to accomplish. The characteristic consists in the fact that by this co-operation of enterprises, which are competitors on the market, the procurement is united with the goal of attaining favorable purchase conditions. Although in the last years many different beginnings for the establishment of the purchase co-operation in the industry were developed, can be observed to today hardly changes in the procurement process of the enterprises.  Therefore, factors must exist that hinder such an establishment of purchasing cooperations. The assessment of purchasing cooperations is ambivalent, on the one hand it holds opportunities for the company (cost aspect), on the other hand it also contains risks arising from the cooperation.",
+  article: topic6_article2
+)
+
+# topic 6, article 2
+Chapter.create!(
+  title: "Example",
+  content: "The University Hospitals of Göttingen, Lübeck, Magdeburg and Hanover Medical School concluded a cooperation agreement years ago and formed a supraregional purchasing association. The aim is to bundle joint supply contracts and reduce purchase prices on a sustainable basis, to jointly define standard ranges and to create a common database. This also includes the introduction of an eBusiness platform. Through joint negotiations and tenders, the strengths of the four purchasing departments can be used to create market transparency, for example.",
+  article: topic6_article2
+)
+
+# topic 6, article 3
+Chapter.create!(
+  title: "Explanation",
+  content: "As consumers, we conclude purchase contracts on a daily basis without becoming aware of the legal procedures involved. Companies purchase goods and stocks in order to use them for production and resell them. Here too, purchase contracts are concluded on a daily basis. In the following the most important legal bases are to be represented, which are connected with the topic sales contract.",
+  article: topic6_article3
+)
+
+# topic 6, article 3
+Chapter.create!(
+  title: "Components",
+  content: "The conclusion of a sales contract obliges the seller and buyer to fulfil the contract. What does this mean in our case for the supplier ABC and the office furniture manufacturer? The supplier ABC (seller) is obliged: to deliver the bogies ordered for the office chairs on time and in perfect condition (without defects), to accept the agreed purchase price to provide the office furniture manufacturer (buyer) with ownership of the goods. The office furniture manufacturer (buyer) is obliged: to pay the agreed purchase price in due time and to accept the ordered bogies with punctual delivery. These obligations of seller and buyer initially sound very abstract. How must one imagine the concrete implementation (fulfilment)? The supplier ABC must deliver the bogies within the agreed period or exactly on the agreed date. They must meet the technical requirements and must not show any external scratches. If the office furniture manufacturer pays, the supplier must accept the purchase price from ABC. If nothing has been agreed about the method of payment (bank transfer, cheque, cash payment), the buyer can freely choose the method of payment. In the case of cash payments, there is a restriction in business life that the seller does not have to accept more than 50 coins. Some sellers, e.g. petrol stations, exclude payment with a 500 EURO bill for security reasons. When paying with ec-cards, sellers set minimum amounts for cost reasons. For legal reasons, the supplier reserves the right of ownership of the delivered goods (bogies) to ABC until the office furniture manufacturer has paid for the goods in full. The buyer is then initially only the owner of the goods, the seller remains the owner. This means that the office furniture manufacturer as the owner can process the bogies (e.g. mount them on the desk chairs) and sell them. In the event of non-payment, however, the supplier ABC could retrieve the goods (ownership = power over an object) if this is still practically possible (the different forms of retention of title are not discussed here).",
+  article: topic6_article3
+)
+
+# topic 6, article 3
+Chapter.create!(
+  title: "Example",
+  content: "A company, e.g. an office furniture manufacturer, would like to select new suppliers who can supply it with bogies for the manufacture of its office chairs. He is particularly interested in the quality (texture), price, transport costs, delivery time and payment terms of possible suppliers so that he can compare. These requests are not legally binding. The office furniture manufacturer does not enter into any legal obligations. He does not have to order from a particular supplier on the basis of his enquiry. He can make his enquiries by telephone, in writing, by fax or online. It is said that the enquiry is not bound to any form, it is free of form. The office furniture manufacturer receives offers with the desired information from various suppliers. After comparing the offers, he decides to procure the bogies for his office chairs from the supplier ABC. The supplier ABC's offer is called a declaration of intent towards the office furniture manufacturer to supply the bogies under the specified conditions. The office furniture manufacturer has checked the offer of the supplier ABC and orders under the conditions stated. The office furniture manufacturer's order is called a declaration of intent towards the supplier ABC to purchase the bogies under the specified conditions. Thus the office furniture manufacturer is legally bound to the conditions stated by the supplier. This obligation becomes effective when the order has been placed with the supplier. This is called a declaration of intent that needs to be received. If the office furniture manufacturer still wants to change something in the order, then his change (legally: revocation) must be received by the supplier at the latest with the order.",
+  article: topic6_article3
+)
+
+# topic 6, article 4
+Chapter.create!(
+  title: "Explanation",
+  content: "The reference calculation deals with the acquisition costs incurred by each company when it purchases goods from other companies for the production of its own goods. Of course, no company can afford to leave supplier prices to chance. In the end, this would lead to an unforeseeable increase in manufacturing costs and, consequently, in their own prices, which in turn would worsen the competitive situation. Therefore the reference calculation is used, in order to ensure the overview and comparison for the prices, which must be included with the procurement. Reference costing is used to determine the reference price, also known as the cost price. On this basis then different offers for goods or services which can be procured can be taken into the comparison.",
+  article: topic6_article4
+)
+
+# topic 6, article 4
+Chapter.create!(
+  title: "Components",
+  content: "For a complete reference cost estimate, all components of a respective reference price for the special goods must be included. The procurement costs here include such components as packaging costs, freight costs, customs duties, road tolls, insurance, brokerage commissions, storage costs, and other or fewer items, depending on the type of goods, transportation, and special features of the delivery. Discounts may be granted in the form of supplier discounts, cash discounts, bonus offers. The reference calculation can be made in the simple and the extended form. The simple reference costing calculates itself: Gross purchase price minus purchase costs = purchase price plus gross profit markup = gross sales price. With the extended purchase price calculation, the system also calculates how the purchase costs are calculated if several different goods are ordered from one vendor. Such costs are not necessarily comparable. Packaging, weight, freight conditions and more are often different. To make this calculable, the procurement costs are divided into the categories value expenses (target purchase price of the goods) and weight expenses (weight plus packaging weight, dependent costs).",
+  article: topic6_article4
+)
+
+# topic 6, article 4
+Chapter.create!(
+  title: "Example",
+  content: "The automobile manufacturer Mercedes Lenz requires 12 tons of aluminum sheets. Willi Wuchtig AG has already made an offer of € 912.40 per tonne. In order to obtain these sheets as cheaply as possible, we want to examine a further offer from Aluminium-Alex GmbH. In order to be able to compare these two offers, the final purchase price has to be calculated for the second offer. The following data is available: List price net: 820,00 € per ton, quantity discount: 15 %, discount: 2 % (for payment within 14 days), procurement costs: 1,950.00 € (delivery ex works by truck). With the reference cost estimate, you can now calculate the reference price (cost price): The calculated, final purchase price now shows how much we have to pay Aluminium-Alex GmbH for one tonne of aluminium sheet (after deduction of rebate and discount and inclusion of the purchase costs (freight)). The purchase calculation showed that we have to pay € 878.06 for one tonne of aluminium sheet metal at Aluminium-Alex GmbH. This means that the purchase price is € 34.34 (per ton) cheaper than at Willi Wuchtig AG. This results in a total saving of 343.40 € for the complete order. Typical discounts: Discounts (e.g. loyalty discount, quantity discount, reseller discount or special discount) Discount (is granted from the invoice price with timely payment). Typical procurement costs: postage (e.g. parcel services), freight (e.g. for trucks and trains), storage costs, packaging costs, insurance costs.",
+  article: topic6_article4
+)
+
 
 puts "Creating flashcards..."
 flashcard1 = Flashcard.create!(article: topic1_article1, content: "Which of these is not a various components of rail?")
