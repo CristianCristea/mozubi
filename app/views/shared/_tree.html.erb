@@ -38,9 +38,18 @@
             </div>
           </li>
         <% end %>
+        <%# raise %>
       </ul>
     </div>
 </div>
+
+<script>
+  // const button = document.querySelector("aria-expanded")
+  var menu = document.querySelector('a[href="#submenu<%= @article.topic_id %>"]');
+  menu.setAttribute("class", "list-group-item-action #{topic_class?(topic)} collapsed");
+  var submenu = document.querySelector('#submenu<%= @article.topic_id %>');
+  submenu.setAttribute("class", "collapse sidebar-submenu show");
+</script>
 
 <!-- <script>
 
