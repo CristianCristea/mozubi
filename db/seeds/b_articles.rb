@@ -40,11 +40,7 @@ puts "Creating articles..."
   topic: @topic2
 )
 
-@topic2_article6 = Article.create!(
-  title: "Parsing",
-  description: "",
-  topic: @topic2
-)
+# ---------------------------- TOPIC 3 ----------------------------
 
 @topic3_article1 = Article.create!(
   title: "Classes & Instances",
@@ -57,8 +53,6 @@ puts "Creating articles..."
   description: "",
   topic: @topic3
 )
-
-# ---------------------------- TOPIC 3 ----------------------------
 
 @topic3_article3 = Article.create!(
   title: "Cookbook (Day 1)",

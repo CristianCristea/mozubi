@@ -34,13 +34,13 @@ $margin-left: calc(#{$card-width} / 6);
   color: grey;
   font-weight: lighter;
   font-size: 21px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .card-current-title-title {
   font-weight: lighter;
   letter-spacing: 1px;
-  padding-top: 10px;
+  padding-top: 0px;
 }
 
 .dashboard-cards-right {
@@ -95,7 +95,7 @@ hr {
 
 .card-dashboard-body {
   display: grid;
-  grid-template-rows: 40% 1fr;
+  grid-template-rows: 30% 1fr;
 
   &-topics {
     display: grid;
@@ -123,7 +123,7 @@ hr {
 .card-body-topic-title {
   display: flex;
   padding-left: 20px;
-  padding-top: 10px;
+  padding-top: 0px;
   position: relative;
 
   &:before {
@@ -133,13 +133,13 @@ hr {
     height: 5px;
     border-radius: 50%;
     background-color: $secondary;
-    top: 21px;
+    top: 11px;
     left: 6px;
   }
 }
 
 .card-body-topic-status {
-  padding-top: 10px;
+  padding-top: 2%;
 }
 
 .card-footer {
@@ -151,11 +151,21 @@ hr {
     color: $text-secondary;
     background-color: $secondary;
     border: none;
+    height: 100%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
 
     &:focus {
       color: #fff;
     }
   }
+}
+
+.button-text {
+  align-self: center;
+  display: flex;
+  justify-content: center;
 }
 
 .round-progress-bar {
