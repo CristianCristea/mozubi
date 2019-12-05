@@ -13,7 +13,7 @@
         </div>
 
         <%= form_for check_answer_flashcard_path(@flashcard), url: {action: "check_answer"}, method: :post, html: { id: "flashcardAnswerForm", "data-form-submitted": false } do |f| %>
-          <% @flashcard.answers.each do |answer| %>
+          <% @flashcard.answers.sort.each do |answer| %>
 
              <div class="flashcard-answer">
                 <%= radio_button_tag(:answer, answer.right_answer, false, id: answer.id) %>
