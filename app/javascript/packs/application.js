@@ -128,3 +128,10 @@ if (quizBtn) {
     }
   });
 }
+
+// article arrow
+$(".container-accordion .card-header").on("click", e => {
+  e.currentTarget
+    .querySelector("i")
+    .classList.replace("fa-angle-down", "fa-angle-up");
+});
