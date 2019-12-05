@@ -1,5 +1,5 @@
 meta_product_name: "Mozubi"
 meta_title: "Mozubi - Greater mobile learning"
 meta_description: "Pass your final exam with the leading learning platform for apprentices!"
-meta_image: "cover.png" # should exist in `app/assets/images/`
-twitter_account: "@queen_uk"   # required for Twitter Cards
+meta_image: "cover.jpg" # should exist in `app/assets/images/`
+twitter_account: "@queen_uk" # required for Twitter Cards
