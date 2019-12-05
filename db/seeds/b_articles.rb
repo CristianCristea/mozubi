@@ -249,8 +249,9 @@ puts "Creating articles..."
 )
 
 @topic7_article6 = Article.create!(
-  title: "Final Rehersal",
-  description: "It’s been 2 months since my days and nights have been monopolized by Le Wagon, a coding bootcamp. That is to say, a (very) intensive program of 9 weeks where dozens of people (40 here) from diverse backgrounds learn the basics and best practices of web development : HTML, CSS, Ruby on Rails, Javascript, PostgreSQL, Bootstrap, Github…After the failure of my 1st start-up, I had clearly observed the technical knowledge of “how the web works and how to build web products” was missing from us. Moreover, it’s been a long time since I sold WIX websites in freelance (I know…), and developed marketplaces crafted with a CMS, Zapier, Excel & Gmail connected all together. It was time to take the lead.",
+  title: "Final Revision",
+  description: "While it is possible to study and learn the previously internalized subjects independently, the Mozubi platform improves the speed and quality of learning by providing a great environment, excellent teachers, challenging exercises and real projects where the learned knowledge can be tested.
+              More importantly, the entire experience contributes to building confidence in dealing with the technical environment that is actually needed to build a web application. In addition, it is easy and quick to repeat the learned concepts and content.",
   topic: @topic7
 )
 
