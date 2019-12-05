@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Oops! (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-    .banner-404 {
-      background-size: cover;
-      background-position: center;
-      background-position: center bottom;
-      max-width: 100%;
-      height: 100vh;
-    }
+  <head>
+    <title>Mozubi</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      body {
+        background: url("https://media.giphy.com/media/Q61LJj43H48z1FIK4X/giphy.gif")
+          center;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+      }
 
-    .404-text {
-      margin-top: 150px;
-    }
+      .text-404 {
+        margin-top: 150px;
+      }
 
-    .card-404 {
-      background-color: white;
-      font-weight: lighter;
-      width: 900px;
-      margin: auto;
-    }
+      .banner-404 {
+        background-color: white;
+        font-weight: lighter;
+        width: 900px;
+        height: 200px;
+        margin: auto;
+      }
+    </style>
+  </head>
 
-  </style>
-</head>
-
-  <body class="rails-default-error-page">
+  <body>
     <!-- This file lives in public/404.html -->
-    <div class="banner">
-      <div class="banner-404" style="background-image: url(https://media.giphy.com/media/Q61LJj43H48z1FIK4X/giphy.gif)">
-        <div class="row">
-          <div class="card-404">
-            <h1 class="404-text">Oops, this is not the page you're looking for...</h1>
-            <a class="btn-primary" href="/dashboard">Bring me back to Mozubi</a>
-          </div>
-        </div>
-      </div>
+    <div class="banner-404">
+      <h1 class="text-404">
+        Why are you here?
+      </h1>
+      <a class="btn-primary" href="/dashboard">Bring me back to Mozubi</a>
     </div>
   </body>
 </html>
