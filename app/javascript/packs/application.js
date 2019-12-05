@@ -7,6 +7,7 @@ const showResultBtn = document.getElementById("showResultBtn");
 const flashcardAnswerEl = document.getElementsByClassName("flashcard-answer");
 const radioInputEl = document.querySelector("input[name='answer']:checked");
 const congratsEl = document.getElementById("congrats");
+const quizBtn = document.getElementById("quizBtn");
 
 const removePointerEvents = collection => {
   for (const el of collection) {
@@ -27,7 +28,7 @@ if (showResultBtn) {
   });
 }
 
-// great job
+// congrats screen
 if (congratsEl) {
   const particles = [".blob", ".star"],
     $congratsSection = $("#congrats"),
@@ -114,4 +115,16 @@ if (congratsEl) {
       $congratsSection.append('<div class="particle blob ' + i + '"></div>');
     }
   }
+}
+
+// show quiz btn if article chapters are open
+if (quizBtn) {
+  window.addEventListener("scroll", e => {
+    console.log("scroll");
+    if (window.innerHeight < document.body.clientHeight) {
+      quizBtn.classList.add("d-block");
+    } else {
+      quizBtn.classList.remove("d-block");
+    }
+  });
 }
