@@ -38,11 +38,11 @@ Answer.create!(flashcard: @flashcard6, content: "Because no code is better than 
 Answer.create!(flashcard: @flashcard6, content: "Because if it was hard to write then it must be hard to read!", right_answer: true)
 Answer.create!(flashcard: @flashcard6, content: "Because it the rubocop will complain about it.")
 
-@flashcard7 = Flashcard.create!(article: @topic2_article6, content: "Why do developers never comment their code?")
-Answer.create!(flashcard: @flashcard7, content: "Because they don't know how to do that.")
-Answer.create!(flashcard: @flashcard7, content: "Because no code is better than no code.")
-Answer.create!(flashcard: @flashcard7, content: "Because if it was hard to write then it must be hard to read!", right_answer: true)
-Answer.create!(flashcard: @flashcard7, content: "Because it the rubocop will complain about it.")
+# @flashcard7 = Flashcard.create!(article: @topic2_article6, content: "Why do developers never comment their code?")
+# Answer.create!(flashcard: @flashcard7, content: "Because they don't know how to do that.")
+# Answer.create!(flashcard: @flashcard7, content: "Because no code is better than no code.")
+# Answer.create!(flashcard: @flashcard7, content: "Because if it was hard to write then it must be hard to read!", right_answer: true)
+# Answer.create!(flashcard: @flashcard7, content: "Because it the rubocop will complain about it.")
 
 # ---------------------------- TOPIC 3 ----------------------------
 

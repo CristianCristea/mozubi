@@ -20,7 +20,7 @@ user = User.create!(
         first_name: "Bob",
         last_name: "McDonald",
         birthdate: Date.new(1986, 4, 10),
-        exam_date: Date.new(2020, 3, 1),
+        exam_date: Date.new(2019, 12, 13),
         profession: @profession
     )
 
