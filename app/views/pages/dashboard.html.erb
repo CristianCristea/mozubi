@@ -32,7 +32,9 @@
           </div>
           <div class="card-footer">
             <div class="card-text card-dashboard-text small-text">Total reading time: 13 minutes</div>
-            <%= link_to  "Read next article", @current_article, class: "btn btn-secondary" %>
+            <%= link_to @current_article, class: "btn btn-secondary" do %>
+              <div class="button-text">Read next article</div>
+            <% end %>
           </div>
         </div> <!-- ./card -->
         <div class="dashboard-cards-right">
