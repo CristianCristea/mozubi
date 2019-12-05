@@ -26,31 +26,31 @@ user = User.create!(
 
 
 
-puts "Creating topics..."
+# puts "Creating topics..."
 
-# require_relative 'seeds/topics'
-Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each do |seed|
-  load seed
-end
+require_relative './seeds/a_topics'
+# Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each do |seed|
+#   load seed
+# end
 
 
-puts "Creating articles..."
+# puts "Creating articles..."
 
-# require_relative 'seeds/articles'
+require_relative './seeds/b_articles'
 # Dir[File.join(Rails.root, 'db', 'seeds', 'articles.rb')].sort.each do |seed|
 #   load seed
 # end
 
 
-puts "Creating article chapters..."
+# puts "Creating article chapters..."
 
-# require_relative 'seeds/chapters'
+require_relative './seeds/c_chapters'
 # Dir[File.join(Rails.root, 'db', 'seeds', 'chapters.rb')].sort.each do |seed|
 #   load seed
 # end
 
 
-puts "Creating flashcards..."
+# puts "Creating flashcards..."
 
 # require_relative 'seeds/flashcards'
 # Dir[File.join(Rails.root, 'db', 'seeds', 'flashcards.rb')].sort.each do |seed|

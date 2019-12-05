@@ -3,22 +3,22 @@ profession = Profession.create!(name: "Web Developer")
 
 puts "Creating topics..."
 
-topic1 = Topic.create!(
+@topic1 = Topic.create!(
   name: "Goods procurement",
   profession: profession
 )
 
-topic2 = Topic.create!(
+@topic2 = Topic.create!(
   name: "Sales conversations",
   profession: profession
 )
 
-topic3 = Topic.create!(
+@topic3 = Topic.create!(
   name: "Service area cash desk",
   profession: profession
 )
 
-topic4 = Topic.create!(
+@topic4 = Topic.create!(
   name: "Goods presentation",
   profession: profession
 )

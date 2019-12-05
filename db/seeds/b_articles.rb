@@ -1,4 +1,6 @@
 puts "Creating articles..."
+
+
 topic1_article1 = Article.create!(
   title: "Working and learning techniques",
   description: "Study skills, academic skill, or study strategies are approaches applied to learning. They are generally critical to success in school, considered essential for acquiring good grades, and useful for learning throughout one's life.
@@ -6,7 +8,7 @@ topic1_article1 = Article.create!(
                 While often left up to the student and their support network, study skills are increasingly taught in high school and at the university level.
                 More broadly, any skill which boosts a person's ability to study, retain and recall information which assists in and passing exams can be termed a study skill, and this could include time management and motivational techniques.
                 Study skills are discrete techniques that can be learned, usually in a short time, and applied to all or most fields of study. They must therefore be distinguished from strategies that are specific to a particular field of study (e.g. music or technology), and from abilities inherent in the student, such as aspects of intelligence or learning styles.",
-  topic: topic1
+  topic: @topic1
 )
 
 topic1_article2 = Article.create!(
@@ -16,7 +18,7 @@ topic1_article2 = Article.create!(
                 While often left up to the student and their support network, study skills are increasingly taught in high school and at the university level.
                 More broadly, any skill which boosts a person's ability to study, retain and recall information which assists in and passing exams can be termed a study skill, and this could include time management and motivational techniques.
                 Study skills are discrete techniques that can be learned, usually in a short time, and applied to all or most fields of study. They must therefore be distinguished from strategies that are specific to a particular field of study (e.g. music or technology), and from abilities inherent in the student, such as aspects of intelligence or learning styles.",
-  topic: topic1
+  topic: @topic1
 )
 
 topic1_article3 = Article.create!(
