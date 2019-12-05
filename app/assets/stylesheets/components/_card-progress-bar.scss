@@ -34,7 +34,7 @@ $margin-left: calc(#{$card-width} / 6);
   color: grey;
   font-weight: lighter;
   font-size: 21px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .card-current-title-title {
@@ -139,7 +139,7 @@ hr {
 }
 
 .card-body-topic-status {
-  padding-top: 10px;
+  padding-top: 2%;
 }
 
 .card-footer {
@@ -151,13 +151,21 @@ hr {
     color: $text-secondary;
     background-color: $secondary;
     border: none;
-    height: 70%;
+    height: 100%;
     align-self: center;
+    display: flex;
+    justify-content: center;
 
     &:focus {
       color: #fff;
     }
   }
+}
+
+.button-text {
+  align-self: center;
+  display: flex;
+  justify-content: center;
 }
 
 .round-progress-bar {
