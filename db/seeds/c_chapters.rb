@@ -99,20 +99,26 @@ Chapter.create!(
 
 # topic 7, article 6
 Chapter.create!(
-  title: "Lectures? An exceptional (educational) product.",
-  content: "A powerful learning platform (automatic pairing with a new student every day to work with and learn to code in peer, pre-corrected exercises, pre-uploaded videos and notes of morning classes, statistics on each student to detect those who drop out or start lagging behind in order to help them…). A well-thought out educational program, in perpetual evolution from a batch to another: order of languages/frameworks learned, choice of daily training exercises so that they can be re-used in our future jobs, evening recap exercises due to the sheer amount of information your brain has to register on a daily basis…Good at explaining teachers, who share with you the best practices of current technical teams, secret tricks from experienced developers and cool tools to help you save time.",
+  title: "The way to become an IT-sepcialist",
+  content: "In order to become an IT-specialist, you need different basics in Ruby, HTML, CSS, SQL, Javascript and Rails. In addition, it requires a basic setup, as well as some requirements, which are not directly related to the programming itself, but must also be considered. In this case it is for example necessary that the operating system is either based on OS or that the setup is done with Ubuntu at the beginning. In addition, the work surface is located on the 5th floor, which can be reached without a freely accessible elevator. However, these are only basic conditions which have to be mastered in order to deal with the core of the training, the basics in all programming languages.",
   article: @topic7_article6
 )
 
 Chapter.create!(
-  title: "Skills? A life lesson.",
-  content: "In life, everything is attainable. Why ? Because if you really want it, everything can be learned, even more so today with the internet. You just have to give yourself the means, be resilient and create a favorable context to learn fast and well. That’s what Le Wagon did for us during these 9 weeks. You have to learn at every step of your life. That’s a rule, a mantra you have to implement. The only way to be in trend with your time, to be better everyday. That’s why I decided, every morning, I will take 1 hour to watch a video lesson or read an article on Youtube, Medium, Coursera, OpenClassroom or any other content website. I’ve realized learning curve is key.",
+  title: "Coding Style",
+  content: "In the training to become a developer, it is not only important to write code that does not contain any errors, but also code that is readable by third parties. Therefore the style of the code is essential to work on a project with other developers. Another developer should be able to understand the code quickly and easily and spend little time learning a personal style. Therefore it is important that the code is clearly structured and does not contain any superfluous elements. There are controversial views on the ideal length of the code, which can vary depending on the developer. However, it is generally possible to summarize that shorter code is easier to read than longer code and therefore the best code is little to no code at all.",
   article: @topic7_article6
 )
 
 Chapter.create!(
-  title: "A network of alumni? A community.",
-  content: "I always thought the most important thing in a private school, the one on which you had to concentrate your energy when you joined one, is networking: take part in student associations to meet and work with people, contact alumni to ask for traineeship/jobs… Once again, Le Wagon surprises. Yes, the people you meet there and the alumni present in companies that interest you are essentials. But the big added value of this program lies in the community of entrepreneurs and developers that it constitutes. Furthermore, Le Wagon is now present in 29 cities of 17 countries. Think about in one click being able to talk with an entrepreneur or a developer in Bali. Think about traveling the world and making a stop at Le Wagon São Paulo to teach code to newbies. At Le Wagon, it feels like you will be welcomed everywhere in the world.Honestly, being part of a community of people who are eager to learn and share every day is priceless.",
+  title: "Collaborative interaction",
+  content: "Throughout your training as a developer, it is important to work together as a team and exchange ideas. This leads to stronger results in the learning process and a better communication culture. During the training, teamwork will be promoted in a targeted way and the mutual exchange will be promoted in the live code sessions. In order to also give more reserved developers a chance, the random wheel helps to randomly select a single one.",
+  article: @topic7_article6
+)
+
+Chapter.create!(
+  title: "Motivation",
+  content: "Training to become an IT specialist is a very demanding training, whereas the motivation from week to week is a decisive factor. some will think that every week is harder than the previous one. The respective driver is also instructed to express himself in order to keep the motivation high and to celebrate the personal success more intensively. Nevertheless, both the training as a whole and the milestones achieved should be considered as personal success.",
   article: @topic7_article6
 )
 
