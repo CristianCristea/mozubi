@@ -1,6 +1,7 @@
 .container-accordion {
   position: relative;
   margin-bottom: 5rem;
+  width: 1028px;
 
   .card {
     border: none;
@@ -11,7 +12,10 @@
   }
 
   .card-body {
-    padding-left: 0;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 97%;
   }
 
   h5 {
