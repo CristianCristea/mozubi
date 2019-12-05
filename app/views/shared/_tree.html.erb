@@ -16,7 +16,7 @@
           <% end %>
             <%# raise %>
             <div class="hidden">
-              <a href="#submenu<%= topic.id %>" aria-controls='submenu<%= topic.id %>' data-toggle="collapse" aria-expanded="true" data-target="#submenu<%= topic.id %>" class=" list-group-item-action #{topic_class?(@article.topic_id)}">
+              <a href="#submenu<%= topic.id %>" aria-controls='submenu<%= topic.id %>' data-toggle="collapse" aria-expanded="true" data-target="#submenu<%= topic.id %>" class=" list-group-item-action">
                 <%= topic.name.upcase %>
               </a>
             <%# raise %>
@@ -39,6 +39,7 @@
           </li>
         <% end %>
         <%# raise %>
+        <!-- @all_topics.map { |topic| topic.articles.map { |article| @art_read.include?(article.id) } } -->
       </ul>
     </div>
 </div>

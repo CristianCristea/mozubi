@@ -11,8 +11,8 @@ module ApplicationHelper
     return 'active' if request.path =~ /#{article_path(article)}/
     ''
   end
-  def topic_class?(topic)
-    return 'current' if request.path.topic_id =~ /#{topic_path(topic)}/
-    ''
-  end
+  # def topic_class?(topic)
+  #   return 'current' if request.path.topic_id =~ /#{topic_path(topic)}/
+  #   ''
+  # end
 end

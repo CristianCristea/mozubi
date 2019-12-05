@@ -6,6 +6,7 @@ $width-eights: calc(#{$width-tree} / 8);
 
 $line-width: 4px;
 $line-left: calc(#{$width-half} - (#{$line-width} / 2));
+$line-left-tiny: calc(#{$width-half} - (#{$line-width}));
 
 $dot-width: $width-fourth;
 $dot-left: calc(#{$width-half} - (#{$dot-width} / 2));
@@ -149,7 +150,6 @@ ul {
   left: $line-left;
   width: $line-width;
   height: 100%;
-  // top: 0px;
 }
 .list > li:before {
   content: " ";
@@ -160,23 +160,24 @@ ul {
   width: $line-width;
   height: 100%;
 }
-.list > li.current:before {
-  content: " ";
-  background: $primary;
-  display: inline-block;
-  position: absolute;
-  left: $line-left;
-  width: $line-width;
-  height: 100%;
-  .list-group-item-action {
-    font-weight: 900;
-  }
+.collapsed {
+  font-weight: 900 !important;
 }
-ul.sub {
+ul.nav-sub {
   list-style-type: none;
   position: relative;
   padding-right: 7px;
 }
+// .nav-sub.read:before {
+//   background-color: red;
+//   content: " ";
+//   background: $secondary;
+//   display: inline-block;
+//   position: absolute;
+//   left: $line-left;
+//   width: $line-width;
+//   height: 100%;
+// }
 .tree {
   text-decoration: none;
   font-size: 0.8rem;
@@ -207,5 +208,10 @@ ul.sub {
     color: $text-primary;
     text-decoration: none;
     background-color: white;
+  }
+}
+.nav-sub.read {
+  a{
+    color: $secondary !important;
   }
 }
