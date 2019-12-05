@@ -71,6 +71,10 @@ $margin-left: calc(#{$card-width} / 6);
   .material-icons-sharp {
     margin: 0;
   }
+
+  .display-4 {
+    color: $text-primary;
+  }
 }
 
 .card-header-title {
