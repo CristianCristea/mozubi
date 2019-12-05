@@ -11,7 +11,7 @@ User.delete_all
 Profession.delete_all
 
 puts "Adding professions..."
-profession = Profession.create!(name: "Web Developer")
+@profession = Profession.create!(name: "Web Developer")
 
 puts "Adding users..."
 user = User.create!(
@@ -21,7 +21,7 @@ user = User.create!(
         last_name: "McDonald",
         birthdate: Date.new(1986, 4, 10),
         exam_date: Date.new(2020, 3, 1),
-        profession: profession
+        profession: @profession
     )
 
 
@@ -52,7 +52,7 @@ require_relative './seeds/c_chapters'
 
 # puts "Creating flashcards..."
 
-# require_relative 'seeds/flashcards'
+require_relative 'seeds/d_flashcards'
 # Dir[File.join(Rails.root, 'db', 'seeds', 'flashcards.rb')].sort.each do |seed|
 #   load seed
 # end
