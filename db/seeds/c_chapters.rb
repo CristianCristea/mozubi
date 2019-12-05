@@ -4,19 +4,19 @@ puts "Creating article chapters..."
 
 # topic 7, article 6
 Chapter.create!(
-  title: "",
+  title: "Test1",
   content: "",
   article: @topic7_article6
 )
 
 Chapter.create!(
-  title: "",
+  title: "Test2",
   content: "",
   article: @topic7_article6
 )
 
 Chapter.create!(
-  title: "",
+  title: "Test3",
   content: "",
   article: @topic7_article6
 )

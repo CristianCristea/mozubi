@@ -95,7 +95,7 @@ hr {
 
 .card-dashboard-body {
   display: grid;
-  grid-template-rows: 40% 1fr;
+  grid-template-rows: 30% 1fr;
 
   &-topics {
     display: grid;
@@ -123,7 +123,7 @@ hr {
 .card-body-topic-title {
   display: flex;
   padding-left: 20px;
-  padding-top: 10px;
+  padding-top: 0px;
   position: relative;
 
   &:before {
@@ -133,7 +133,7 @@ hr {
     height: 5px;
     border-radius: 50%;
     background-color: $secondary;
-    top: 21px;
+    top: 11px;
     left: 6px;
   }
 }
@@ -151,6 +151,8 @@ hr {
     color: $text-secondary;
     background-color: $secondary;
     border: none;
+    height: 70%;
+    align-self: center;
 
     &:focus {
       color: #fff;
