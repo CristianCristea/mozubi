@@ -8,9 +8,7 @@ const flashcardAnswerEl = document.getElementsByClassName("flashcard-answer");
 const radioInputEl = document.querySelector("input[name='answer']:checked");
 const congratsEl = document.getElementById("congrats");
 const quizBtn = document.getElementById("quizBtn");
-const accordionCardHeaderEl = document.querySelector(
-  ".container-accordion .card-header"
-);
+const accordionCardHeaderEls = $(".container-accordion .card-header");
 
 const removePointerEvents = collection => {
   for (const el of collection) {
@@ -133,8 +131,8 @@ if (quizBtn) {
 }
 
 // article arrow
-if (accordionCardHeaderEl) {
-  accordionCardHeaderEl.addEventListener("click", e => {
+if (accordionCardHeaderEls) {
+  accordionCardHeaderEls.on("click", e => {
     e.currentTarget
       .querySelector("i")
       .classList.replace("fa-angle-down", "fa-angle-up");
