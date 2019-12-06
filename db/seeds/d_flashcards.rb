@@ -357,7 +357,7 @@ Answer.create!(flashcard: @flashcard57, content: "Very Clear and Explanatory Met
 @flashcard58 = Flashcard.create!(article: @topic7_article6, content: "What will happen if nobody volunteers for live code?")
 Answer.create!(flashcard: @flashcard58, content: "Dimitri will code it in 3 seconds")
 Answer.create!(flashcard: @flashcard58, content: "The wheel of death selects the next victim", right_answer: true)
-Answer.create!(flashcard: @flashcard58, content: "Stone, paper scissors until there is a winner that codes")
+Answer.create!(flashcard: @flashcard58, content: "Stone, paper, scissors until there is a winner that codes")
 Answer.create!(flashcard: @flashcard58, content: "No beers on Fridays")
 
 @flashcard59 = Flashcard.create!(article: @topic7_article6, content: "Which week is the hardest?")
