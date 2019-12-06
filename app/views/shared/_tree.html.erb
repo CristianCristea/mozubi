@@ -22,7 +22,7 @@
             <%# raise %>
               <div id='submenu<%= topic.id %>' class="collapse sidebar-submenu" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <ul class="sub">
-                  <% topic.articles.each do |article| %>
+                  <% topic.articles.sort.each do |article| %>
                     <% if @art_read.include?(article.id) %>
                       <li class="nav-sub read">
                     <% else %>
