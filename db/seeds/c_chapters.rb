@@ -118,7 +118,7 @@ Chapter.create!(
 
 Chapter.create!(
   title: "Motivation",
-  content: "Training to become an IT specialist is a very demanding training, whereas the motivation from week to week is a decisive factor. some will think that every week is harder than the previous one. The respective driver is also instructed to express himself in order to keep the motivation high and to celebrate the personal success more intensively. Nevertheless, both the training as a whole and the milestones achieved should be considered as personal success.",
+  content: "Training to become an IT specialist is a very demanding training, whereas the motivation from week to week is a decisive factor. Some will think that every week is harder than the previous one. The respective driver is also instructed to express himself in order to keep the motivation high and to celebrate the personal success more intensively. Nevertheless, both the training as a whole and the milestones achieved should be considered as personal success.",
   article: @topic7_article6
 )
 
