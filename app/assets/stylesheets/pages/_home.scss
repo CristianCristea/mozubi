@@ -244,7 +244,7 @@ $content-size: 70px;
 
 .flat-button:after {
   position: absolute;
-  top: 90%;
+  top: 100%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -255,7 +255,7 @@ $content-size: 70px;
 }
 
 .flat-button:hover::after {
-  transform: translateY(-80%);
+  transform: translateY(-100%);
   transition: transform 0.3s;
 }
 
