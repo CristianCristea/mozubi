@@ -13,6 +13,11 @@
     p {
       font-size: 20px;
       color: $text-primary;
+      .number {
+      color: $primary;
+      font-weight: 900;
+      font-size: 24px;
+      }
     }
   }
 
