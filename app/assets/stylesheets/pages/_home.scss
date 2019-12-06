@@ -29,6 +29,13 @@ $content-size: 70px;
   }
 }
 
+.highlight {
+  background-color: rgba(60, 207, 141, .6);
+  padding-left: 1%;
+  padding-right: 1%;
+  // font-weight: 900;
+}
+
 .landing-primary {
   background: linear-gradient(
       to bottom,
@@ -63,6 +70,7 @@ $content-size: 70px;
   position: absolute;
   top: 8rem;
   left: 2rem;
+  right: 0rem;
 }
 
 .flat-button {
@@ -118,11 +126,11 @@ $content-size: 70px;
         line-height: $content-size;
 
         -webkit-animation-name: opacity;
-        -webkit-animation-duration: 12s;
+        -webkit-animation-duration: 120s;
         -webkit-animation-iteration-count: 1;
         -webkit-animation-fill-mode: forwards;
         animation-name: opacity;
-        animation-duration: 12s;
+        animation-duration: 120s;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
       }
@@ -140,11 +148,11 @@ $content-size: 70px;
         list-style: none;
 
         -webkit-animation-name: change;
-        -webkit-animation-duration: 12s;
+        -webkit-animation-duration: 25s;
         -webkit-animation-iteration-count: 1;
         -webkit-animation-iteration-count: infinite;
         animation-name: change;
-        animation-duration: 12s;
+        animation-duration: 25s;
         animation-iteration-count: 1;
         animation-iteration-count: infinite;
 
@@ -293,11 +301,11 @@ $content-size: 70px;
       line-height: $content-size;
 
       -webkit-animation-name: opacity;
-      -webkit-animation-duration: 60s;
+      -webkit-animation-duration: 120s;
       -webkit-animation-iteration-count: 1;
       -webkit-animation-iteration-count: infinite;
       animation-name: opacity;
-      animation-duration: 60s;
+      animation-duration: 120s;
       animation-iteration-count: 1;
       animation-iteration-count: infinite;
     }
@@ -315,11 +323,11 @@ $content-size: 70px;
       list-style: none;
 
       -webkit-animation-name: change;
-      -webkit-animation-duration: 20s;
+      -webkit-animation-duration: 25s;
       -webkit-animation-iteration-count: 1;
       -webkit-animation-iteration-count: infinite;
       animation-name: change;
-      animation-duration: 20s;
+      animation-duration: 25s;
       animation-iteration-count: 1;
       animation-iteration-count: infinite;
 
