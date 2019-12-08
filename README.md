@@ -1,1 +1,1 @@
-Final team project for [Le Wagon coding bootcamp](https://www.lewagon.com).
+Final team project at [Le Wagon coding bootcamp](https://www.lewagon.com).
