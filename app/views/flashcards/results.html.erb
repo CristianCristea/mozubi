@@ -2,11 +2,11 @@
 <div class="row justify-content-center align-items-center flex-column">
   <div class="congrats-container">
     <div id="congrats">
-      <h1 id="title"><%= @flashcards_percentage >= 50 ? "Great Job!" : "Try again!" %></h1>
+      <h1 id="title"><%= @flashcards_percentage >= 50 ? "Sehr gut!" : "DAs hat leider nicht gereicht" %></h1>
     </div>
     <div class="flashcard-results">
       <h2>
-        <span class="percentage-widget"><%= @flashcards_percentage %>% <i>completion <br>rate</i></span>
+        <span class="percentage-widget"><%= @flashcards_percentage %>% <i>richtig</i></span>
       </h2>
 
 
@@ -14,8 +14,8 @@
   </div>
 
   <div class="flashcard-results-buttons mt-5">
-    <%= link_to "Back to article", @article, class: "width-btn btn btn-outline-primary btn-lg" %>
-    <%= link_to "Repeat quiz", @flashcard, class: "width-btn btn btn-outline-success btn-lg ml-5" %>
-    <%= link_to "Next article", @next_article, class: "width-btn btn btn-outline-primary btn-lg ml-5" %>
+    <%= link_to "Zurück zu Artikel", @article, class: "width-btn btn btn-outline-primary btn-lg" %>
+    <%= link_to "Quiz wiederholen", @flashcard, class: "width-btn btn btn-outline-success btn-lg ml-5" %>
+    <%= link_to "Nächster Artikel", @next_article, class: "width-btn btn btn-outline-primary btn-lg ml-5" %>
   </div>
 </div>

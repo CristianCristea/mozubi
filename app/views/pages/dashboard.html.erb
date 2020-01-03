@@ -10,12 +10,12 @@
           <div class="card-body card-dashboard-body text-center">
             <div class="card-body-main">
               <div class='card-body-title'>
-                <p class='card-current-title-label'>Your topic is:</p>
+                <p class='card-current-title-label'>Dein Thema ist:</p>
                 <h3 class='card-current-title-title'><%= @current_topic.name %></h3>
               </div>
               <div class="todays-completionrate">
                 <i><%= @article_index %></i>
-                <abbr>out<br>of <strong><%= @current_topic.articles.count %></strong></abbr>
+                <abbr>von <strong><%= @current_topic.articles.count %></strong></abbr>
               </div>
             </div>
             <div class="card-body-topics">
@@ -31,32 +31,32 @@
 
           </div>
           <div class="card-footer">
-            <div class="card-text card-dashboard-text small-text">Total reading time: 13 minutes</div>
+            <div class="card-text card-dashboard-text small-text">Gesamte Lesezeit: 13 Minuten</div>
             <%= link_to @current_article, class: "btn btn-secondary" do %>
-              <div class="button-text">Read next article</div>
+              <div class="button-text">Nächster Artikel</div>
             <% end %>
           </div>
         </div> <!-- ./card -->
         <div class="dashboard-cards-right">
           <div class="card card-progress-bar-right">
             <div class="card-dashboard-header">
-              <h4 class="card-header-title">Flashcards</h4>
+              <h4 class="card-header-title">Quiz</h4>
               <i class="material-icons-sharp fa-rotate-180">dynamic_feed</i>
             </div>
 
             <div class="card-body secondary-card">
-              <span>87% <i>completion <br>rate</i></span>
+              <span>87% <i>schon <br>richtig</i></span>
               <progress max="100" value="87"></progress>
             </div>
           </div> <!-- ./card -->
           <div class="card card-progress-bar-right">
             <div class="card-dashboard-header">
-              <h4 class="card-header-title">Exam preparations</h4>
+              <h4 class="card-header-title">Prüfungen</h4>
               <i class="material-icons-sharp">description</i>
             </div>
 
             <div class="card-body secondary-card">
-              <span>65% <i>completion <br>rate</i></span>
+              <span>65% <i>schon <br>richtig</i></span>
               <progress max="100" value="65"></progress>
             </div>
           </div> <!-- ./card -->

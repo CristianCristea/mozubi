@@ -2,13 +2,13 @@
   <div class="row justify-content-center flex-column align-items-center">
     <ul class="nav nav-pills" id="libraryTab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Bookmarks</a>
+        <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Lesezeichen</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Upcoming reads</a>
+        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Ungelesene Themen</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Completed</a>
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Gelesene</a>
       </li>
     </ul>
 
@@ -18,7 +18,7 @@
           <div class="card-library">
             <div class="card-library-header">
               <div>
-                Articles: <strong><%= @articles_bookmarked.count %></strong>
+                Artikel: <strong><%= @articles_bookmarked.count %></strong>
               </div>
               <div>
          <!--        <i class="far fa-bookmark"></i> -->
@@ -39,7 +39,7 @@
           <div class="card-library">
             <div class="card-library-header">
               <div>
-                Articles: <strong><%= @articles_upcoming.count %></strong>
+                Artikel: <strong><%= @articles_upcoming.count %></strong>
               </div>
               <div>
              <!--    <i class="far fa-newspaper"></i> -->
@@ -60,7 +60,7 @@
           <div class="card-library">
             <div class="card-library-header">
               <div>
-                Articles: <strong><%= @articles_read.count %></strong>
+                Artikel: <strong><%= @articles_read.count %></strong>
               </div>
               <div>
             <!--     <i class="fas fa-check"></i> -->

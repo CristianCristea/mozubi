@@ -6,7 +6,7 @@
   </div>
 
   <div class="my-5 d-flex align-items-center">
-    <h2 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Read" if @article_read %></h3>
+    <h2 class="article-title"><%= @article.title %><%= render "shared/badge", text: "Gelesen" if @article_read %></h3>
 
 
 
@@ -22,7 +22,7 @@
           <i class="material-icons-sharp bookmark-icon" id="two">bookmark_border</i>
         <% end %>
       <% end %>
-      <%= link_to "Go to Quiz", @flashcard, class: "btn btn-primary mt-1 quiz-button" %>
+      <%= link_to "Zum Quiz", @flashcard, class: "btn btn-primary mt-1 quiz-button" %>
     </div>
 
   </div>
@@ -70,7 +70,7 @@
         <% end %>
     </div>
     </div>
-    <%= link_to "Go to Quiz", @flashcard, class: "btn btn-primary quiz-button d-none", id: "quizBtn" %>
+    <%= link_to "Zum Quiz", @flashcard, class: "btn btn-primary quiz-button d-none", id: "quizBtn" %>
     <br>
     <br>
 </div>
