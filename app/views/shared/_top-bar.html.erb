@@ -1,9 +1,9 @@
 <div class="top-bar card">
   <div class="card-dashboard-header top-bar">
-    <h2 class="display-4">Welcome back, <%= current_user.first_name %> 👌</h2>
+    <h2 class="display-4">Willkomen zurück, <%= current_user.first_name %> 👌</h2>
   </div>
   <div class="top-body card-body">
-    <p>You've done great so far! For now you still have <span class="number"><%= (current_user.exam_date.to_date - Date.current).to_i %></span> days until your exam.</p>
+    <p>Du bist schon weit gekommen! Du hast noch <span class="number"><%= (current_user.exam_date.to_date - Date.current).to_i %></span> Tage bis zur Prüfung.</p>
     <progress max="<%= (current_user.exam_date.to_date - Date.new(2019, 11, 1)).to_i %>" value="<%= ((current_user.exam_date.to_date - Date.new(2019, 11, 1)).to_i) - ((current_user.exam_date.to_date - Date.current).to_i) %>"></progress>
   </div>
 </div>
