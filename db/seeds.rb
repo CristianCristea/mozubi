@@ -15,7 +15,7 @@ puts "Adding professions..."
 
 puts "Adding users..."
 user = User.create!(
-        email: "bob@example.com",
+        email: "azubi@example.com",
         password: "123456",
         first_name: "Bob",
         last_name: "McDonald",
