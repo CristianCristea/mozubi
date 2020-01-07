@@ -20,7 +20,7 @@ $margin-left: calc(#{$card-width} / 6);
 
 .card-body-main {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 87% 1fr;
 }
 
 .nav-pills .nav-link {
@@ -38,7 +38,6 @@ $margin-left: calc(#{$card-width} / 6);
   color: grey;
   font-weight: lighter;
   font-size: 21px;
-  padding-top: 10px;
 }
 
 .card-current-title-title {
@@ -100,7 +99,8 @@ hr {
 
 .card-dashboard-body {
   display: grid;
-  grid-template-rows: 30% 1fr;
+  grid-template-rows: 40% 1fr;
+  padding-bottom: 0;
 
   &-topics {
     display: grid;
@@ -122,14 +122,16 @@ hr {
 
 .card-body-topics {
   display: grid;
-  grid-template-columns: 66% 1fr;
+  grid-template-columns: 95% 1fr;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .card-body-topic-title {
   display: flex;
   padding-left: 20px;
-  padding-top: 0px;
   position: relative;
+  margin-top: 5px;
 
   &:before {
     content: "";

@@ -1,66 +1,61 @@
 puts "Creating topics..."
 
 @topic1 = Topic.create!(
-  name: "Wirtschaften und dessen Grundlagen",
+  name: "In Ausbildung und Beruf orientieren",
   profession: @profession
 )
 
 @topic2 = Topic.create!(
-  name: "Rechtliche Strukturen und Rechtsformen",
+  name: "Marktorientierte Geschäftsprozesse eines Industriebetriebes erfassen",
   profession: @profession
 )
 
 @topic3 = Topic.create!(
-  name: "Menschliche Arbeit im Unternehmen",
+  name: "Werteströme und Werte erfassen und dokumentieren",
   profession: @profession
 )
 
 @topic4 = Topic.create!(
-  name: "Arbeitssicherheit, Umwelt- und Gesundheitsschutz",
+  name: "Wertschöpfungsprozesse analysieren und beurteilen",
   profession: @profession
 )
 
 @topic5 = Topic.create!(
-  name: "Wirtschaftspolitik und Ordnung",
+  name: "Leistungserstellungsprozesse planen, steuern und kontrollieren",
   profession: @profession
 )
 
 @topic6 = Topic.create!(
-  name: "Inventur",
+  name: "Beschaffungsprozesse planen, steuern und kontrollieren",
   profession: @profession
 )
 
 @topic7 = Topic.create!(
-  name: "Bilanzierung",
+  name: "Personalwirtschaftliche Aufgaben wahrnehmen",
   profession: @profession
 )
 
 @topic8 = Topic.create!(
-  name: "Rechnungswesen",
+  name: "Jahresabschluss analysieren und bewerten",
   profession: @profession
 )
 
 @topic9 = Topic.create!(
-  name: "Buchführung",
+  name: "Das Unternehmen im gesamt- und weltwirtschaftlichen Zusammenhang einordnen",
   profession: @profession
 )
 
 @topic10 = Topic.create!(
-  name: "Marketing und Absatz",
+  name: "Absatzprozesse planen, steuern und kontrollieren",
   profession: @profession
 )
 
 @topic11 = Topic.create!(
-  name: "Beschaffung und Bevorratung",
+  name: "Investitions- und Finanzierungsprozesse planen",
   profession: @profession
 )
 
 @topic12 = Topic.create!(
-  name: "Personalwesen",
-  profession: @profession
-)
-
-@topic13 = Topic.create!(
-  name: "Leistungserstellung",
+  name: "Unternehmensstrategien, -projekte umsetzen",
   profession: @profession
 )
