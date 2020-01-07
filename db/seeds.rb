@@ -14,7 +14,7 @@ puts "Adding professions..."
 @profession = Profession.create!(name: "Web Developer")
 
 puts "Adding users..."
-user = User.create!(
+@user = User.create!(
         email: "azubi@example.com",
         password: "123456",
         first_name: "Bob",
